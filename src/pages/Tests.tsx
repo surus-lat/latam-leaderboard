@@ -107,23 +107,23 @@ export function Tests() {
   }
 
   return (
-    <div className="container py-10">
-      <h1 className="text-3xl font-bold mb-6">{t('tests.title')}</h1>
+    <div className="container py-6 md:py-10">
+      <h1 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">{t('tests.title')}</h1>
 
-      <div className="space-y-10">
+      <div className="space-y-6 md:space-y-10">
         {entries.map(([groupKey, group]) => (
           <section key={groupKey}>
             <div
-              className={`rounded border p-5 ${groupStyles(groupKey)} cursor-pointer`}
+              className={`rounded border p-4 md:p-5 ${groupStyles(groupKey)} cursor-pointer`}
               role="button"
               tabIndex={0}
               aria-expanded={!!groupExpanded[groupKey]}
               onClick={() => toggleGroup(groupKey)}
               onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleGroup(groupKey) } }}
             >
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex items-start justify-between gap-3 md:gap-4">
                 <div>
-                  <h2 className="text-xl font-semibold flex items-center gap-2">
+                  <h2 className="text-lg md:text-xl font-semibold flex items-center gap-2">
                     {lx(group, 'name')}
                     <span className={`transition-transform ${groupExpanded[groupKey] ? 'rotate-90' : ''}`}>›</span>
                   </h2>

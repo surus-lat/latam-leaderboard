@@ -4,10 +4,10 @@ export function Submit() {
   const { t } = useI18n()
 
   return (
-    <div className="container max-w-4xl py-10">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-6">{t('contribute.ready_to_contribute')}</h1>
-        <p className="text-lg text-muted-foreground mb-8">
+    <div className="container max-w-4xl py-6 md:py-10">
+      <div className="text-center mb-8 md:mb-12">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">{t('contribute.ready_to_contribute')}</h1>
+        <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
           {t('contribute.community_description')}
         </p>
         <a 

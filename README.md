@@ -1,4 +1,4 @@
-# LATAM Leaderboard
+# LatamBoard
 
 Simple, stylized leaderboard for evaluating LLMs on Spanish and Portuguese tasks in LATAM. Built with React, Vite, and TailwindCSS.
 

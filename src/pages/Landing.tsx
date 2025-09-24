@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useI18n } from '../i18n/I18nProvider'
+import { HeroSection } from '../components/ui/hero-section'
+import { FilterPanel } from '../components/ui/filter-panel'
+import { LeaderboardTable } from '../components/ui/leaderboard-table'
+import { ExternalLink } from 'lucide-react'
 
 type LeaderboardRow = Record<string, string | number | null>
 
@@ -52,6 +56,7 @@ export function Landing() {
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
   const [taskGroups, setTaskGroups] = useState<TaskGroups | null>(null)
   const [/* tasksList */, setTasksList] = useState<TasksList | null>(null)
+  const [showMobileFilters, setShowMobileFilters] = useState<boolean>(false)
 
   useEffect(() => {
     fetchLeaderboard().then(setData).catch(() => setError('Failed to load leaderboard data'))
@@ -126,102 +131,75 @@ export function Landing() {
   }
 
   return (
-    <div className="container py-10">
-      <section className="text-center space-y-4 py-10">
-        <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-secondary">{t('landing.hero_title')}</h1>
-        <p className="max-w-2xl mx-auto text-muted-foreground">{t('landing.hero_subtitle')}</p>
-      </section>
+    <div className="min-h-screen">
+      <HeroSection />
+      
+      <div id="leaderboard" className="pb-8 md:pb-20 container">
+        {/* Mobile Filter Toggle */}
+        <div className="lg:hidden mb-6">
+          <button
+            onClick={() => setShowMobileFilters(!showMobileFilters)}
+            className="btn-outline w-full flex items-center justify-center gap-2"
+          >
+            <span>Filters</span>
+            <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full">
+              {visibleColumns.length}
+            </span>
+          </button>
+        </div>
 
-      <section className="space-y-4">
-        <div className="space-y-2">
-          {/* Overall row */}
-          <div className="flex flex-wrap items-center gap-2">
-            <button onClick={() => toggleColumn('overall_latam_score')} className={`chip ${visibleColumns.includes('overall_latam_score') ? 'chip-agg-overall' : 'hover:bg-muted'}`}>
-              {visibleColumns.includes('overall_latam_score') ? '✓ ' : ''}overall_latam_score
-            </button>
+        <div className="flex flex-col lg:flex-row gap-4 md:gap-8">
+          {/* Desktop Sidebar */}
+          <div className="hidden lg:block w-1/5">
+            <FilterPanel
+              visibleColumns={visibleColumns}
+              groupColumnMap={groupColumnMap}
+              groupOrder={groupOrder}
+              onToggleColumn={toggleColumn}
+            />
           </div>
 
-          {/* One row per group: aggregate first, then subtasks (auto-generated) */}
-          <div className="flex flex-col gap-2">
-            {groupOrder.map((groupKey) => {
-              // derive aggregate column from prefix
-              const prefixMap: Record<string, string> = { latam_es: 'spanish_', latam_pr: 'portuguese_' }
-              const prefix = prefixMap[groupKey]
-              if (!prefix) return null
-              const aggCol = `${prefix.slice(0, -1)}_score`
-              const chips = groupColumnMap[groupKey] ?? []
-              // choose chip accent by group
-              const activeAgg = visibleColumns.includes(aggCol)
-              const aggClass = `chip ${activeAgg ? 'chip-agg-lang' : 'hover:bg-muted'}`
-              return (
-                <div key={groupKey} className="flex flex-wrap items-center gap-2">
-                  <button onClick={() => toggleColumn(aggCol)} className={aggClass}>
-                    {activeAgg ? '✓ ' : ''}{aggCol}
-                  </button>
-                  {chips.map((col) => {
-                    const active = visibleColumns.includes(col)
-                    const label = col.replace(/^spanish_|^portuguese_/, '')
-                    const style = groupKey === 'latam_es'
-                      ? (active ? 'bg-tertiary/20 border-tertiary/40 text-foreground' : 'hover:bg-muted')
-                      : groupKey === 'latam_pr'
-                        ? (active ? 'bg-secondary/20 border-secondary/40 text-foreground' : 'hover:bg-muted')
-                        : (active ? 'bg-primary/10 border-primary/30' : 'hover:bg-muted')
-                    return (
-                      <button key={col} onClick={() => toggleColumn(col)} className={`px-2 py-1 rounded border text-xs ${style}`}>
-                        {active ? '✓ ' : ''}{label}
-                      </button>
-                    )
-                  })}
-                </div>
-              )
-            })}
+          {/* Mobile Filter Panel */}
+          {showMobileFilters && (
+            <div className="lg:hidden mb-4 md:mb-6">
+              <FilterPanel
+                visibleColumns={visibleColumns}
+                groupColumnMap={groupColumnMap}
+                groupOrder={groupOrder}
+                onToggleColumn={toggleColumn}
+              />
+            </div>
+          )}
+
+          {/* Main Content */}
+          <div className="flex-1 lg:w-4/5">
+            <LeaderboardTable
+              data={sortedData}
+              visibleColumns={visibleColumns}
+              orderedColumns={orderedColumns}
+              aggregates={aggregates}
+              sortBy={sortBy}
+              sortDir={sortDir}
+              onSort={handleSort}
+              loading={data === null && !error}
+              error={error}
+            />
           </div>
         </div>
 
-        <div className="overflow-auto rounded border shadow-sm">
-          <table className="w-full text-sm">
-            <thead>
-              <tr>
-                {orderedColumns.filter((c) => visibleColumns.includes(c)).map((col) => (
-                  <th key={col} className={`text-left px-3 py-2 whitespace-nowrap cursor-pointer select-none ${aggregates.has(col) ? 'bg-primary/5' : col.startsWith('spanish_') ? 'bg-tertiary/10' : col.startsWith('portuguese_') ? 'bg-secondary/10' : ''}`} onClick={() => handleSort(col)}>
-                    <div className="inline-flex items-center gap-1">
-                      <span>{col}</span>
-                      {sortBy === col && (
-                        <span className="text-xs text-muted-foreground">{sortDir === 'asc' ? '▲' : '▼'}</span>
-                      )}
-                    </div>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {error && (
-                <tr>
-                  <td className="px-3 py-2 text-destructive" colSpan={orderedColumns.length}>{t('landing.load_failed')}</td>
-                </tr>
-              )}
-              {!error && data === null && (
-                <tr>
-                  <td className="px-3 py-6 text-center text-muted-foreground" colSpan={orderedColumns.length}>{t('common.loading')}</td>
-                </tr>
-              )}
-              {!error && data && sortedData.map((row, idx) => (
-                <tr key={idx} className="odd:bg-background/40">
-                  {orderedColumns.filter((c) => visibleColumns.includes(c)).map((col) => (
-                    <td key={col} className="px-3 py-2 whitespace-nowrap">
-                      {typeof row[col] === 'number' ? (row[col] as number).toFixed(4) : String(row[col])}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      </div>
+        <div className="flex items-center justify-center gap-2 pt-8 text-sm text-muted-foreground">
+          <span>{t('landing.source_prefix')}</span>
+          <a 
+            href="https://huggingface.co/datasets/mauroibz/leaderboard-results/" 
+            target="_blank" 
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 text-primary hover:text-primary/80 font-medium transition-colors"
+          >
+            {t('landing.source_link')}
+            <ExternalLink className="h-3 w-3" />
+          </a>
         </div>
-
-        <p className="text-xs text-muted-foreground">
-          {t('landing.source_prefix')} <a className="underline" href="https://huggingface.co/datasets/mauroibz/leaderboard-results/" target="_blank" rel="noreferrer">{t('landing.source_link')}</a>.
-        </p>
-      </section>
     </div>
   )
 }

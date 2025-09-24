@@ -6,7 +6,7 @@ export type TranslationDict = Record<string, any>
 
 export const en: TranslationDict = {
   common: {
-    app_name: 'LATAM Leaderboard',
+    app_name: 'LatamBoard',
     home: 'Home',
     tasks: 'Tasks',
     about: 'About',
@@ -18,12 +18,12 @@ export const en: TranslationDict = {
     error_generic: 'Something went wrong. Try again.',
   },
   landing: {
-    hero_title: 'LATAM Leaderboard',
-    hero_subtitle:
-      "The community-driven platform for evaluating AI models on Spanish and Portuguese benchmarks. Advancing AI excellence across Latin America through transparent, rigorous evaluation.",
+    hero_title: 'LatamBoard',
+    hero_subtitle: "Performance benchmarks for Latin American AI Models",
     source_prefix: 'Source:',
     source_link: 'Hugging Face dataset',
     load_failed: 'Failed to load leaderboard data',
+    cta_button: 'See the results',
     columns: {
       model_name: 'model_name',
       overall_latam_score: 'overall_latam_score',
@@ -39,6 +39,15 @@ export const en: TranslationDict = {
     shots: 'shots',
     failed_meta: 'Failed to load tasks metadata',
     dataset: 'Dataset',
+  },
+  filters: {
+    title: 'Filters',
+    active: 'active',
+    overall_performance: 'Overall Performance',
+    overall_latam_score: 'Overall LATAM Score',
+    benchmarks: 'Benchmarks',
+    show_main_scores: 'Show Main Scores',
+    clear_all: 'Clear All',
   },
   contribute: {
     ready_to_contribute: 'Ready to Contribute?',
@@ -60,11 +69,11 @@ export const en: TranslationDict = {
     follow_announcement: 'Follow us for the announcement and be ready to build with us from day one.',
   },
   about: {
-    title: 'About LATAM Leaderboard',
+    title: 'About LatamBoard',
     p1:
-      "LATAM Leaderboard is a community initiative dedicated to establishing task-oriented, transparent evaluation standards for AI systems serving Latin America. We're helping build the engine to measure real work, not just language fluency.",
+      "LatamBoard is a community initiative dedicated to establishing task-oriented, transparent evaluation standards for AI systems serving Latin America. We're helping build the engine to measure real work, not just language fluency.",
     p2:
-      "LATAM Leaderboard is more than a ranking system, it's the foundation for establishing our region as a global AI innovation hub. Whether you're a researcher, developer, or AI enthusiast, there's a place for you in building these evaluation standards.",
+      "LatamBoard is more than a ranking system, it's the foundation for establishing our region as a global AI innovation hub. Whether you're a researcher, developer, or AI enthusiast, there's a place for you in building these evaluation standards.",
     mission_title: 'Our Mission',
     mission_p:
       'We create rigorous, region-specific, task-oriented benchmarks, in Spanish and Portuguese and across LATAM industries, so researchers, developers, and companies can train, choose, and ship models that actually move the needle in production.',
@@ -110,16 +119,16 @@ export const en: TranslationDict = {
     commit_li4: 'Community Ownership: We maintain the infrastructure; the community shapes the standards.',
     future_title: "Help Build Latin America's AI Future",
     future_p:
-      "LATAM Leaderboard is more than a ranking, it's the evaluation layer that lets our region train and deploy systems that solve real problems.",
+      "LatamBoard is more than a ranking, it's the evaluation layer that lets our region train and deploy systems that solve real problems.",
     ready_title: 'Ready to contribute?',
     ready_p:
-      'LATAM Leaderboard is proudly supported by compute infrastructure from Surus, with development and methodology contributions from the broader LATAM AI community.',
+      'LatamBoard is proudly supported by compute infrastructure from Surus, with development and methodology contributions from the broader LATAM AI community.',
   },
 }
 
 export const es: TranslationDict = {
   common: {
-    app_name: 'LATAM Leaderboard',
+    app_name: 'LatamBoard',
     home: 'Inicio',
     tasks: 'Tareas',
     about: 'Acerca de',
@@ -131,12 +140,12 @@ export const es: TranslationDict = {
     error_generic: 'Algo salió mal. Intenta de nuevo.',
   },
   landing: {
-    hero_title: 'LATAM Leaderboard',
-    hero_subtitle:
-      'Plataforma comunitaria para evaluar modelos de IA en español y portugués. Impulsando la excelencia en IA en América Latina con evaluación rigurosa y transparente.',
+    hero_title: 'LatamBoard',
+    hero_subtitle: 'Benchmarks de rendimiento para modelos de IA latinoamericanos',
     source_prefix: 'Fuente:',
     source_link: 'Dataset en Hugging Face',
     load_failed: 'Error al cargar los datos del leaderboard',
+    cta_button: 'Ver los resultados',
     columns: {
       model_name: 'model_name',
       overall_latam_score: 'overall_latam_score',
@@ -152,6 +161,15 @@ export const es: TranslationDict = {
     shots: 'disparos',
     failed_meta: 'Error al cargar los metadatos de tareas',
     dataset: 'Dataset',
+  },
+  filters: {
+    title: 'Filtros',
+    active: 'activos',
+    overall_performance: 'Rendimiento General',
+    overall_latam_score: 'Puntaje General LATAM',
+    benchmarks: 'Evaluaciones',
+    show_main_scores: 'Mostrar Puntuaciones Principales',
+    clear_all: 'Limpiar Todo',
   },
   contribute: {
     ready_to_contribute: '¿Listo para Contribuir?',
@@ -173,11 +191,11 @@ export const es: TranslationDict = {
     follow_announcement: 'Síguenos para el anuncio y prepárate para construir con nosotros desde el primer día.',
   },
   about: {
-    title: 'Sobre LATAM Leaderboard',
+    title: 'Sobre LatamBoard',
     p1:
-      "LATAM Leaderboard es una iniciativa comunitaria dedicada a establecer estándares de evaluación transparentes y orientados a tareas para sistemas de IA en América Latina. Estamos ayudando a construir un motor que mide trabajo real, no solo fluidez lingüística.",
+      "LatamBoard es una iniciativa comunitaria dedicada a establecer estándares de evaluación transparentes y orientados a tareas para sistemas de IA en América Latina. Estamos ayudando a construir un motor que mide trabajo real, no solo fluidez lingüística.",
     p2:
-      "LATAM Leaderboard es más que un sistema de rankings, es la base para posicionar a nuestra región como un hub global de innovación en IA. Seas investigador, desarrollador o entusiasta de la IA, hay un lugar para vos en la construcción de estos estándares de evaluación.",
+      "LatamBoard es más que un sistema de rankings, es la base para posicionar a nuestra región como un hub global de innovación en IA. Seas investigador, desarrollador o entusiasta de la IA, hay un lugar para vos en la construcción de estos estándares de evaluación.",
     mission_title: 'Nuestra Misión',
     mission_p:
       'Creamos benchmarks rigurosos, específicos para la región y orientados a tareas, en español y portugués y a través de industrias de LATAM, para que investigadores, desarrolladores y empresas puedan entrenar, elegir y desplegar modelos que realmente marquen la diferencia en producción.',
@@ -223,16 +241,16 @@ export const es: TranslationDict = {
     commit_li4: 'Propiedad Comunitaria: Mantenemos la infraestructura; la comunidad define los estándares.',
     future_title: "Ayudá a Construir el Futuro de la IA en LATAM",
     future_p:
-      "LATAM Leaderboard es más que un ranking, es la capa de evaluación que permite a nuestra región entrenar y desplegar sistemas que resuelvan problemas reales.",
+      "LatamBoard es más que un ranking, es la capa de evaluación que permite a nuestra región entrenar y desplegar sistemas que resuelvan problemas reales.",
     ready_title: '¿Listo para contribuir?',
     ready_p:
-      'LATAM Leaderboard cuenta con el apoyo de infraestructura de cómputo de Surus, junto con contribuciones de desarrollo y metodología de la comunidad de IA de LATAM.',
+      'LatamBoard cuenta con el apoyo de infraestructura de cómputo de Surus, junto con contribuciones de desarrollo y metodología de la comunidad de IA de LATAM.',
   },
 }
 
 export const pt: TranslationDict = {
   common: {
-    app_name: 'LATAM Leaderboard',
+    app_name: 'LatamBoard',
     home: 'Início',
     tasks: 'Tarefas',
     about: 'Sobre',
@@ -244,12 +262,12 @@ export const pt: TranslationDict = {
     error_generic: 'Algo deu errado. Tente novamente.',
   },
   landing: {
-    hero_title: 'LATAM Leaderboard',
-    hero_subtitle:
-      'Plataforma comunitária para avaliar modelos de IA em espanhol e português. Promovendo excelência em IA na América Latina com avaliação rigorosa e transparente.',
+    hero_title: 'LatamBoard',
+    hero_subtitle: 'Benchmarks de desempenho para modelos de IA da América Latina',
     source_prefix: 'Fonte:',
     source_link: 'Dataset no Hugging Face',
     load_failed: 'Falha ao carregar os dados do leaderboard',
+    cta_button: 'Ver os resultados',
     columns: {
       model_name: 'model_name',
       overall_latam_score: 'overall_latam_score',
@@ -265,6 +283,15 @@ export const pt: TranslationDict = {
     shots: 'exemplos',
     failed_meta: 'Falha ao carregar metadados das tarefas',
     dataset: 'Dataset',
+  },
+  filters: {
+    title: 'Filtros',
+    active: 'ativos',
+    overall_performance: 'Desempenho Geral',
+    overall_latam_score: 'Pontuação Geral LATAM',
+    benchmarks: 'Avaliações',
+    show_main_scores: 'Mostrar Pontuações Principais',
+    clear_all: 'Limpar Tudo',
   },
   contribute: {
     ready_to_contribute: 'Pronto para Contribuir?',
@@ -286,9 +313,9 @@ export const pt: TranslationDict = {
     follow_announcement: 'Siga-nos para o anúncio e esteja pronto para construir conosco desde o primeiro dia.',
   },
   about: {
-    title: 'Sobre o LATAM Leaderboard',
+    title: 'Sobre o LatamBoard',
     p1:
-      'O LATAM Leaderboard é uma iniciativa comunitária dedicada a estabelecer padrões de avaliação orientados a tarefas e transparentes para sistemas de IA na América Latina. Medimos trabalho real, não apenas fluência.',
+      'O LatamBoard é uma iniciativa comunitária dedicada a estabelecer padrões de avaliação orientados a tarefas e transparentes para sistemas de IA na América Latina. Medimos trabalho real, não apenas fluência.',
     p2:
       'Mais que um ranking, é a base para tornar a região um polo global de inovação em IA. Pesquisadores, desenvolvedores e entusiastas são bem-vindos para construir esses padrões.',
     mission_title: 'Nossa missão',
