@@ -1,23 +1,17 @@
-import { useI18n } from '../i18n/I18nProvider'
-import Markdown from 'markdown-to-jsx'
-import aboutEnMd from '../content/about.en.md?raw'
-import aboutEsMd from '../content/about.es.md?raw'
-import aboutPtMd from '../content/about.pt.md?raw'
+import { useEffect } from 'react'
 
 export function About() {
-  const { locale } = useI18n()
-
-  const contentMap = {
-    en: aboutEnMd,
-    es: aboutEsMd,
-    pt: aboutPtMd
-  }
-
-  const content = contentMap[locale] || contentMap.en
+  useEffect(() => {
+    // Redirect to the self-contained HTML file
+    window.location.href = '/about.html'
+  }, [])
 
   return (
-    <div className="container prose prose-neutral dark:prose-invert prose-sm md:prose-base max-w-3xl py-6 md:py-10 mx-auto">
-      <Markdown>{content}</Markdown>
+    <div className="container max-w-3xl py-6 md:py-10 mx-auto text-center">
+      <div className="space-y-4">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+        <p className="text-muted-foreground">Redirecting to About page...</p>
+      </div>
     </div>
   )
 }

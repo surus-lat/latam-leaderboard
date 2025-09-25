@@ -34,6 +34,9 @@ export function HeroSection() {
             <p className="mt-2 text-base sm:text-lg text-background/90 font-medium drop-shadow">
               {t('landing.hero_subtitle')}
             </p>
+            <p className="text-sm text-background/75 font-normal drop-shadow">
+              {t('landing.hero_tagline')}
+            </p>
           </div>
         </div>
 
