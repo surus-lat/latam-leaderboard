@@ -55,23 +55,8 @@
       "long_description_pt": "Suíte abrangente de avaliação de tradução automática combinando os conjuntos FLORES+ e OPUS-100 para avaliar capacidades de tradução multilíngue. FLORES+ fornece traduções de alta qualidade entre espanhol, português, inglês, francês, italiano, alemão, indiano, árabe e chinês, cobrindo 30 pares de idiomas focados em línguas latino-americanas e ibéricas. OPUS-100 contribui com pares de tradução inglês-espanhol e inglês-português de um corpus multilíngue em larga escala. Ambos os conjuntos avaliam a qualidade da tradução usando métricas BLEU e chrF. Esta suíte mede a capacidade dos modelos de traduzir com precisão entre idiomas mantendo o significado semântico e a fluência linguística em diversos domínios textuais.",
       "repository": "https://github.com/surus-lat/lm-evaluation-harness-surus",
       "subtasks": [
-        "flores_arb_por",
-        "flores_arb_spa",
-        "flores_cmn_por",
-        "flores_cmn_spa",
-        "flores_deu_por",
-        "flores_deu_spa",
-        "flores_eng_por",
-        "flores_eng_spa",
-        "flores_fra_por",
-        "flores_fra_spa",
-        "flores_hin_por",
-        "flores_hin_spa",
-        "flores_ita_por",
-        "flores_ita_spa",
-        "flores_por_spa",
-        "opus_100_en-es",
-        "opus_100_en-pt"
+        "flores_plus_bidirectional",
+        "opus"
       ]
     }
     }
