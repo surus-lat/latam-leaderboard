@@ -23,7 +23,7 @@ export function FilterPanel({
   }
 
   const cleanColumnName = (column: string) => {
-    return column.replace(/^spanish_|^portuguese_/, '')
+    return column.replace(/^spanish_|^portuguese_|^translation_/, '')
   }
 
   return (
@@ -61,12 +61,13 @@ export function FilterPanel({
         {groupOrder.map((groupKey) => {
           const prefixMap: Record<string, string> = { 
             latam_es: 'spanish_', 
-            latam_pr: 'portuguese_' 
+            latam_pr: 'portuguese_',
+            translation: 'translation_'
           }
           const prefix = prefixMap[groupKey]
           if (!prefix) return null
 
-          const groupName = groupKey === 'latam_es' ? 'Spanish' : 'Portuguese'
+          const groupName = groupKey === 'latam_es' ? 'Spanish' : groupKey === 'latam_pr' ? 'Portuguese' : 'Translation'
           const aggCol = `${prefix.slice(0, -1)}_score`
           const subtasks = groupColumnMap[groupKey] ?? []
 
@@ -89,7 +90,10 @@ export function FilterPanel({
                 {subtasks.map((column) => (
                   <button
                     key={column}
-                    onClick={() => onToggleColumn(column)}
+                    onClick={() => {
+                      console.log('Filter panel - toggling subtask:', column, 'visible:', visibleColumns.includes(column));
+                      onToggleColumn(column);
+                    }}
                     className={`badge text-[10px] md:text-xs transition-all ${getBadgeStyle(visibleColumns.includes(column))}`}
                   >
                     {visibleColumns.includes(column) && (
@@ -107,7 +111,7 @@ export function FilterPanel({
         <div className="flex flex-col gap-1.5 md:gap-2 pt-3 md:pt-4 border-t">
           <button
             onClick={() => {
-              const allColumns = ['model_name', 'overall_latam_score', 'spanish_score', 'portuguese_score']
+              const allColumns = ['model_name', 'overall_latam_score', 'spanish_score', 'portuguese_score', 'translation_score']
               allColumns.forEach(col => {
                 if (!visibleColumns.includes(col)) {
                   onToggleColumn(col)

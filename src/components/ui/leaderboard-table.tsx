@@ -45,6 +45,10 @@ export function LeaderboardTable({
   }
 
   const visibleOrderedColumns = orderedColumns.filter(col => visibleColumns.includes(col))
+  
+  // Debug logging
+  console.log('Table render - visibleColumns:', visibleColumns);
+  console.log('Table render - visibleOrderedColumns:', visibleOrderedColumns);
 
   if (loading) {
     return (

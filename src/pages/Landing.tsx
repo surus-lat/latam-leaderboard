@@ -45,6 +45,7 @@ const DEFAULT_VISIBLE = [
   'overall_latam_score',
   'spanish_score',
   'portuguese_score',
+  'translation_score',
 ]
 
 export function Landing() {
@@ -69,16 +70,21 @@ export function Landing() {
     }).catch(() => {/* non-fatal */})
   }, [])
 
+  // Debug: Log when visibleColumns changes
+  useEffect(() => {
+    console.log('visibleColumns changed:', visibleColumns);
+  }, [visibleColumns])
+
   // Determine ordered columns: aggregates, then per-group tasks in JSON order (only those present in data)
   const { orderedColumns, aggregates, groupColumnMap, groupOrder } = useMemo(() => {
     if (!data || data.length === 0) {
       return { orderedColumns: [] as string[], aggregates: new Set<string>(), groupColumnMap: {} as Record<string, string[]>, groupOrder: [] as string[] }
     }
     const present = new Set(Object.keys(data[0]))
-    const aggregatesArr = ['overall_latam_score', 'spanish_score', 'portuguese_score']
+    const aggregatesArr = ['overall_latam_score', 'spanish_score', 'portuguese_score', 'translation_score']
     const aggregatesSet = new Set(aggregatesArr)
 
-    const groupPrefixMap: Record<string, string> = { latam_es: 'spanish_', latam_pr: 'portuguese_' }
+    const groupPrefixMap: Record<string, string> = { latam_es: 'spanish_', latam_pr: 'portuguese_', translation: 'translation_' }
     const map: Record<string, string[]> = {}
     const order: string[] = Object.keys(taskGroups?.task_groups ?? {})
     for (const key of order) {
@@ -99,6 +105,8 @@ export function Landing() {
     for (const k of present) {
       if (!covered.has(k)) ordered.push(k)
     }
+    console.log('useMemo result - groupColumnMap:', map);
+    console.log('useMemo result - groupOrder:', order);
     return { orderedColumns: ordered, aggregates: aggregatesSet, groupColumnMap: map, groupOrder: order }
   }, [data, taskGroups])
 
@@ -116,9 +124,13 @@ export function Landing() {
   }, [data, sortBy, sortDir])
 
   function toggleColumn(col: string) {
-    setVisibleColumns((prev) =>
-      prev.includes(col) ? prev.filter((c) => c !== col) : [...prev, col]
-    )
+    console.log('toggleColumn called with:', col);
+    setVisibleColumns((prev) => {
+      const newColumns = prev.includes(col) ? prev.filter((c) => c !== col) : [...prev, col];
+      console.log('Previous visible columns:', prev);
+      console.log('New visible columns:', newColumns);
+      return newColumns;
+    })
   }
 
   function handleSort(col: string) {
