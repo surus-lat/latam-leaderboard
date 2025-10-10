@@ -74,6 +74,37 @@ export function Submit() {
         </div>
 
         <div className="rounded-lg border bg-card/60 p-8 text-center">
+          <h2 className="text-2xl font-semibold mb-4">{t('contribute.non_technical_title')}</h2>
+          <p className="text-muted-foreground mb-6">
+            {t('contribute.non_technical_description')}
+          </p>
+          <div className="space-y-3 text-left max-w-2xl mx-auto">
+            <p className="text-muted-foreground">
+              {t('contribute.non_technical_learn_benchmarks')}{' '}
+              <a 
+                href="https://surus.lat/blog/what_are_benchmarks" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 underline"
+              >
+                {t('contribute.non_technical_learn_benchmarks_link')}
+              </a>
+            </p>
+            <p className="text-muted-foreground">
+              {t('contribute.non_technical_explore_tasks')}{' '}
+              <a 
+                href="https://surus.lat/blog/why_task_based_benchmarks" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 underline"
+              >
+                {t('contribute.non_technical_explore_tasks_link')}
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="rounded-lg border bg-card/60 p-8 text-center">
           <h2 className="text-2xl font-semibold mb-4">{t('contribute.coming_soon')}</h2>
           <p className="text-muted-foreground">
             {t('contribute.follow_announcement')}
