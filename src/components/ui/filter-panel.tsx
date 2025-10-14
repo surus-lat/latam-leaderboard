@@ -23,7 +23,7 @@ export function FilterPanel({
   }
 
   const cleanColumnName = (column: string) => {
-    return column.replace(/^spanish_|^portuguese_|^translation_/, '')
+    return column.replace(/^spanish_|^portuguese_|^translation_|^structured_extraction_/, '')
   }
 
   return (
@@ -57,17 +57,37 @@ export function FilterPanel({
           </div>
         </div>
 
+        {/* Model Info */}
+        <div className="space-y-2 md:space-y-3">
+          <h4 className="text-xs md:text-sm font-medium text-muted-foreground">Model Info</h4>
+          <div className="flex flex-wrap gap-1.5 md:gap-2">
+            <button
+              onClick={() => onToggleColumn('publisher')}
+              className={`badge text-xs transition-all ${getBadgeStyle(visibleColumns.includes('publisher'))}`}
+            >
+              {visibleColumns.includes('publisher') && (
+                <X className="h-3 w-3 mr-1" />
+              )}
+              Publisher
+            </button>
+          </div>
+        </div>
+
         {/* Language Groups */}
         {groupOrder.map((groupKey) => {
           const prefixMap: Record<string, string> = { 
             latam_es: 'spanish_', 
             latam_pr: 'portuguese_',
-            translation: 'translation_'
+            translation: 'translation_',
+            structured_extraction: 'structured_extraction_'
           }
           const prefix = prefixMap[groupKey]
           if (!prefix) return null
 
-          const groupName = groupKey === 'latam_es' ? 'Spanish' : groupKey === 'latam_pr' ? 'Portuguese' : 'Translation'
+          const groupName = groupKey === 'latam_es' ? 'Spanish' : 
+                           groupKey === 'latam_pr' ? 'Portuguese' : 
+                           groupKey === 'translation' ? 'Translation' :
+                           groupKey === 'structured_extraction' ? 'Structured Extraction' : groupKey
           const aggCol = `${prefix.slice(0, -1)}_score`
           const subtasks = groupColumnMap[groupKey] ?? []
 

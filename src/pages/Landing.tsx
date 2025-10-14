@@ -42,10 +42,12 @@ async function fetchLeaderboard(): Promise<LeaderboardRow[]> {
 
 const DEFAULT_VISIBLE = [
   'model_name',
+  'publisher',
   'overall_latam_score',
   'spanish_score',
   'portuguese_score',
   'translation_score',
+  'structured_extraction_score',
 ]
 
 export function Landing() {
@@ -81,10 +83,10 @@ export function Landing() {
       return { orderedColumns: [] as string[], aggregates: new Set<string>(), groupColumnMap: {} as Record<string, string[]>, groupOrder: [] as string[] }
     }
     const present = new Set(Object.keys(data[0]))
-    const aggregatesArr = ['overall_latam_score', 'spanish_score', 'portuguese_score', 'translation_score']
+    const aggregatesArr = ['overall_latam_score', 'spanish_score', 'portuguese_score', 'translation_score', 'structured_extraction_score']
     const aggregatesSet = new Set(aggregatesArr)
 
-    const groupPrefixMap: Record<string, string> = { latam_es: 'spanish_', latam_pr: 'portuguese_', translation: 'translation_' }
+    const groupPrefixMap: Record<string, string> = { latam_es: 'spanish_', latam_pr: 'portuguese_', translation: 'translation_', structured_extraction: 'structured_extraction_' }
     const map: Record<string, string[]> = {}
     const order: string[] = Object.keys(taskGroups?.task_groups ?? {})
     for (const key of order) {
@@ -95,7 +97,7 @@ export function Landing() {
       map[key] = cols
     }
 
-    const ordered = ['model_name', ...aggregatesArr]
+    const ordered = ['model_name', 'publisher', ...aggregatesArr]
     for (const key of order) {
       const cols = map[key]
       if (cols && cols.length) ordered.push(...cols)
@@ -146,7 +148,7 @@ export function Landing() {
     <div className="min-h-screen">
       <HeroSection />
       
-      <div id="leaderboard" className="pb-8 md:pb-20 container">
+      <div id="leaderboard" className="pb-8 md:pb-20 px-4 md:px-6 lg:px-8">
         {/* Mobile Filter Toggle */}
         <div className="lg:hidden mb-6">
           <button
@@ -160,9 +162,9 @@ export function Landing() {
           </button>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-4 md:gap-8">
+        <div className="flex flex-col lg:flex-row gap-4 md:gap-6">
           {/* Desktop Sidebar */}
-          <div className="hidden lg:block w-1/5">
+          <div className="hidden lg:block w-80 flex-shrink-0">
             <FilterPanel
               visibleColumns={visibleColumns}
               groupColumnMap={groupColumnMap}
@@ -184,7 +186,7 @@ export function Landing() {
           )}
 
           {/* Main Content */}
-          <div className="flex-1 lg:w-4/5">
+          <div className="flex-1 min-w-0">
             <LeaderboardTable
               data={sortedData}
               visibleColumns={visibleColumns}

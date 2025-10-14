@@ -73,14 +73,14 @@ export function LeaderboardTable({
   }
 
   return (
-    <div className="card border rounded-lg overflow-hidden">
+    <div className="border rounded-lg overflow-hidden bg-background">
       {/* Mobile: Show table info */}
       <div className="md:hidden px-4 py-3 bg-muted/30 border-b text-xs text-muted-foreground">
         Showing {data.length} models • Scroll horizontally to see all metrics
       </div>
 
       <div className="overflow-x-auto custom-scrollbar">
-        <table className="w-full min-w-[700px] md:min-w-[600px]">
+        <table className="w-full min-w-[800px] md:min-w-[900px]">
           <thead>
             <tr className="border-b bg-muted/50">
               <th className="px-4 md:px-6 py-4 md:py-4 text-left text-sm md:text-xs font-bold text-muted-foreground uppercase tracking-wider min-w-[80px] md:min-w-[60px] md:sticky md:left-0 md:z-10 md:bg-muted/50">
@@ -89,12 +89,12 @@ export function LeaderboardTable({
               {visibleOrderedColumns.map((col) => (
                 <th
                   key={col}
-                  className={`px-4 md:px-6 py-4 md:py-4 text-left text-sm md:text-xs font-bold text-muted-foreground uppercase tracking-wider cursor-pointer select-none hover:text-foreground transition-colors min-w-[140px] md:min-w-[120px] ${col === 'model_name' ? 'min-w-[200px] md:min-w-[180px]' : ''} ${col === 'model_name' ? 'md:sticky md:left-[60px] md:z-10 md:bg-muted/50' : ''}`}
+                  className={`px-4 md:px-6 py-4 md:py-4 text-left text-sm md:text-xs font-bold text-muted-foreground uppercase tracking-wider cursor-pointer select-none hover:text-foreground transition-colors min-w-[120px] md:min-w-[100px] ${col === 'model_name' ? 'min-w-[200px] md:min-w-[180px]' : ''} ${col === 'publisher' ? 'min-w-[120px] md:min-w-[100px]' : ''} ${col === 'model_name' ? 'md:sticky md:left-[60px] md:z-10 md:bg-muted/50' : ''}`}
                   onClick={() => onSort(col)}
                 >
                   <div className="flex items-center gap-1 md:gap-2">
                     <span className="truncate text-xs md:text-xs">
-                      {col === 'model_name' ? 'Model' : col.replace(/_/g, ' ').replace('score', '').trim()}
+                      {col === 'model_name' ? 'Model' : col === 'publisher' ? 'Publisher' : col.replace(/_/g, ' ').replace('score', '').trim()}
                     </span>
                     {sortBy === col && (
                       <div className="flex-shrink-0 text-primary">
@@ -129,6 +129,17 @@ export function LeaderboardTable({
                       {col === 'model_name' ? (
                         <div className="font-bold text-foreground max-w-[180px] md:max-w-xs truncate text-base md:text-sm">
                           {String(row[col] || '')}
+                        </div>
+                      ) : col === 'publisher' ? (
+                        <div className="font-medium text-foreground">
+                          <a 
+                            href={`https://huggingface.co/${row.full_model_name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary/80 transition-colors underline decoration-dotted underline-offset-2"
+                          >
+                            {String(row[col] || '')}
+                          </a>
                         </div>
                       ) : typeof row[col] === 'number' && (aggregates.has(col) || col.includes('_score')) ? (
                         <div className="flex items-center justify-center">
