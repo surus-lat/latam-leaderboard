@@ -119,6 +119,16 @@ npm run preview
 
 Any static host (e.g., Netlify, Vercel, GitHub Pages, S3) can serve the `dist/` folder. Ensure `public/` contains the JSON files (run `npm run fetch:data` in your CI/CD before build, if needed).
 
+Recommended CI build command:
+
+```bash
+npm ci
+npm run fetch:data
+npm run build
+```
+
+If you need higher rate limits or access to private HF datasets during the fetch step, set `HF_TOKEN` as a CI secret (never in the repo). See Security & Secrets below.
+
 ## Data Source & Community
 
 - Dataset: https://huggingface.co/datasets/mauroibz/leaderboard-results
@@ -129,3 +139,11 @@ Any static host (e.g., Netlify, Vercel, GitHub Pages, S3) can serve the `dist/` 
 
 - The table groups columns by category using the keys/subtasks in `tasks_groups.json`. Aggregates are highlighted and component task columns are styled to match their group.
 - The Submit page is client-only (no backend); submissions are logged in the console as a placeholder.
+
+## Security & Secrets
+
+- No secrets are committed to this repository. `.env`, `.env.*` are ignored in `.gitignore` (see `.env.example` for reference).
+- The site is a static SPA; it does not require runtime API keys in the browser.
+- Data fetching in CI can optionally use `HF_TOKEN` to avoid rate limits. Set this as a CI/host secret and run `npm run fetch:data` before `npm run build`.
+- Do not embed tokens in client-side code or expose them via `VITE_` env vars. Keep them only in your CI environment for the data fetch step.
+- To rotate or remove a leaked token, revoke it in your Hugging Face account settings and update the CI secret.

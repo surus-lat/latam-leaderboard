@@ -71,11 +71,7 @@
       "long_description_pt": "Suíte abrangente de avaliação para as capacidades dos sistemas de IA em extrair informações estruturadas de texto não estruturado e retorná-las em formato JSON. Este grupo de tarefas foca em testar a capacidade dos modelos de analisar diversos tipos de documentos e extrair toda a informação relevante enquanto aderem a esquemas JSON fornecidos. A avaliação cobre múltiplos domínios incluindo registros médicos, listagens de e-commerce, documentos comerciais, itinerários de viagem, conteúdo de mídia, especificações tecnológicas e relatórios de manufatura. Este benchmark avalia tanto a precisão de compreensão quanto as capacidades de geração de saída estruturada, medindo quão bem os modelos de linguagem podem transformar texto não estruturado em respostas JSON precisas e compatíveis com esquemas.",
       "repository": "https://github.com/surus-lat/benchy",
       "subtasks": [
-        "extraction_quality_score",
-        "composite_score", 
-        "schema_validity",
-        "field_f1_partial",
-        "hallucination_rate"
+        "paraloq"
       ]
     }
     }

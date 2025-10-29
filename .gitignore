@@ -22,3 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment files (never commit secrets)
+.env
+.env.*
+!.env.example
+
+# Common LLM/editor artifacts
+cursor.md
+.cursor/
+CLAUDE.md
+ToDo.md

@@ -1,0 +1,82 @@
+{
+  "logos": [
+    {
+      "file": "acl-logo.png",
+      "src": "/contributors/acl-logo.png",
+      "title": "ACL",
+      "url": "https://www.surus.lat/"
+    },
+    {
+      "file": "BSC-blue-small.png",
+      "src": "/contributors/BSC-blue-small.png",
+      "title": "BSC",
+      "url": "https://www.surus.lat/"
+    },
+    {
+      "file": "ceia.png",
+      "src": "/contributors/ceia.png",
+      "title": "CEIA",
+      "url": "https://www.surus.lat/"
+    },
+    {
+      "file": "google-research.png",
+      "src": "/contributors/google-research.png",
+      "title": "Google Research",
+      "url": "https://www.surus.lat/"
+    },
+    {
+      "file": "meta.svg",
+      "src": "/contributors/meta.svg",
+      "title": "Meta",
+      "url": "https://www.surus.lat/"
+    },
+    {
+      "file": "mozilla.svg",
+      "src": "/contributors/mozilla.svg",
+      "title": "Mozilla",
+      "url": "https://www.surus.lat/"
+    },
+    {
+      "file": "oldi.svg",
+      "src": "/contributors/oldi.svg",
+      "title": "OLDI",
+      "url": "https://www.surus.lat/"
+    },
+    {
+      "file": "paraloq.svg",
+      "src": "/contributors/paraloq.svg",
+      "title": "Paraloq",
+      "url": "https://paraloq.ai/"
+    },
+    {
+      "file": "PlanTL.png",
+      "src": "/contributors/PlanTL.png",
+      "title": "PlanTL",
+      "url": "https://www.surus.lat/"
+    },
+    {
+      "file": "somosnlp.svg",
+      "src": "/contributors/somosnlp.svg",
+      "title": "SomosNLP",
+      "url": "https://somosnlp.org/"
+    },
+    {
+      "file": "surus.svg",
+      "src": "/contributors/surus.svg",
+      "title": "Surus AI",
+      "url": "https://www.surus.lat/"
+    },
+    {
+      "file": "ufg.jpg",
+      "src": "/contributors/ufg.jpg",
+      "title": "Universidade Federal de Goiás",
+      "url": "https://www.ufg.br/"
+    },
+    {
+      "file": "upfb.png",
+      "src": "/contributors/upfb.png",
+      "title": "Universitat Pompeu Fabra",
+      "url": "https://www.upf.edu/en/home"
+    }
+  ]
+}

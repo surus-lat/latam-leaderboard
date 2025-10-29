@@ -1,0 +1,379 @@
+{
+  "model_name": "aya-vision-8b",
+  "publisher": "CohereLabs",
+  "full_model_name": "CohereLabs/aya-vision-8b",
+  "categories": {
+    "spanish": {
+      "task_scores": {
+        "spanish": {
+          "score": 0.5294649585531274,
+          "stderr": 0.0059635518020702705,
+          "metric": "acc",
+          "alias": "spanish"
+        },
+        "copa_es": {
+          "score": 0.768,
+          "stderr": 0.01889619359195203,
+          "metric": "acc",
+          "alias": "copa_es"
+        },
+        "escola": {
+          "score": 0.6115859449192782,
+          "stderr": 0.015026863679120362,
+          "metric": "acc",
+          "alias": "escola"
+        },
+        "mgsm_direct_es_spanish_bench": {
+          "score": 0.12,
+          "stderr": 0.020593600596839956,
+          "metric": "exact_match",
+          "alias": "mgsm_direct_es_spanish_bench"
+        },
+        "openbookqa_es": {
+          "score": 0.324,
+          "stderr": 0.020950557312477552,
+          "metric": "acc",
+          "alias": "openbookqa_es"
+        },
+        "paws_es_spanish_bench": {
+          "score": 0.5955,
+          "stderr": 0.0109772548964908,
+          "metric": "acc",
+          "alias": "paws_es_spanish_bench"
+        },
+        "teleia": {
+          "score": 0.7142857142857143,
+          "stderr": 0.1018690289920114,
+          "metric": "acc",
+          "alias": "teleia"
+        },
+        "teleia_cervantes_ave": {
+          "score": 0.6666666666666666,
+          "stderr": 0.210818510677892,
+          "metric": "acc",
+          "alias": "teleia_cervantes_ave"
+        },
+        "teleia_pce": {
+          "score": 0.5714285714285714,
+          "stderr": 0.20203050891044214,
+          "metric": "acc",
+          "alias": "teleia_pce"
+        },
+        "teleia_siele": {
+          "score": 0.875,
+          "stderr": 0.125,
+          "metric": "acc",
+          "alias": "teleia_siele"
+        },
+        "wnli_es": {
+          "score": 0.5352112676056338,
+          "stderr": 0.0596130578497224,
+          "metric": "acc",
+          "alias": "wnli_es"
+        },
+        "xnli_es_spanish_bench": {
+          "score": 0.43333333333333335,
+          "stderr": 0.009932588282324064,
+          "metric": "acc",
+          "alias": "xnli_es_spanish_bench"
+        }
+      },
+      "category_scores": {
+        "latam_es": {
+          "score": 0.597858420439276,
+          "stderr": 0.0059635518020702705,
+          "metric": "acc",
+          "alias": "latam_es"
+        },
+        "spanish": {
+          "score": 0.5294649585531274,
+          "stderr": 0.0059635518020702705,
+          "metric": "acc",
+          "alias": "spanish"
+        },
+        "teleia": {
+          "score": 0.7142857142857143,
+          "stderr": 0.1018690289920114,
+          "metric": "acc",
+          "alias": "teleia"
+        }
+      },
+      "top_level_scores": {
+        "latam_es": {
+          "score": 0.597858420439276,
+          "stderr": 0.0059635518020702705,
+          "metric": "acc",
+          "alias": "latam_es"
+        },
+        "spanish": {
+          "score": 0.5294649585531274,
+          "stderr": 0.0059635518020702705,
+          "metric": "acc",
+          "alias": "spanish"
+        },
+        "teleia": {
+          "score": 0.7142857142857143,
+          "stderr": 0.1018690289920114,
+          "metric": "acc",
+          "alias": "teleia"
+        }
+      },
+      "overall_score": 0.6138696977593726,
+      "model_name": "aya-vision-8b",
+      "model_name_sanitized": "unknown",
+      "evaluation_time": "unknown"
+    },
+    "portuguese": {
+      "task_scores": {
+        "assin2_rte": {
+          "score": 0.9106030554811042,
+          "stderr": 0.004085089168551208,
+          "metric": "f1_macro",
+          "alias": "assin2_rte"
+        },
+        "bluex": {
+          "score": 0.5257301808066759,
+          "stderr": 0.010758194737138745,
+          "metric": "acc",
+          "alias": "bluex"
+        },
+        "enem_challenge": {
+          "score": 0.6585024492652204,
+          "stderr": 0.0072591646114537976,
+          "metric": "acc",
+          "alias": "enem_challenge"
+        },
+        "faquad_nli": {
+          "score": 0.7419107354366319,
+          "stderr": 0.014521931450289816,
+          "metric": "f1_macro",
+          "alias": "faquad_nli"
+        },
+        "oab_exams": {
+          "score": 0.4660592255125285,
+          "stderr": 0.006134141621898433,
+          "metric": "acc",
+          "alias": "oab_exams"
+        }
+      },
+      "category_scores": {
+        "latam_pr": {
+          "score": 0.8593454403171132,
+          "stderr": 0.004372200811654775,
+          "metric": "acc",
+          "alias": "latam_pr"
+        }
+      },
+      "top_level_scores": {
+        "latam_pr": {
+          "score": 0.8593454403171132,
+          "stderr": 0.004372200811654775,
+          "metric": "acc",
+          "alias": "latam_pr"
+        }
+      },
+      "overall_score": 0.8593454403171132,
+      "model_name": "aya-vision-8b",
+      "model_name_sanitized": "unknown",
+      "evaluation_time": "unknown"
+    },
+    "translation": {
+      "task_scores": {
+        "translation": {
+          "score": 0.1451404463755531,
+          "stderr": 0.0010583916325793154,
+          "metric": "bleu",
+          "alias": "translation"
+        },
+        "flores_plus_bidirectional": {
+          "score": 0.12227798660839236,
+          "stderr": 0.0009948406706341518,
+          "metric": "bleu",
+          "alias": "flores_plus_bidirectional"
+        },
+        "flores_arb_por": {
+          "score": 0.16369801052944033,
+          "stderr": 0.0029342057837218986,
+          "metric": "chrf",
+          "alias": "flores_arb_por"
+        },
+        "flores_arb_spa": {
+          "score": 0.17082288991379055,
+          "stderr": 0.0028147810281706543,
+          "metric": "chrf",
+          "alias": "flores_arb_spa"
+        },
+        "flores_cmn_por": {
+          "score": 0.24519587574496293,
+          "stderr": 0.004784655156587423,
+          "metric": "chrf",
+          "alias": "flores_cmn_por"
+        },
+        "flores_cmn_spa": {
+          "score": 0.2904720569318834,
+          "stderr": 0.0047265639185749995,
+          "metric": "chrf",
+          "alias": "flores_cmn_spa"
+        },
+        "flores_deu_por": {
+          "score": 0.34087258469731035,
+          "stderr": 0.004526698100487384,
+          "metric": "chrf",
+          "alias": "flores_deu_por"
+        },
+        "flores_deu_spa": {
+          "score": 0.2660750047223067,
+          "stderr": 0.003968395481812125,
+          "metric": "chrf",
+          "alias": "flores_deu_spa"
+        },
+        "flores_eng_por": {
+          "score": 0.5620800603961483,
+          "stderr": 0.0076941838057573405,
+          "metric": "chrf",
+          "alias": "flores_eng_por"
+        },
+        "flores_eng_spa": {
+          "score": 0.45948659598635094,
+          "stderr": 0.005648377762435449,
+          "metric": "chrf",
+          "alias": "flores_eng_spa"
+        },
+        "flores_fra_por": {
+          "score": 0.43443814307853323,
+          "stderr": 0.0053383768370707805,
+          "metric": "chrf",
+          "alias": "flores_fra_por"
+        },
+        "flores_fra_spa": {
+          "score": 0.34875830305590433,
+          "stderr": 0.004840509118325334,
+          "metric": "chrf",
+          "alias": "flores_fra_spa"
+        },
+        "flores_hin_por": {
+          "score": 0.3888304087428014,
+          "stderr": 0.004628646752954805,
+          "metric": "chrf",
+          "alias": "flores_hin_por"
+        },
+        "flores_hin_spa": {
+          "score": 0.33881949531976047,
+          "stderr": 0.004406522271749289,
+          "metric": "chrf",
+          "alias": "flores_hin_spa"
+        },
+        "flores_ita_por": {
+          "score": 0.3455559620358328,
+          "stderr": 0.004953014159435546,
+          "metric": "chrf",
+          "alias": "flores_ita_por"
+        },
+        "flores_ita_spa": {
+          "score": 0.26699197061632396,
+          "stderr": 0.004360606559384455,
+          "metric": "chrf",
+          "alias": "flores_ita_spa"
+        },
+        "flores_por_spa": {
+          "score": 0.27829550884857507,
+          "stderr": 0.004313022275729211,
+          "metric": "chrf",
+          "alias": "flores_por_spa"
+        },
+        "opus": {
+          "score": 0.3166088946292587,
+          "stderr": 0.005063773472124344,
+          "metric": "bleu",
+          "alias": "opus"
+        },
+        "opus_100_en-es": {
+          "score": 0.582878876721922,
+          "stderr": 0.006324582119025998,
+          "metric": "chrf",
+          "alias": "opus_100_en-es"
+        },
+        "opus_100_en-pt": {
+          "score": 0.5354879047949913,
+          "stderr": 0.006479784791959642,
+          "metric": "chrf",
+          "alias": "opus_100_en-pt"
+        }
+      },
+      "category_scores": {
+        "translation": {
+          "score": 0.1451404463755531,
+          "stderr": 0.0010583916325793154,
+          "metric": "bleu",
+          "alias": "translation"
+        }
+      },
+      "top_level_scores": {
+        "translation": {
+          "score": 0.1451404463755531,
+          "stderr": 0.0010583916325793154,
+          "metric": "bleu",
+          "alias": "translation"
+        }
+      },
+      "overall_score": 0.1451404463755531,
+      "model_name": "aya-vision-8b",
+      "model_name_sanitized": "unknown",
+      "evaluation_time": "unknown"
+    },
+    "structured_extraction": {
+      "model_name": "aya-vision-8b",
+      "task_scores": {
+        "extraction_quality_score": {
+          "score": 0.8435447005523882,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "extraction_quality_score"
+        },
+        "composite_score": {
+          "score": 0.8696355469086148,
+          "stderr": 0.29643752829951964,
+          "metric": "composite_mean",
+          "alias": "composite_score"
+        },
+        "schema_validity": {
+          "score": 0.7478991596638656,
+          "stderr": 0.0,
+          "metric": "validity_rate",
+          "alias": "schema_validity"
+        },
+        "field_f1_partial": {
+          "score": 0.7585064023215372,
+          "stderr": 0.0,
+          "metric": "f1",
+          "alias": "field_f1_partial"
+        },
+        "hallucination_rate": {
+          "score": 0.04322535860535842,
+          "stderr": 0.0,
+          "metric": "hallucination_rate",
+          "alias": "hallucination_rate"
+        }
+      },
+      "category_scores": {
+        "structured_extraction": {
+          "score": 0.8435447005523882,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "structured_extraction"
+        }
+      },
+      "top_level_scores": {
+        "structured_extraction": {
+          "score": 0.8435447005523882,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "structured_extraction"
+        }
+      },
+      "overall_score": 0.8435447005523882,
+      "evaluation_time": "20251016_224033"
+    }
+  },
+  "overall_latam_score": 0.6114722519210826
+}

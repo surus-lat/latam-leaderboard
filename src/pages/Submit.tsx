@@ -1,5 +1,6 @@
 import { useI18n } from '../i18n/I18nProvider'
 import { parseMarkdownLinks } from '../utils/linkParser'
+import { ContributorsGridSection } from '../components/ui/contributors-wall'
 
 export function Submit() {
   const { t } = useI18n()
@@ -111,6 +112,8 @@ export function Submit() {
           </p>
         </div>
       </div>
+
+      <ContributorsGridSection />
     </div>
   )
 }

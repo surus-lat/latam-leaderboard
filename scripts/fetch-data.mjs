@@ -19,6 +19,7 @@ const FILES = (process.env.LEADERBOARD_DATA_FILES || DEFAULT_FILES)
   .filter(Boolean)
 const FETCH_ALL = String(process.env.LEADERBOARD_FETCH_ALL || '').toLowerCase() === 'true'
 const FETCH_PATTERN = process.env.LEADERBOARD_FETCH_PATTERN || '.json'
+const FETCH_CONTRIBUTORS = String(process.env.LEADERBOARD_FETCH_CONTRIBUTORS ?? 'true').toLowerCase() === 'true'
 
 const headers = {}
 if (process.env.HF_TOKEN) {
@@ -31,7 +32,8 @@ async function downloadFile(fileName) {
   if (!res.ok) {
     throw new Error(`Failed to fetch ${url}: ${res.status} ${res.statusText}`)
   }
-  const text = await res.text()
+  const arrayBuffer = await res.arrayBuffer()
+  const buffer = Buffer.from(arrayBuffer)
   const outDir = join(process.cwd(), 'public')
   if (!existsSync(outDir)) {
     await mkdir(outDir, { recursive: true })
@@ -41,7 +43,7 @@ async function downloadFile(fileName) {
   if (!existsSync(outParent)) {
     await mkdir(outParent, { recursive: true })
   }
-  await writeFile(outPath, text)
+  await writeFile(outPath, buffer)
   console.log(`Saved ${fileName} -> public/${fileName}`)
 }
 
@@ -71,8 +73,9 @@ async function listRepoFiles(repoId) {
 
 async function main() {
   try {
+    const repoId = process.env.LEADERBOARD_REPO || parseRepoIdFromBaseUrl(BASE_URL) || 'mauroibz/leaderboard-results'
+
     if (FETCH_ALL) {
-      const repoId = process.env.LEADERBOARD_REPO || parseRepoIdFromBaseUrl(BASE_URL) || 'mauroibz/leaderboard-results'
       const all = await listRepoFiles(repoId)
       const matchAll = FETCH_PATTERN === '*'
       const toDownload = all.filter((p) => matchAll || p.endsWith(FETCH_PATTERN))
@@ -81,6 +84,14 @@ async function main() {
       }
     } else {
       for (const file of FILES) {
+        await downloadFile(file)
+      }
+    }
+
+    if (!FETCH_ALL && FETCH_CONTRIBUTORS) {
+      const all = await listRepoFiles(repoId)
+      const contributorsFiles = all.filter((p) => p.startsWith('contributors/'))
+      for (const file of contributorsFiles) {
         await downloadFile(file)
       }
     }

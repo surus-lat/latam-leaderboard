@@ -1,0 +1,379 @@
+{
+  "model_name": "Qwen3-VL-4B-Instruct",
+  "publisher": "Qwen",
+  "full_model_name": "Qwen/Qwen3-VL-4B-Instruct",
+  "categories": {
+    "spanish": {
+      "task_scores": {
+        "spanish": {
+          "score": 0.5570459683496609,
+          "stderr": 0.005944634605385966,
+          "metric": "acc",
+          "alias": "spanish"
+        },
+        "copa_es": {
+          "score": 0.742,
+          "stderr": 0.019586711785215868,
+          "metric": "acc",
+          "alias": "copa_es"
+        },
+        "escola": {
+          "score": 0.6704653371320038,
+          "stderr": 0.014492084139152189,
+          "metric": "acc",
+          "alias": "escola"
+        },
+        "mgsm_direct_es_spanish_bench": {
+          "score": 0.024,
+          "stderr": 0.009699087026964252,
+          "metric": "exact_match",
+          "alias": "mgsm_direct_es_spanish_bench"
+        },
+        "openbookqa_es": {
+          "score": 0.322,
+          "stderr": 0.020916668330019865,
+          "metric": "acc",
+          "alias": "openbookqa_es"
+        },
+        "paws_es_spanish_bench": {
+          "score": 0.6065,
+          "stderr": 0.010926507643553924,
+          "metric": "acc",
+          "alias": "paws_es_spanish_bench"
+        },
+        "teleia": {
+          "score": 0.6666666666666666,
+          "stderr": 0.10968472191337503,
+          "metric": "acc_norm",
+          "alias": "teleia"
+        },
+        "teleia_cervantes_ave": {
+          "score": 0.5,
+          "stderr": 0.22360679774997896,
+          "metric": "acc",
+          "alias": "teleia_cervantes_ave"
+        },
+        "teleia_pce": {
+          "score": 0.5714285714285714,
+          "stderr": 0.20203050891044214,
+          "metric": "acc",
+          "alias": "teleia_pce"
+        },
+        "teleia_siele": {
+          "score": 0.625,
+          "stderr": 0.18298126367784995,
+          "metric": "acc",
+          "alias": "teleia_siele"
+        },
+        "wnli_es": {
+          "score": 0.7605633802816901,
+          "stderr": 0.05100514327793386,
+          "metric": "acc",
+          "alias": "wnli_es"
+        },
+        "xnli_es_spanish_bench": {
+          "score": 0.4734939759036145,
+          "stderr": 0.01000798055773262,
+          "metric": "acc",
+          "alias": "xnli_es_spanish_bench"
+        }
+      },
+      "category_scores": {
+        "latam_es": {
+          "score": 0.5857168071939867,
+          "stderr": 0.005944634605385966,
+          "metric": "acc",
+          "alias": "latam_es"
+        },
+        "spanish": {
+          "score": 0.5570459683496609,
+          "stderr": 0.005944634605385966,
+          "metric": "acc",
+          "alias": "spanish"
+        },
+        "teleia": {
+          "score": 0.6666666666666666,
+          "stderr": 0.10968472191337503,
+          "metric": "acc_norm",
+          "alias": "teleia"
+        }
+      },
+      "top_level_scores": {
+        "latam_es": {
+          "score": 0.5857168071939867,
+          "stderr": 0.005944634605385966,
+          "metric": "acc",
+          "alias": "latam_es"
+        },
+        "spanish": {
+          "score": 0.5570459683496609,
+          "stderr": 0.005944634605385966,
+          "metric": "acc",
+          "alias": "spanish"
+        },
+        "teleia": {
+          "score": 0.6666666666666666,
+          "stderr": 0.10968472191337503,
+          "metric": "acc_norm",
+          "alias": "teleia"
+        }
+      },
+      "overall_score": 0.6031431474034381,
+      "model_name": "Qwen3-VL-4B-Instruct",
+      "model_name_sanitized": "unknown",
+      "evaluation_time": "unknown"
+    },
+    "portuguese": {
+      "task_scores": {
+        "assin2_rte": {
+          "score": 0.9407572081984574,
+          "stderr": 0.003379248326989732,
+          "metric": "f1_macro",
+          "alias": "assin2_rte"
+        },
+        "bluex": {
+          "score": 0.6759388038942976,
+          "stderr": 0.01010651946869738,
+          "metric": "acc",
+          "alias": "bluex"
+        },
+        "enem_challenge": {
+          "score": 0.7634709587123862,
+          "stderr": 0.006524478843118765,
+          "metric": "acc",
+          "alias": "enem_challenge"
+        },
+        "faquad_nli": {
+          "score": 0.813731199792932,
+          "stderr": 0.012407200335618988,
+          "metric": "f1_macro",
+          "alias": "faquad_nli"
+        },
+        "oab_exams": {
+          "score": 0.5339407744874716,
+          "stderr": 0.006160027926016206,
+          "metric": "acc",
+          "alias": "oab_exams"
+        }
+      },
+      "category_scores": {
+        "latam_pr": {
+          "score": 0.8957772584200887,
+          "stderr": 0.0025143023662909736,
+          "metric": "acc",
+          "alias": "latam_pr"
+        }
+      },
+      "top_level_scores": {
+        "latam_pr": {
+          "score": 0.8957772584200887,
+          "stderr": 0.0025143023662909736,
+          "metric": "acc",
+          "alias": "latam_pr"
+        }
+      },
+      "overall_score": 0.8957772584200887,
+      "model_name": "Qwen3-VL-4B-Instruct",
+      "model_name_sanitized": "unknown",
+      "evaluation_time": "unknown"
+    },
+    "translation": {
+      "task_scores": {
+        "translation": {
+          "score": 0.152503263365457,
+          "stderr": 0.0009504231883044562,
+          "metric": "bleu",
+          "alias": "translation"
+        },
+        "flores_plus_bidirectional": {
+          "score": 0.14135311802876402,
+          "stderr": 0.0009085265174113366,
+          "metric": "bleu",
+          "alias": "flores_plus_bidirectional"
+        },
+        "flores_arb_por": {
+          "score": 0.1255173530143532,
+          "stderr": 0.002451531097051835,
+          "metric": "chrf",
+          "alias": "flores_arb_por"
+        },
+        "flores_arb_spa": {
+          "score": 0.12435691633025119,
+          "stderr": 0.0024508473686346787,
+          "metric": "chrf",
+          "alias": "flores_arb_spa"
+        },
+        "flores_cmn_por": {
+          "score": 0.2767042215347763,
+          "stderr": 0.0043148300337359224,
+          "metric": "chrf",
+          "alias": "flores_cmn_por"
+        },
+        "flores_cmn_spa": {
+          "score": 0.32676252180610005,
+          "stderr": 0.004506550444653359,
+          "metric": "chrf",
+          "alias": "flores_cmn_spa"
+        },
+        "flores_deu_por": {
+          "score": 0.37727041629158914,
+          "stderr": 0.004259354586863117,
+          "metric": "chrf",
+          "alias": "flores_deu_por"
+        },
+        "flores_deu_spa": {
+          "score": 0.35756380347165306,
+          "stderr": 0.0038395521092608855,
+          "metric": "chrf",
+          "alias": "flores_deu_spa"
+        },
+        "flores_eng_por": {
+          "score": 0.6397156947861409,
+          "stderr": 0.0046459334413975085,
+          "metric": "chrf",
+          "alias": "flores_eng_por"
+        },
+        "flores_eng_spa": {
+          "score": 0.5462324800724421,
+          "stderr": 0.003116287380621911,
+          "metric": "chrf",
+          "alias": "flores_eng_spa"
+        },
+        "flores_fra_por": {
+          "score": 0.4550749317974742,
+          "stderr": 0.0057089980949759835,
+          "metric": "chrf",
+          "alias": "flores_fra_por"
+        },
+        "flores_fra_spa": {
+          "score": 0.4356947261099272,
+          "stderr": 0.004192597240152078,
+          "metric": "chrf",
+          "alias": "flores_fra_spa"
+        },
+        "flores_hin_por": {
+          "score": 0.3009754115458666,
+          "stderr": 0.004560982791348949,
+          "metric": "chrf",
+          "alias": "flores_hin_por"
+        },
+        "flores_hin_spa": {
+          "score": 0.30248707646963424,
+          "stderr": 0.003661288945444802,
+          "metric": "chrf",
+          "alias": "flores_hin_spa"
+        },
+        "flores_ita_por": {
+          "score": 0.39378399427150973,
+          "stderr": 0.004065460099318377,
+          "metric": "chrf",
+          "alias": "flores_ita_por"
+        },
+        "flores_ita_spa": {
+          "score": 0.3856658840357995,
+          "stderr": 0.003378933214523656,
+          "metric": "chrf",
+          "alias": "flores_ita_spa"
+        },
+        "flores_por_spa": {
+          "score": 0.3770247517412843,
+          "stderr": 0.003867352939790746,
+          "metric": "chrf",
+          "alias": "flores_por_spa"
+        },
+        "opus": {
+          "score": 0.23612935339065444,
+          "stderr": 0.004370614122389674,
+          "metric": "bleu",
+          "alias": "opus"
+        },
+        "opus_100_en-es": {
+          "score": 0.5470895063938732,
+          "stderr": 0.005948288023034808,
+          "metric": "chrf",
+          "alias": "opus_100_en-es"
+        },
+        "opus_100_en-pt": {
+          "score": 0.34830625877950877,
+          "stderr": 0.008461035197902575,
+          "metric": "chrf",
+          "alias": "opus_100_en-pt"
+        }
+      },
+      "category_scores": {
+        "translation": {
+          "score": 0.152503263365457,
+          "stderr": 0.0009504231883044562,
+          "metric": "bleu",
+          "alias": "translation"
+        }
+      },
+      "top_level_scores": {
+        "translation": {
+          "score": 0.152503263365457,
+          "stderr": 0.0009504231883044562,
+          "metric": "bleu",
+          "alias": "translation"
+        }
+      },
+      "overall_score": 0.152503263365457,
+      "model_name": "Qwen3-VL-4B-Instruct",
+      "model_name_sanitized": "unknown",
+      "evaluation_time": "unknown"
+    },
+    "structured_extraction": {
+      "model_name": "Qwen3-VL-4B-Instruct",
+      "task_scores": {
+        "extraction_quality_score": {
+          "score": 0.8337197282661554,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "extraction_quality_score"
+        },
+        "composite_score": {
+          "score": 0.9203640294957949,
+          "stderr": 0.23561967660807037,
+          "metric": "composite_mean",
+          "alias": "composite_score"
+        },
+        "schema_validity": {
+          "score": 0.9915966386554622,
+          "stderr": 0.0,
+          "metric": "validity_rate",
+          "alias": "schema_validity"
+        },
+        "field_f1_partial": {
+          "score": 0.745699958381979,
+          "stderr": 0.0,
+          "metric": "f1",
+          "alias": "field_f1_partial"
+        },
+        "hallucination_rate": {
+          "score": 0.06792559319486444,
+          "stderr": 0.0,
+          "metric": "hallucination_rate",
+          "alias": "hallucination_rate"
+        }
+      },
+      "category_scores": {
+        "structured_extraction": {
+          "score": 0.8337197282661554,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "structured_extraction"
+        }
+      },
+      "top_level_scores": {
+        "structured_extraction": {
+          "score": 0.8337197282661554,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "structured_extraction"
+        }
+      },
+      "overall_score": 0.8337197282661554,
+      "evaluation_time": "20251019_043859"
+    }
+  },
+  "overall_latam_score": 0.6169292643114219
+}

@@ -1,0 +1,379 @@
+{
+  "model_name": "Mistral-NeMo-Minitron-8B-Instruct",
+  "publisher": "nvidia",
+  "full_model_name": "nvidia/Mistral-NeMo-Minitron-8B-Instruct",
+  "categories": {
+    "spanish": {
+      "task_scores": {
+        "spanish": {
+          "score": 0.5627731725697062,
+          "stderr": 0.005935175242484917,
+          "metric": "acc",
+          "alias": "spanish"
+        },
+        "copa_es": {
+          "score": 0.836,
+          "stderr": 0.016575811142446696,
+          "metric": "acc",
+          "alias": "copa_es"
+        },
+        "escola": {
+          "score": 0.5783475783475783,
+          "stderr": 0.01522523099049551,
+          "metric": "acc",
+          "alias": "escola"
+        },
+        "mgsm_direct_es_spanish_bench": {
+          "score": 0.124,
+          "stderr": 0.02088638225867326,
+          "metric": "exact_match",
+          "alias": "mgsm_direct_es_spanish_bench"
+        },
+        "openbookqa_es": {
+          "score": 0.38,
+          "stderr": 0.021728881438701678,
+          "metric": "acc",
+          "alias": "openbookqa_es"
+        },
+        "paws_es_spanish_bench": {
+          "score": 0.63,
+          "stderr": 0.01079853249993146,
+          "metric": "acc",
+          "alias": "paws_es_spanish_bench"
+        },
+        "teleia": {
+          "score": 0.6666666666666666,
+          "stderr": 0.10401065414350123,
+          "metric": "acc",
+          "alias": "teleia"
+        },
+        "teleia_cervantes_ave": {
+          "score": 0.5,
+          "stderr": 0.22360679774997896,
+          "metric": "acc",
+          "alias": "teleia_cervantes_ave"
+        },
+        "teleia_pce": {
+          "score": 0.5714285714285714,
+          "stderr": 0.20203050891044214,
+          "metric": "acc",
+          "alias": "teleia_pce"
+        },
+        "teleia_siele": {
+          "score": 0.875,
+          "stderr": 0.125,
+          "metric": "acc",
+          "alias": "teleia_siele"
+        },
+        "wnli_es": {
+          "score": 0.7323943661971831,
+          "stderr": 0.05291406220869695,
+          "metric": "acc",
+          "alias": "wnli_es"
+        },
+        "xnli_es_spanish_bench": {
+          "score": 0.4783132530120482,
+          "stderr": 0.01001264136706555,
+          "metric": "acc",
+          "alias": "xnli_es_spanish_bench"
+        }
+      },
+      "category_scores": {
+        "latam_es": {
+          "score": 0.6201648632205978,
+          "stderr": 0.005935175242484917,
+          "metric": "acc",
+          "alias": "latam_es"
+        },
+        "spanish": {
+          "score": 0.5627731725697062,
+          "stderr": 0.005935175242484917,
+          "metric": "acc",
+          "alias": "spanish"
+        },
+        "teleia": {
+          "score": 0.6666666666666666,
+          "stderr": 0.10401065414350123,
+          "metric": "acc",
+          "alias": "teleia"
+        }
+      },
+      "top_level_scores": {
+        "latam_es": {
+          "score": 0.6201648632205978,
+          "stderr": 0.005935175242484917,
+          "metric": "acc",
+          "alias": "latam_es"
+        },
+        "spanish": {
+          "score": 0.5627731725697062,
+          "stderr": 0.005935175242484917,
+          "metric": "acc",
+          "alias": "spanish"
+        },
+        "teleia": {
+          "score": 0.6666666666666666,
+          "stderr": 0.10401065414350123,
+          "metric": "acc",
+          "alias": "teleia"
+        }
+      },
+      "overall_score": 0.6165349008189902,
+      "model_name": "Mistral-NeMo-Minitron-8B-Instruct",
+      "model_name_sanitized": "unknown",
+      "evaluation_time": "unknown"
+    },
+    "portuguese": {
+      "task_scores": {
+        "assin2_rte": {
+          "score": 0.8861167468009326,
+          "stderr": 0.0045307663936280385,
+          "metric": "f1_macro",
+          "alias": "assin2_rte"
+        },
+        "bluex": {
+          "score": 0.6133518776077886,
+          "stderr": 0.010507414639661844,
+          "metric": "acc",
+          "alias": "bluex"
+        },
+        "enem_challenge": {
+          "score": 0.7340797760671799,
+          "stderr": 0.006761178449412645,
+          "metric": "acc",
+          "alias": "enem_challenge"
+        },
+        "faquad_nli": {
+          "score": 0.5827750402093081,
+          "stderr": 0.013810408292639666,
+          "metric": "f1_macro",
+          "alias": "faquad_nli"
+        },
+        "oab_exams": {
+          "score": 0.5129840546697039,
+          "stderr": 0.006143284370559029,
+          "metric": "acc",
+          "alias": "oab_exams"
+        }
+      },
+      "category_scores": {
+        "latam_pr": {
+          "score": 0.8056730659267329,
+          "stderr": 0.008171291108751269,
+          "metric": "acc",
+          "alias": "latam_pr"
+        }
+      },
+      "top_level_scores": {
+        "latam_pr": {
+          "score": 0.8056730659267329,
+          "stderr": 0.008171291108751269,
+          "metric": "acc",
+          "alias": "latam_pr"
+        }
+      },
+      "overall_score": 0.8056730659267329,
+      "model_name": "Mistral-NeMo-Minitron-8B-Instruct",
+      "model_name_sanitized": "unknown",
+      "evaluation_time": "unknown"
+    },
+    "translation": {
+      "task_scores": {
+        "translation": {
+          "score": 0.10353199145847589,
+          "stderr": 0.000736718122349527,
+          "metric": "bleu",
+          "alias": "translation"
+        },
+        "flores_plus_bidirectional": {
+          "score": 0.07998664003026197,
+          "stderr": 0.0006575652622072345,
+          "metric": "bleu",
+          "alias": "flores_plus_bidirectional"
+        },
+        "flores_arb_por": {
+          "score": 0.17097709544939316,
+          "stderr": 0.0013912672329907188,
+          "metric": "chrf",
+          "alias": "flores_arb_por"
+        },
+        "flores_arb_spa": {
+          "score": 0.17186881511284702,
+          "stderr": 0.0012277919330716735,
+          "metric": "chrf",
+          "alias": "flores_arb_spa"
+        },
+        "flores_cmn_por": {
+          "score": 0.1681314458564171,
+          "stderr": 0.0025456896983880933,
+          "metric": "chrf",
+          "alias": "flores_cmn_por"
+        },
+        "flores_cmn_spa": {
+          "score": 0.16531356293454572,
+          "stderr": 0.0022889427225405144,
+          "metric": "chrf",
+          "alias": "flores_cmn_spa"
+        },
+        "flores_deu_por": {
+          "score": 0.25554552705959915,
+          "stderr": 0.0026209069804004055,
+          "metric": "chrf",
+          "alias": "flores_deu_por"
+        },
+        "flores_deu_spa": {
+          "score": 0.2519389053316685,
+          "stderr": 0.002251851944200468,
+          "metric": "chrf",
+          "alias": "flores_deu_spa"
+        },
+        "flores_eng_por": {
+          "score": 0.676788398753242,
+          "stderr": 0.0028706929032245353,
+          "metric": "chrf",
+          "alias": "flores_eng_por"
+        },
+        "flores_eng_spa": {
+          "score": 0.5578923075528185,
+          "stderr": 0.002517080383414167,
+          "metric": "chrf",
+          "alias": "flores_eng_spa"
+        },
+        "flores_fra_por": {
+          "score": 0.3414918055278835,
+          "stderr": 0.004011614955319002,
+          "metric": "chrf",
+          "alias": "flores_fra_por"
+        },
+        "flores_fra_spa": {
+          "score": 0.34424715986500276,
+          "stderr": 0.0036938806534690923,
+          "metric": "chrf",
+          "alias": "flores_fra_spa"
+        },
+        "flores_hin_por": {
+          "score": 0.12918118339684923,
+          "stderr": 0.002711325198817065,
+          "metric": "chrf",
+          "alias": "flores_hin_por"
+        },
+        "flores_hin_spa": {
+          "score": 0.13471118049863834,
+          "stderr": 0.002646877065685185,
+          "metric": "chrf",
+          "alias": "flores_hin_spa"
+        },
+        "flores_ita_por": {
+          "score": 0.29978448341725766,
+          "stderr": 0.003235925163781243,
+          "metric": "chrf",
+          "alias": "flores_ita_por"
+        },
+        "flores_ita_spa": {
+          "score": 0.301984021584919,
+          "stderr": 0.003176332808987835,
+          "metric": "chrf",
+          "alias": "flores_ita_spa"
+        },
+        "flores_por_spa": {
+          "score": 0.3290038707628794,
+          "stderr": 0.0037780095321035523,
+          "metric": "chrf",
+          "alias": "flores_por_spa"
+        },
+        "opus": {
+          "score": 0.2801221271700801,
+          "stderr": 0.0038909552315821044,
+          "metric": "bleu",
+          "alias": "opus"
+        },
+        "opus_100_en-es": {
+          "score": 0.5610344287853842,
+          "stderr": 0.005110839182477618,
+          "metric": "chrf",
+          "alias": "opus_100_en-es"
+        },
+        "opus_100_en-pt": {
+          "score": 0.5101011450992446,
+          "stderr": 0.006293193073520454,
+          "metric": "chrf",
+          "alias": "opus_100_en-pt"
+        }
+      },
+      "category_scores": {
+        "translation": {
+          "score": 0.10353199145847589,
+          "stderr": 0.000736718122349527,
+          "metric": "bleu",
+          "alias": "translation"
+        }
+      },
+      "top_level_scores": {
+        "translation": {
+          "score": 0.10353199145847589,
+          "stderr": 0.000736718122349527,
+          "metric": "bleu",
+          "alias": "translation"
+        }
+      },
+      "overall_score": 0.10353199145847589,
+      "model_name": "Mistral-NeMo-Minitron-8B-Instruct",
+      "model_name_sanitized": "unknown",
+      "evaluation_time": "unknown"
+    },
+    "structured_extraction": {
+      "model_name": "Mistral-NeMo-Minitron-8B-Instruct",
+      "task_scores": {
+        "extraction_quality_score": {
+          "score": 0.7978168130567024,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "extraction_quality_score"
+        },
+        "composite_score": {
+          "score": 0.895418104494165,
+          "stderr": 0.27185776359219893,
+          "metric": "composite_mean",
+          "alias": "composite_score"
+        },
+        "schema_validity": {
+          "score": 0.9411764705882353,
+          "stderr": 0.0,
+          "metric": "validity_rate",
+          "alias": "schema_validity"
+        },
+        "field_f1_partial": {
+          "score": 0.7111437902141438,
+          "stderr": 0.0,
+          "metric": "f1",
+          "alias": "field_f1_partial"
+        },
+        "hallucination_rate": {
+          "score": 0.13585628739662972,
+          "stderr": 0.0,
+          "metric": "hallucination_rate",
+          "alias": "hallucination_rate"
+        }
+      },
+      "category_scores": {
+        "structured_extraction": {
+          "score": 0.7978168130567024,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "structured_extraction"
+        }
+      },
+      "top_level_scores": {
+        "structured_extraction": {
+          "score": 0.7978168130567024,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "structured_extraction"
+        }
+      },
+      "overall_score": 0.7978168130567024,
+      "evaluation_time": "20251018_223832"
+    }
+  },
+  "overall_latam_score": 0.5817966834156273
+}

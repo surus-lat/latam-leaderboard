@@ -3,6 +3,7 @@ import { useI18n } from '../i18n/I18nProvider'
 import { HeroSection } from '../components/ui/hero-section'
 import { FilterPanel } from '../components/ui/filter-panel'
 import { LeaderboardTable } from '../components/ui/leaderboard-table'
+import { ContributorsRail } from '../components/ui/contributors-wall'
 import { ExternalLink } from 'lucide-react'
 
 type LeaderboardRow = Record<string, string | number | null>
@@ -202,18 +203,19 @@ export function Landing() {
         </div>
 
       </div>
-        <div className="flex items-center justify-center gap-2 pt-8 text-sm text-muted-foreground">
-          <span>{t('landing.source_prefix')}</span>
-          <a 
-            href="https://huggingface.co/datasets/mauroibz/leaderboard-results/" 
-            target="_blank" 
-            rel="noreferrer"
-            className="inline-flex items-center gap-1 text-primary hover:text-primary/80 font-medium transition-colors"
-          >
-            {t('landing.source_link')}
-            <ExternalLink className="h-3 w-3" />
-          </a>
-        </div>
+      <div className="flex items-center justify-center gap-2 pt-8 text-sm text-muted-foreground">
+        <span>{t('landing.source_prefix')}</span>
+        <a 
+          href="https://huggingface.co/datasets/mauroibz/leaderboard-results/" 
+          target="_blank" 
+          rel="noreferrer"
+          className="inline-flex items-center gap-1 text-primary hover:text-primary/80 font-medium transition-colors"
+        >
+          {t('landing.source_link')}
+          <ExternalLink className="h-3 w-3" />
+        </a>
+      </div>
+      <ContributorsRail />
     </div>
   )
 }

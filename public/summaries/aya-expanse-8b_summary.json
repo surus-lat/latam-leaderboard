@@ -1,0 +1,379 @@
+{
+  "model_name": "aya-expanse-8b",
+  "publisher": "CohereLabs",
+  "full_model_name": "CohereLabs/aya-expanse-8b",
+  "categories": {
+    "spanish": {
+      "task_scores": {
+        "spanish": {
+          "score": 0.5689525244913338,
+          "stderr": 0.005894445744341206,
+          "metric": "acc",
+          "alias": "spanish"
+        },
+        "copa_es": {
+          "score": 0.808,
+          "stderr": 0.017632180454361004,
+          "metric": "acc",
+          "alias": "copa_es"
+        },
+        "escola": {
+          "score": 0.7065527065527065,
+          "stderr": 0.014038783170371525,
+          "metric": "acc",
+          "alias": "escola"
+        },
+        "mgsm_direct_es_spanish_bench": {
+          "score": 0.08,
+          "stderr": 0.017192507941462994,
+          "metric": "exact_match",
+          "alias": "mgsm_direct_es_spanish_bench"
+        },
+        "openbookqa_es": {
+          "score": 0.366,
+          "stderr": 0.021564276850201684,
+          "metric": "acc",
+          "alias": "openbookqa_es"
+        },
+        "paws_es_spanish_bench": {
+          "score": 0.609,
+          "stderr": 0.010914167834964097,
+          "metric": "acc",
+          "alias": "paws_es_spanish_bench"
+        },
+        "teleia": {
+          "score": 0.6666666666666666,
+          "stderr": 0.1018690289920114,
+          "metric": "acc",
+          "alias": "teleia"
+        },
+        "teleia_cervantes_ave": {
+          "score": 0.6666666666666666,
+          "stderr": 0.210818510677892,
+          "metric": "acc",
+          "alias": "teleia_cervantes_ave"
+        },
+        "teleia_pce": {
+          "score": 0.42857142857142855,
+          "stderr": 0.20203050891044214,
+          "metric": "acc",
+          "alias": "teleia_pce"
+        },
+        "teleia_siele": {
+          "score": 0.875,
+          "stderr": 0.125,
+          "metric": "acc",
+          "alias": "teleia_siele"
+        },
+        "wnli_es": {
+          "score": 0.676056338028169,
+          "stderr": 0.055934166129236386,
+          "metric": "acc",
+          "alias": "wnli_es"
+        },
+        "xnli_es_spanish_bench": {
+          "score": 0.4674698795180723,
+          "stderr": 0.010000839483876062,
+          "metric": "acc",
+          "alias": "xnli_es_spanish_bench"
+        }
+      },
+      "category_scores": {
+        "latam_es": {
+          "score": 0.622590779926338,
+          "stderr": 0.005894445744341206,
+          "metric": "acc",
+          "alias": "latam_es"
+        },
+        "spanish": {
+          "score": 0.5689525244913338,
+          "stderr": 0.005894445744341206,
+          "metric": "acc",
+          "alias": "spanish"
+        },
+        "teleia": {
+          "score": 0.6666666666666666,
+          "stderr": 0.1018690289920114,
+          "metric": "acc",
+          "alias": "teleia"
+        }
+      },
+      "top_level_scores": {
+        "latam_es": {
+          "score": 0.622590779926338,
+          "stderr": 0.005894445744341206,
+          "metric": "acc",
+          "alias": "latam_es"
+        },
+        "spanish": {
+          "score": 0.5689525244913338,
+          "stderr": 0.005894445744341206,
+          "metric": "acc",
+          "alias": "spanish"
+        },
+        "teleia": {
+          "score": 0.6666666666666666,
+          "stderr": 0.1018690289920114,
+          "metric": "acc",
+          "alias": "teleia"
+        }
+      },
+      "overall_score": 0.6194033236947795,
+      "model_name": "aya-expanse-8b",
+      "model_name_sanitized": "unknown",
+      "evaluation_time": "unknown"
+    },
+    "portuguese": {
+      "task_scores": {
+        "assin2_rte": {
+          "score": 0.9056221722187505,
+          "stderr": 0.004186514423925259,
+          "metric": "f1_macro",
+          "alias": "assin2_rte"
+        },
+        "bluex": {
+          "score": 0.5465924895688457,
+          "stderr": 0.010751988944100312,
+          "metric": "acc",
+          "alias": "bluex"
+        },
+        "enem_challenge": {
+          "score": 0.6515045486354094,
+          "stderr": 0.007315982464786867,
+          "metric": "acc",
+          "alias": "enem_challenge"
+        },
+        "faquad_nli": {
+          "score": 0.7643571535197151,
+          "stderr": 0.013410943891727749,
+          "metric": "f1_macro",
+          "alias": "faquad_nli"
+        },
+        "oab_exams": {
+          "score": 0.4765375854214123,
+          "stderr": 0.006170232874544366,
+          "metric": "acc",
+          "alias": "oab_exams"
+        }
+      },
+      "category_scores": {
+        "latam_pr": {
+          "score": 0.8533644122000356,
+          "stderr": 0.004543754442659245,
+          "metric": "acc",
+          "alias": "latam_pr"
+        }
+      },
+      "top_level_scores": {
+        "latam_pr": {
+          "score": 0.8533644122000356,
+          "stderr": 0.004543754442659245,
+          "metric": "acc",
+          "alias": "latam_pr"
+        }
+      },
+      "overall_score": 0.8533644122000356,
+      "model_name": "aya-expanse-8b",
+      "model_name_sanitized": "unknown",
+      "evaluation_time": "unknown"
+    },
+    "translation": {
+      "task_scores": {
+        "translation": {
+          "score": 0.4823558182038264,
+          "stderr": 0.0008929879182860885,
+          "metric": "chrf",
+          "alias": "translation"
+        },
+        "flores_plus_bidirectional": {
+          "score": 0.46966820954699545,
+          "stderr": 0.0008453087813535651,
+          "metric": "chrf",
+          "alias": "flores_plus_bidirectional"
+        },
+        "flores_arb_por": {
+          "score": 0.15379642975821248,
+          "stderr": 0.003772045738163855,
+          "metric": "chrf",
+          "alias": "flores_arb_por"
+        },
+        "flores_arb_spa": {
+          "score": 0.15472153289088864,
+          "stderr": 0.0037496040823612213,
+          "metric": "chrf",
+          "alias": "flores_arb_spa"
+        },
+        "flores_cmn_por": {
+          "score": 0.42614861120116826,
+          "stderr": 0.004266629995583963,
+          "metric": "chrf",
+          "alias": "flores_cmn_por"
+        },
+        "flores_cmn_spa": {
+          "score": 0.39476054282820855,
+          "stderr": 0.003674622184119549,
+          "metric": "chrf",
+          "alias": "flores_cmn_spa"
+        },
+        "flores_deu_por": {
+          "score": 0.5824942498103096,
+          "stderr": 0.0027189869964191504,
+          "metric": "chrf",
+          "alias": "flores_deu_por"
+        },
+        "flores_deu_spa": {
+          "score": 0.486648504664757,
+          "stderr": 0.0032263959102308815,
+          "metric": "chrf",
+          "alias": "flores_deu_spa"
+        },
+        "flores_eng_por": {
+          "score": 0.7040985419255448,
+          "stderr": 0.0028440498282096406,
+          "metric": "chrf",
+          "alias": "flores_eng_por"
+        },
+        "flores_eng_spa": {
+          "score": 0.5557466660004238,
+          "stderr": 0.003493856355791074,
+          "metric": "chrf",
+          "alias": "flores_eng_spa"
+        },
+        "flores_fra_por": {
+          "score": 0.6045821606988577,
+          "stderr": 0.0033812150347697556,
+          "metric": "chrf",
+          "alias": "flores_fra_por"
+        },
+        "flores_fra_spa": {
+          "score": 0.5306983910858543,
+          "stderr": 0.002713126025781768,
+          "metric": "chrf",
+          "alias": "flores_fra_spa"
+        },
+        "flores_hin_por": {
+          "score": 0.4966641495788002,
+          "stderr": 0.0027599323440844464,
+          "metric": "chrf",
+          "alias": "flores_hin_por"
+        },
+        "flores_hin_spa": {
+          "score": 0.44280860315879045,
+          "stderr": 0.0024665226223607923,
+          "metric": "chrf",
+          "alias": "flores_hin_spa"
+        },
+        "flores_ita_por": {
+          "score": 0.5409809901513783,
+          "stderr": 0.0022650031059333756,
+          "metric": "chrf",
+          "alias": "flores_ita_por"
+        },
+        "flores_ita_spa": {
+          "score": 0.49292559381711415,
+          "stderr": 0.0031561245849939072,
+          "metric": "chrf",
+          "alias": "flores_ita_spa"
+        },
+        "flores_por_spa": {
+          "score": 0.47794817563462344,
+          "stderr": 0.0038851072965845495,
+          "metric": "chrf",
+          "alias": "flores_por_spa"
+        },
+        "opus": {
+          "score": 0.5775128831300588,
+          "stderr": 0.004204405696693444,
+          "metric": "chrf",
+          "alias": "opus"
+        },
+        "opus_100_en-es": {
+          "score": 0.6031995344708345,
+          "stderr": 0.005607180193829042,
+          "metric": "chrf",
+          "alias": "opus_100_en-es"
+        },
+        "opus_100_en-pt": {
+          "score": 0.551826231789283,
+          "stderr": 0.006266389656212294,
+          "metric": "chrf",
+          "alias": "opus_100_en-pt"
+        }
+      },
+      "category_scores": {
+        "translation": {
+          "score": 0.4823558182038264,
+          "stderr": 0.0008929879182860885,
+          "metric": "chrf",
+          "alias": "translation"
+        }
+      },
+      "top_level_scores": {
+        "translation": {
+          "score": 0.4823558182038264,
+          "stderr": 0.0008929879182860885,
+          "metric": "chrf",
+          "alias": "translation"
+        }
+      },
+      "overall_score": 0.4823558182038264,
+      "model_name": "aya-expanse-8b",
+      "model_name_sanitized": "unknown",
+      "evaluation_time": "unknown"
+    },
+    "structured_extraction": {
+      "model_name": "aya-expanse-8b",
+      "task_scores": {
+        "extraction_quality_score": {
+          "score": 0.7871417215275647,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "extraction_quality_score"
+        },
+        "composite_score": {
+          "score": 0.8815703078133138,
+          "stderr": 0.2849563792057985,
+          "metric": "composite_mean",
+          "alias": "composite_score"
+        },
+        "schema_validity": {
+          "score": 0.9957983193277311,
+          "stderr": 0.0,
+          "metric": "validity_rate",
+          "alias": "schema_validity"
+        },
+        "field_f1_partial": {
+          "score": 0.6971733089354474,
+          "stderr": 0.0,
+          "metric": "f1",
+          "alias": "field_f1_partial"
+        },
+        "hallucination_rate": {
+          "score": 0.15515664976024812,
+          "stderr": 0.0,
+          "metric": "hallucination_rate",
+          "alias": "hallucination_rate"
+        }
+      },
+      "category_scores": {
+        "structured_extraction": {
+          "score": 0.7871417215275647,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "structured_extraction"
+        }
+      },
+      "top_level_scores": {
+        "structured_extraction": {
+          "score": 0.7871417215275647,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "structured_extraction"
+        }
+      },
+      "overall_score": 0.7871417215275647,
+      "evaluation_time": "20251013_043358"
+    }
+  },
+  "overall_latam_score": 0.6863631829644412
+}

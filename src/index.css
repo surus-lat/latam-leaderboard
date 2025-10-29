@@ -216,3 +216,21 @@
     border: 1px solid transparent;
   }
 }
+
+@keyframes contributors-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.contributors-marquee {
+  min-width: max-content;
+  animation: contributors-marquee var(--marquee-duration, 40s) linear infinite;
+}
+
+.contributors-marquee:hover {
+  animation-play-state: paused;
+}
