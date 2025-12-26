@@ -127,13 +127,22 @@ export function Landing() {
                 <button
                   key={task.key}
                   onClick={() => toggleTask(task.key)}
-                  className={`badge text-xs transition-all ${isSelected ? 'badge-default' : 'badge-outline hover:bg-accent hover:text-accent-foreground'}`}
+                  className={`badge text-sm px-3 py-1.5 transition-all ${isSelected ? 'badge-default' : 'badge-outline hover:bg-accent hover:text-accent-foreground'}`}
                   aria-pressed={isSelected}
                 >
                   {task.label}
                 </button>
               )
             })}
+          </div>
+          <div className="mt-3 text-sm text-muted-foreground">
+            {t('landing.task_selector_learn_more')}{' '}
+            <a
+              href="/tests"
+              className="text-primary hover:text-primary/80 font-medium transition-colors"
+            >
+              {t('landing.task_selector_learn_more_link')}
+            </a>
           </div>
         </div>
 

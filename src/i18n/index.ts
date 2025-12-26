@@ -31,6 +31,8 @@ export const en: TranslationDict = {
     load_failed: 'Failed to load leaderboard data',
     cta_button: 'See the results',
     task_selector_prompt: 'I am looking for the best AI system for:',
+    task_selector_learn_more: 'Learn more about each task here:',
+    task_selector_learn_more_link: 'Tasks overview',
     task_labels: {
       spanish: 'Spanish',
       portuguese: 'Portuguese',
@@ -180,6 +182,8 @@ export const es: TranslationDict = {
     load_failed: 'Error al cargar los datos del leaderboard',
     cta_button: 'Ver los resultados',
     task_selector_prompt: 'Estoy buscando el mejor sistema de IA para:',
+    task_selector_learn_more: 'Aprendé más sobre cada tarea aquí:',
+    task_selector_learn_more_link: 'Ver tareas',
     task_labels: {
       spanish: 'Español',
       portuguese: 'Portugués',
@@ -329,6 +333,8 @@ export const pt: TranslationDict = {
     load_failed: 'Falha ao carregar os dados do leaderboard',
     cta_button: 'Ver os resultados',
     task_selector_prompt: 'Estou procurando o melhor sistema de IA para:',
+    task_selector_learn_more: 'Saiba mais sobre cada tarefa aqui:',
+    task_selector_learn_more_link: 'Ver tarefas',
     task_labels: {
       spanish: 'Espanhol',
       portuguese: 'Português',

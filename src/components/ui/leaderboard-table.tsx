@@ -132,7 +132,7 @@ export function LeaderboardTable({
                       ) : col === 'publisher' ? (
                         <div className="font-medium text-foreground">
                           <a 
-                            href={`https://huggingface.co/${row.full_model_name}`}
+                            href={typeof row.url === 'string' && row.url.length > 0 ? row.url : `https://huggingface.co/${row.full_model_name}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-primary hover:text-primary/80 transition-colors underline decoration-dotted underline-offset-2"
