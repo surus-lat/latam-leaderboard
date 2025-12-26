@@ -1,31 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useI18n } from '../i18n/I18nProvider'
 import { HeroSection } from '../components/ui/hero-section'
-import { FilterPanel } from '../components/ui/filter-panel'
 import { LeaderboardTable } from '../components/ui/leaderboard-table'
 import { ContributorsRail } from '../components/ui/contributors-wall'
 import { ExternalLink } from 'lucide-react'
 
 type LeaderboardRow = Record<string, string | number | null>
-
-type Task = {
-  name: string
-  group: string
-  description: string
-  long_description: string
-}
-
-type TasksList = { tasks: Record<string, Task> }
-
-type TaskGroup = {
-  name: string
-  description: string
-  long_description?: string
-  repository?: string
-  subtasks?: string[]
-}
-
-type TaskGroups = { task_groups: Record<string, TaskGroup> }
 
 async function fetchLeaderboard(): Promise<LeaderboardRow[]> {
   try {
@@ -41,81 +21,68 @@ async function fetchLeaderboard(): Promise<LeaderboardRow[]> {
   return await local.json()
 }
 
-const DEFAULT_VISIBLE = [
-  'model_name',
-  'publisher',
-  'overall_latam_score',
-  'spanish_score',
-  'portuguese_score',
-  'translation_score',
-  'structured_extraction_score',
-]
+const TASK_OPTIONS = [
+  { key: 'spanish', column: 'spanish_score' },
+  { key: 'portuguese', column: 'portuguese_score' },
+  { key: 'translation', column: 'translation_score' },
+  { key: 'structured_extraction', column: 'structured_extraction_score' },
+  { key: 'image_extraction', column: 'image_extraction_score' },
+] as const
+
+const DEFAULT_SELECTED_TASKS = ['spanish', 'portuguese']
 
 export function Landing() {
   const { t } = useI18n()
   const [data, setData] = useState<LeaderboardRow[] | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const [visibleColumns, setVisibleColumns] = useState<string[]>(DEFAULT_VISIBLE)
-  const [sortBy, setSortBy] = useState<string>('overall_latam_score')
+  const [selectedTasks, setSelectedTasks] = useState<string[]>(DEFAULT_SELECTED_TASKS)
+  const [sortBy, setSortBy] = useState<string>('overall_score')
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
-  const [taskGroups, setTaskGroups] = useState<TaskGroups | null>(null)
-  const [/* tasksList */, setTasksList] = useState<TasksList | null>(null)
-  const [showMobileFilters, setShowMobileFilters] = useState<boolean>(false)
 
   useEffect(() => {
     fetchLeaderboard().then(setData).catch(() => setError('Failed to load leaderboard data'))
-    Promise.all([
-      fetch('/tasks_groups.json').then(r => r.json() as Promise<TaskGroups>),
-      fetch('/tasks_list.json').then(r => r.json() as Promise<TasksList>),
-    ]).then(([g, t]) => {
-      setTaskGroups(g)
-      setTasksList(t)
-    }).catch(() => {/* non-fatal */})
   }, [])
 
-  // Debug: Log when visibleColumns changes
+  const taskOptions = TASK_OPTIONS.map((task) => ({
+    ...task,
+    label: t(`landing.task_labels.${task.key}`)
+  }))
+
+  const selectedTaskColumns = useMemo(() => {
+    return TASK_OPTIONS.filter((task) => selectedTasks.includes(task.key)).map((task) => task.column)
+  }, [selectedTasks])
+
+  const visibleColumns = useMemo(() => {
+    return ['model_name', 'publisher', 'overall_score', ...selectedTaskColumns]
+  }, [selectedTaskColumns])
+
+  const orderedColumns = visibleColumns
+
+  const aggregates = useMemo(() => {
+    return new Set(['overall_score', ...selectedTaskColumns])
+  }, [selectedTaskColumns])
+
+  const dataWithOverall = useMemo(() => {
+    if (!data) return [] as LeaderboardRow[]
+    return data.map((row) => {
+      const values = selectedTaskColumns.map((col) => row[col])
+      const numericValues = values.filter((value): value is number => typeof value === 'number')
+      const hasAllScores = numericValues.length === selectedTaskColumns.length && selectedTaskColumns.length > 0
+      const overall = hasAllScores ? numericValues.reduce((sum, value) => sum + value, 0) / numericValues.length : null
+      return { ...row, overall_score: overall }
+    })
+  }, [data, selectedTaskColumns])
+
   useEffect(() => {
-    console.log('visibleColumns changed:', visibleColumns);
-  }, [visibleColumns])
-
-  // Determine ordered columns: aggregates, then per-group tasks in JSON order (only those present in data)
-  const { orderedColumns, aggregates, groupColumnMap, groupOrder } = useMemo(() => {
-    if (!data || data.length === 0) {
-      return { orderedColumns: [] as string[], aggregates: new Set<string>(), groupColumnMap: {} as Record<string, string[]>, groupOrder: [] as string[] }
+    if (!visibleColumns.includes(sortBy)) {
+      setSortBy('overall_score')
+      setSortDir('desc')
     }
-    const present = new Set(Object.keys(data[0]))
-    const aggregatesArr = ['overall_latam_score', 'spanish_score', 'portuguese_score', 'translation_score', 'structured_extraction_score']
-    const aggregatesSet = new Set(aggregatesArr)
-
-    const groupPrefixMap: Record<string, string> = { latam_es: 'spanish_', latam_pr: 'portuguese_', translation: 'translation_', structured_extraction: 'structured_extraction_' }
-    const map: Record<string, string[]> = {}
-    const order: string[] = Object.keys(taskGroups?.task_groups ?? {})
-    for (const key of order) {
-      const prefix = groupPrefixMap[key]
-      if (!prefix) continue
-      const subtasks = taskGroups?.task_groups?.[key]?.subtasks ?? []
-      const cols = subtasks.map(st => `${prefix}${st}`).filter(col => present.has(col))
-      map[key] = cols
-    }
-
-    const ordered = ['model_name', 'publisher', ...aggregatesArr]
-    for (const key of order) {
-      const cols = map[key]
-      if (cols && cols.length) ordered.push(...cols)
-    }
-    // If any remaining present numeric columns are not covered, append them
-    const covered = new Set(ordered)
-    for (const k of present) {
-      if (!covered.has(k)) ordered.push(k)
-    }
-    console.log('useMemo result - groupColumnMap:', map);
-    console.log('useMemo result - groupOrder:', order);
-    return { orderedColumns: ordered, aggregates: aggregatesSet, groupColumnMap: map, groupOrder: order }
-  }, [data, taskGroups])
+  }, [visibleColumns, sortBy])
 
   const sortedData = useMemo(() => {
     if (!data) return [] as LeaderboardRow[]
-    const arr = [...data]
+    const arr = [...dataWithOverall]
     arr.sort((a, b) => {
       const av = a[sortBy]
       const bv = b[sortBy]
@@ -124,15 +91,14 @@ export function Landing() {
       return sortDir === 'asc' ? an - bn : bn - an
     })
     return arr
-  }, [data, sortBy, sortDir])
+  }, [data, dataWithOverall, sortBy, sortDir])
 
-  function toggleColumn(col: string) {
-    console.log('toggleColumn called with:', col);
-    setVisibleColumns((prev) => {
-      const newColumns = prev.includes(col) ? prev.filter((c) => c !== col) : [...prev, col];
-      console.log('Previous visible columns:', prev);
-      console.log('New visible columns:', newColumns);
-      return newColumns;
+  function toggleTask(taskKey: string) {
+    setSelectedTasks((prev) => {
+      if (prev.includes(taskKey)) {
+        return prev.length === 1 ? prev : prev.filter((key) => key !== taskKey)
+      }
+      return [...prev, taskKey]
     })
   }
 
@@ -150,58 +116,38 @@ export function Landing() {
       <HeroSection />
       
       <div id="leaderboard" className="pb-8 md:pb-20 px-4 md:px-6 lg:px-8">
-        {/* Mobile Filter Toggle */}
-        <div className="lg:hidden mb-6">
-          <button
-            onClick={() => setShowMobileFilters(!showMobileFilters)}
-            className="btn-outline w-full flex items-center justify-center gap-2"
-          >
-            <span>Filters</span>
-            <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full">
-              {visibleColumns.length}
-            </span>
-          </button>
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-4 md:gap-6">
-          {/* Desktop Sidebar */}
-          <div className="hidden lg:block w-80 flex-shrink-0">
-            <FilterPanel
-              visibleColumns={visibleColumns}
-              groupColumnMap={groupColumnMap}
-              groupOrder={groupOrder}
-              onToggleColumn={toggleColumn}
-            />
-          </div>
-
-          {/* Mobile Filter Panel */}
-          {showMobileFilters && (
-            <div className="lg:hidden mb-4 md:mb-6">
-              <FilterPanel
-                visibleColumns={visibleColumns}
-                groupColumnMap={groupColumnMap}
-                groupOrder={groupOrder}
-                onToggleColumn={toggleColumn}
-              />
-            </div>
-          )}
-
-          {/* Main Content */}
-          <div className="flex-1 min-w-0">
-            <LeaderboardTable
-              data={sortedData}
-              visibleColumns={visibleColumns}
-              orderedColumns={orderedColumns}
-              aggregates={aggregates}
-              sortBy={sortBy}
-              sortDir={sortDir}
-              onSort={handleSort}
-              loading={data === null && !error}
-              error={error}
-            />
+        <div className="card border rounded-lg p-4 md:p-6 mb-4 md:mb-6">
+          <p className="text-sm md:text-base font-semibold text-foreground">
+            {t('landing.task_selector_prompt')}
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {taskOptions.map((task) => {
+              const isSelected = selectedTasks.includes(task.key)
+              return (
+                <button
+                  key={task.key}
+                  onClick={() => toggleTask(task.key)}
+                  className={`badge text-xs transition-all ${isSelected ? 'badge-default' : 'badge-outline hover:bg-accent hover:text-accent-foreground'}`}
+                  aria-pressed={isSelected}
+                >
+                  {task.label}
+                </button>
+              )
+            })}
           </div>
         </div>
 
+        <LeaderboardTable
+          data={sortedData}
+          visibleColumns={visibleColumns}
+          orderedColumns={orderedColumns}
+          aggregates={aggregates}
+          sortBy={sortBy}
+          sortDir={sortDir}
+          onSort={handleSort}
+          loading={data === null && !error}
+          error={error}
+        />
       </div>
       <div className="flex items-center justify-center gap-2 pt-8 text-sm text-muted-foreground">
         <span>{t('landing.source_prefix')}</span>
@@ -219,5 +165,3 @@ export function Landing() {
     </div>
   )
 }
-
-

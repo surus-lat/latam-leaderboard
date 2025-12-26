@@ -1,0 +1,46 @@
+============================================================
+BENCHMARK REPORT
+============================================================
+Model: ServiceNow-AI/Apriel-1.6-15b-Thinker
+Task: image_extraction
+Timestamp: 20251226_114444
+
+Metrics:
+----------------------------------------
+  total_samples: 100
+  valid_samples: 4
+  error_count: 96
+  error_rate: 0.9600
+  response_rate: 1.0000
+  connectivity_error_rate: 0.0000
+  invalid_response_rate: 0.9600
+  extraction_quality_score: 0.9454
+  overall_extraction_quality_score: 0.0378
+  schema_validity_rate: 0.0400
+  hallucination_rate: 0.0000
+  exact_match_rate: 0.0000
+  field_f1_partial: 0.9089
+  field_f1_strict: 0.8929
+  field_precision_partial: 0.9089
+  field_recall_partial: 0.9089
+  field_precision_strict: 0.8929
+  field_recall_strict: 0.8929
+  type_accuracy: 0.9464
+  match_distribution: {'exact': 89.28571428571429, 'partial': 5.357142857142857, 'incorrect': 5.357142857142857, 'missed': 0.0, 'spurious': 0.0}
+  match_distribution_counts: {'exact': 50, 'partial': 3, 'incorrect': 3, 'missed': 0, 'spurious': 0}
+  composite_score_stats: {'mean': 0.9753609831029186, 'median': 1.0, 'stdev': 0.1031862168980279, 'min': 0.4571428571428572, 'max': 1.0}
+  sample_level_variance: {'eqs_mean': 0.9453571428571428, 'eqs_stdev': 0.028935184429327333, 'eqs_min': 0.9142857142857141, 'eqs_max': 0.97, 'f1_mean': 0.9089285714285715, 'f1_stdev': 0.04822530738221216, 'f1_min': 0.8571428571428571, 'f1_max': 0.9500000000000001}
+  critical_error_rate: 0.0536
+  field_accuracy_score: 0.8929
+  numeric_precision_rate: 0.9167
+  numeric_fields_total: 36
+  numeric_fields_correct: 33
+  imperfect_sample_quality: 0.9454
+  imperfect_sample_quality_f1: 0.9089
+  imperfect_sample_count: 4
+  document_extraction_score: 0.9265
+  strict_type_compliance_rate: 1.0000
+  samples_with_type_errors: 0
+  total_duration: 1196.1584
+  throughput: 0.0836
+============================================================

@@ -1,0 +1,72 @@
+┌──────────────────────────────────────────────────────────────────────┐
+│  Model: ibm-granite/granite-4.0-h-tiny                               │
+│  Dataset: paraloq/json_data_extraction (476 samples)         │
+│  Date: 2025-10-17 05:12:53                                        │
+└──────────────────────────────────────────────────────────────────────┘
+
+OVERALL SCORE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Extraction Quality Score (EQS): 0.846  ✅ GOOD
+  95% CI: [0.828, 0.864]
+
+PRIMARY METRICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ Schema Validity:     99.2%  (472/476)  Grade: A+
+  ⚠️  Field F1 (Partial):  0.769             Grade: B
+  ❌ Exact Match:         29.8%  (142/476)  Grade: D
+  ✅ Hallucination Rate:   7.8%              Grade: A
+
+DETAILED ACCURACY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Field F1 (Strict):       0.757
+  Field Precision:         0.771
+  Field Recall:            0.774
+  Type Accuracy:           92.0%
+
+MATCH DISTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Exact       66.4%  ██████████████████████████
+  Partial      2.7%  █
+  Incorrect   13.9%  █████
+  Missed       7.3%  ██
+  Spurious     9.7%  ███
+
+COMPOSITE SCORE STATISTICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Mean:   0.879
+  Median: 1.000
+  StdDev: 0.289
+  Range:  [0.001, 1.000]
+
+SAMPLE-LEVEL CONSISTENCY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  EQS:  μ=0.846, σ=0.203, range=[0.200, 1.000]
+  F1:   μ=0.769, σ=0.284, range=[0.000, 1.000]
+  Consistency: Poor (highly variable)
+
+SCHEMA COMPLEXITY ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Distribution by Complexity:
+    Simple   (442): EQS=0.842, F1=0.765, Halluc= 8.2%
+    Medium   ( 29): EQS=0.894, F1=0.834, Halluc= 3.4%
+    Complex  (  1): EQS=1.000, F1=1.000, Halluc= 0.0%
+
+  Correlations with Performance:
+    complexity_score_vs_eqs   r=+0.195 (negligible positive)
+    total_fields_vs_f1        r=+0.191 (negligible positive)
+    max_depth_vs_f1           r=+0.078 (negligible positive)
+
+PRODUCTION READINESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Quality Tier: Tier 2 (Good)
+  Production Ready: ✅ YES
+
+  Recommendation: DEPLOY WITH CONFIDENCE
+  Model demonstrates strong extraction capability across
+  the benchmark. Suitable for production use.
+
+PERFORMANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Throughput:         0.28 samples/second
+  Total Duration:     1695.87 seconds
+  Avg per Sample:     3.56 seconds

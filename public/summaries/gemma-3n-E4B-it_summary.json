@@ -373,6 +373,59 @@
       },
       "overall_score": 0.8353733947187372,
       "evaluation_time": "20251013_100338"
+    },
+    "image_extraction": {
+      "model_name": "gemma-3n-E4B-it",
+      "task_scores": {
+        "extraction_quality_score": {
+          "score": 0.6797714285714287,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "extraction_quality_score"
+        },
+        "composite_score": {
+          "score": 0.8299388476042208,
+          "stderr": 0.32114677392121316,
+          "metric": "composite_mean",
+          "alias": "composite_score"
+        },
+        "schema_validity": {
+          "score": 1.0,
+          "stderr": 0.0,
+          "metric": "validity_rate",
+          "alias": "schema_validity"
+        },
+        "field_f1_partial": {
+          "score": 0.46628571428571425,
+          "stderr": 0.0,
+          "metric": "f1",
+          "alias": "field_f1_partial"
+        },
+        "hallucination_rate": {
+          "score": 0.0,
+          "stderr": 0.0,
+          "metric": "hallucination_rate",
+          "alias": "hallucination_rate"
+        }
+      },
+      "category_scores": {
+        "image_extraction": {
+          "score": 0.6797714285714287,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "image_extraction"
+        }
+      },
+      "top_level_scores": {
+        "image_extraction": {
+          "score": 0.6797714285714287,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "image_extraction"
+        }
+      },
+      "overall_score": 0.6797714285714287,
+      "evaluation_time": "20251226_122611"
     }
   },
   "overall_latam_score": 0.6610546241224581

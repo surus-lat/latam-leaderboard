@@ -1,0 +1,72 @@
+┌──────────────────────────────────────────────────────────────────────┐
+│  Model: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B                      │
+│  Dataset: paraloq/json_data_extraction (476 samples)         │
+│  Date: 2025-10-13 07:26:41                                        │
+└──────────────────────────────────────────────────────────────────────┘
+
+OVERALL SCORE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Extraction Quality Score (EQS): 0.770  ✅ GOOD
+  95% CI: [0.745, 0.794]
+
+PRIMARY METRICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ Schema Validity:     92.2%  (439/476)  Grade: A
+  ❌ Field F1 (Partial):  0.673             Grade: C+
+  ❌ Exact Match:         21.0%  (100/476)  Grade: D
+  ⚠️  Hallucination Rate:  15.8%              Grade: B+
+
+DETAILED ACCURACY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Field F1 (Strict):       0.660
+  Field Precision:         0.681
+  Field Recall:            0.676
+  Type Accuracy:           81.3%
+
+MATCH DISTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Exact       52.6%  █████████████████████
+  Partial      2.5%  █
+  Incorrect   11.7%  ████
+  Missed      15.7%  ██████
+  Spurious    17.4%  ██████
+
+COMPOSITE SCORE STATISTICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Mean:   0.877
+  Median: 1.000
+  StdDev: 0.291
+  Range:  [0.005, 1.000]
+
+SAMPLE-LEVEL CONSISTENCY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  EQS:  μ=0.770, σ=0.271, range=[0.200, 1.000]
+  F1:   μ=0.673, σ=0.355, range=[0.000, 1.000]
+  Consistency: Poor (highly variable)
+
+SCHEMA COMPLEXITY ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Distribution by Complexity:
+    Simple   (410): EQS=0.761, F1=0.661, Halluc=18.1%
+    Medium   ( 28): EQS=0.895, F1=0.837, Halluc= 3.6%
+    Complex  (  1): EQS=0.992, F1=0.986, Halluc= 0.0%
+
+  Correlations with Performance:
+    complexity_score_vs_eqs   r=+0.429 (moderate positive)
+    total_fields_vs_f1        r=+0.424 (moderate positive)
+    max_depth_vs_f1           r=+0.163 (negligible positive)
+
+PRODUCTION READINESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Quality Tier: Tier 4 (Poor)
+  Production Ready: ⚠️  CAUTION
+
+  Recommendation: DEPLOY WITH MONITORING
+  Model shows acceptable performance but may struggle with
+  complex schemas. Recommend human review for critical extractions.
+
+PERFORMANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Throughput:         0.35 samples/second
+  Total Duration:     1377.24 seconds
+  Avg per Sample:     2.89 seconds

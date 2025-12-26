@@ -30,6 +30,14 @@ export const en: TranslationDict = {
     contributors_cta_link: 'Learn how to contribute.',
     load_failed: 'Failed to load leaderboard data',
     cta_button: 'See the results',
+    task_selector_prompt: 'I am looking for the best AI system for:',
+    task_labels: {
+      spanish: 'Spanish',
+      portuguese: 'Portuguese',
+      translation: 'Translation',
+      structured_extraction: 'Structured Extraction',
+      image_extraction: 'Image Extraction',
+    },
     columns: {
       model_name: 'model_name',
       overall_latam_score: 'overall_latam_score',
@@ -171,6 +179,14 @@ export const es: TranslationDict = {
     contributors_cta_link: 'Aprendé cómo contribuir.',
     load_failed: 'Error al cargar los datos del leaderboard',
     cta_button: 'Ver los resultados',
+    task_selector_prompt: 'Estoy buscando el mejor sistema de IA para:',
+    task_labels: {
+      spanish: 'Español',
+      portuguese: 'Portugués',
+      translation: 'Traducción',
+      structured_extraction: 'Extracción estructurada',
+      image_extraction: 'Extracción de imágenes',
+    },
     columns: {
       model_name: 'model_name',
       overall_latam_score: 'overall_latam_score',
@@ -312,6 +328,14 @@ export const pt: TranslationDict = {
     contributors_cta_link: 'Saiba como contribuir.',
     load_failed: 'Falha ao carregar os dados do leaderboard',
     cta_button: 'Ver os resultados',
+    task_selector_prompt: 'Estou procurando o melhor sistema de IA para:',
+    task_labels: {
+      spanish: 'Espanhol',
+      portuguese: 'Português',
+      translation: 'Tradução',
+      structured_extraction: 'Extração estruturada',
+      image_extraction: 'Extração de imagens',
+    },
     columns: {
       model_name: 'model_name',
       overall_latam_score: 'overall_latam_score',
@@ -422,5 +446,3 @@ export const pt: TranslationDict = {
 }
 
 export const translations: Record<Locale, TranslationDict> = { en, es, pt }
-
-

@@ -1,0 +1,72 @@
+┌──────────────────────────────────────────────────────────────────────┐
+│  Model: meta-llama/Llama-3.1-8B-Instruct                             │
+│  Dataset: paraloq/json_data_extraction (476 samples)         │
+│  Date: 2025-10-11 04:20:05                                        │
+└──────────────────────────────────────────────────────────────────────┘
+
+OVERALL SCORE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Extraction Quality Score (EQS): 0.813  ✅ GOOD
+  95% CI: [0.791, 0.835]
+
+PRIMARY METRICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ Schema Validity:     98.5%  (469/476)  Grade: A+
+  ⚠️  Field F1 (Partial):  0.730             Grade: B-
+  ❌ Exact Match:         28.4%  (135/476)  Grade: D
+  ✅ Hallucination Rate:  12.4%              Grade: A-
+
+DETAILED ACCURACY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Field F1 (Strict):       0.717
+  Field Precision:         0.733
+  Field Recall:            0.739
+  Type Accuracy:           86.6%
+
+MATCH DISTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Exact       55.1%  ██████████████████████
+  Partial      2.3%  
+  Incorrect   10.5%  ████
+  Missed      11.4%  ████
+  Spurious    20.7%  ████████
+
+COMPOSITE SCORE STATISTICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Mean:   0.905
+  Median: 1.000
+  StdDev: 0.260
+  Range:  [0.003, 1.000]
+
+SAMPLE-LEVEL CONSISTENCY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  EQS:  μ=0.813, σ=0.244, range=[0.200, 1.000]
+  F1:   μ=0.730, σ=0.327, range=[0.000, 1.000]
+  Consistency: Poor (highly variable)
+
+SCHEMA COMPLEXITY ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Distribution by Complexity:
+    Simple   (439): EQS=0.807, F1=0.723, Halluc=13.2%
+    Medium   ( 29): EQS=0.888, F1=0.822, Halluc= 2.9%
+    Complex  (  1): EQS=1.000, F1=1.000, Halluc= 0.0%
+
+  Correlations with Performance:
+    complexity_score_vs_eqs   r=+0.299 (weak positive)
+    total_fields_vs_f1        r=+0.288 (weak positive)
+    max_depth_vs_f1           r=+0.109 (negligible positive)
+
+PRODUCTION READINESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Quality Tier: Tier 3 (Moderate)
+  Production Ready: ⚠️  CAUTION
+
+  Recommendation: DEPLOY WITH MONITORING
+  Model shows acceptable performance but may struggle with
+  complex schemas. Recommend human review for critical extractions.
+
+PERFORMANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Throughput:         0.46 samples/second
+  Total Duration:     1037.98 seconds
+  Avg per Sample:     2.18 seconds

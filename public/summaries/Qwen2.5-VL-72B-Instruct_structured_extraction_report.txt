@@ -1,0 +1,46 @@
+============================================================
+BENCHMARK REPORT
+============================================================
+Model: Qwen/Qwen2.5-VL-72B-Instruct
+Task: image_extraction
+Timestamp: 20251226_131216
+
+Metrics:
+----------------------------------------
+  total_samples: 100
+  valid_samples: 100
+  error_count: 0
+  error_rate: 0.0000
+  response_rate: 1.0000
+  connectivity_error_rate: 0.0000
+  invalid_response_rate: 0.0000
+  extraction_quality_score: 0.8599
+  overall_extraction_quality_score: 0.8599
+  schema_validity_rate: 1.0000
+  hallucination_rate: 0.0000
+  exact_match_rate: 0.0000
+  field_f1_partial: 0.7665
+  field_f1_strict: 0.7564
+  field_precision_partial: 0.7665
+  field_recall_partial: 0.7665
+  field_precision_strict: 0.7564
+  field_recall_strict: 0.7564
+  type_accuracy: 0.8993
+  match_distribution: {'exact': 75.64285714285714, 'partial': 3.357142857142857, 'incorrect': 21.0, 'missed': 0.0, 'spurious': 0.0}
+  match_distribution_counts: {'exact': 1059, 'partial': 47, 'incorrect': 294, 'missed': 0, 'spurious': 0}
+  composite_score_stats: {'mean': 0.9374092300231023, 'median': 1.0, 'stdev': 0.20955352544395617, 'min': 0.0206896551724138, 'max': 1.0}
+  sample_level_variance: {'eqs_mean': 0.8599, 'eqs_stdev': 0.0646316665351394, 'eqs_min': 0.7, 'eqs_max': 1.0, 'f1_mean': 0.7665000000000001, 'f1_stdev': 0.10771944422523239, 'f1_min': 0.5, 'f1_max': 1.0}
+  critical_error_rate: 0.1657
+  field_accuracy_score: 0.7564
+  numeric_precision_rate: 0.7422
+  numeric_fields_total: 900
+  numeric_fields_correct: 668
+  imperfect_sample_quality: 0.8599
+  imperfect_sample_quality_f1: 0.7665
+  imperfect_sample_count: 100
+  document_extraction_score: 0.7894
+  strict_type_compliance_rate: 1.0000
+  samples_with_type_errors: 0
+  total_duration: 565.0113
+  throughput: 0.1770
+============================================================

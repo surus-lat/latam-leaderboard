@@ -110,6 +110,24 @@
     "structured_extraction_hallucination_rate": 0.0535
   },
   {
+    "model_name": "Qwen2.5-VL-72B-Instruct",
+    "publisher": "Qwen",
+    "full_model_name": "Qwen/Qwen2.5-VL-72B-Instruct",
+    "overall_latam_score": 0.8812,
+    "structured_extraction_score": 0.8812,
+    "structured_extraction_extraction_quality_score": 0.8812,
+    "structured_extraction_composite_score": 0.918,
+    "structured_extraction_schema_validity": 0.9949,
+    "structured_extraction_field_f1_partial": 0.81,
+    "structured_extraction_hallucination_rate": 0.0238,
+    "image_extraction_score": 0.8599,
+    "image_extraction_extraction_quality_score": 0.8599,
+    "image_extraction_composite_score": 0.9374,
+    "image_extraction_schema_validity": 1.0,
+    "image_extraction_field_f1_partial": 0.7665,
+    "image_extraction_hallucination_rate": 0.0
+  },
+  {
     "model_name": "gpt-oss-20b",
     "publisher": "openai",
     "full_model_name": "openai/gpt-oss-20b",
@@ -218,6 +236,18 @@
     "structured_extraction_schema_validity": 0.9916,
     "structured_extraction_field_f1_partial": 0.7457,
     "structured_extraction_hallucination_rate": 0.0679
+  },
+  {
+    "model_name": "surus-extract",
+    "publisher": "unknown",
+    "full_model_name": "surus-extract",
+    "overall_latam_score": 0.9192,
+    "structured_extraction_score": 0.9192,
+    "structured_extraction_extraction_quality_score": 0.9192,
+    "structured_extraction_composite_score": 0.9553,
+    "structured_extraction_schema_validity": 0.6174,
+    "structured_extraction_field_f1_partial": 0.87,
+    "structured_extraction_hallucination_rate": 0.0071
   },
   {
     "model_name": "Yi-1.5-6B-Chat",
@@ -495,6 +525,24 @@
     "structured_extraction_hallucination_rate": 0.1579
   },
   {
+    "model_name": "Apriel-1.6-15b-Thinker",
+    "publisher": "ServiceNow-AI",
+    "full_model_name": "ServiceNow-AI/Apriel-1.6-15b-Thinker",
+    "overall_latam_score": 0.9362,
+    "structured_extraction_score": 0.9362,
+    "structured_extraction_extraction_quality_score": 0.9362,
+    "structured_extraction_composite_score": 0.9684,
+    "structured_extraction_schema_validity": 0.6879,
+    "structured_extraction_field_f1_partial": 0.8958,
+    "structured_extraction_hallucination_rate": 0.0036,
+    "image_extraction_score": 0.0378,
+    "image_extraction_extraction_quality_score": 0.0378,
+    "image_extraction_composite_score": 0.9754,
+    "image_extraction_schema_validity": 0.04,
+    "image_extraction_field_f1_partial": 0.9089,
+    "image_extraction_hallucination_rate": 0.0
+  },
+  {
     "model_name": "Ministral-8B-Instruct-2410",
     "publisher": "mistralai",
     "full_model_name": "mistralai/Ministral-8B-Instruct-2410",
@@ -658,6 +706,18 @@
     "structured_extraction_schema_validity": 0.9937,
     "structured_extraction_field_f1_partial": 0.7668,
     "structured_extraction_hallucination_rate": 0.066
+  },
+  {
+    "model_name": "trinity-mini",
+    "publisher": "arcee-ai",
+    "full_model_name": "arcee-ai/trinity-mini",
+    "overall_latam_score": 0.8713,
+    "structured_extraction_score": 0.8713,
+    "structured_extraction_extraction_quality_score": 0.8713,
+    "structured_extraction_composite_score": 0.9057,
+    "structured_extraction_schema_validity": 0.9577,
+    "structured_extraction_field_f1_partial": 0.7937,
+    "structured_extraction_hallucination_rate": 0.0233
   },
   {
     "model_name": "Mistral-NeMo-Minitron-8B-Instruct",
@@ -1155,6 +1215,24 @@
     "structured_extraction_hallucination_rate": 0.0663
   },
   {
+    "model_name": "Qwen3-Next-80B-A3B-Instruct",
+    "publisher": "Qwen",
+    "full_model_name": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+    "overall_latam_score": 0.8789,
+    "structured_extraction_score": 0.8789,
+    "structured_extraction_extraction_quality_score": 0.8789,
+    "structured_extraction_composite_score": 0.9251,
+    "structured_extraction_schema_validity": 0.9966,
+    "structured_extraction_field_f1_partial": 0.8076,
+    "structured_extraction_hallucination_rate": 0.028,
+    "image_extraction_score": 0.562,
+    "image_extraction_extraction_quality_score": 0.562,
+    "image_extraction_composite_score": 0.6161,
+    "image_extraction_schema_validity": 1.0,
+    "image_extraction_field_f1_partial": 0.2699,
+    "image_extraction_hallucination_rate": 0.0
+  },
+  {
     "model_name": "granite-vision-3.3-2b",
     "publisher": "ibm-granite",
     "full_model_name": "ibm-granite/granite-vision-3.3-2b",
@@ -1427,7 +1505,25 @@
     "structured_extraction_composite_score": 0.8947,
     "structured_extraction_schema_validity": 0.9811,
     "structured_extraction_field_f1_partial": 0.7503,
-    "structured_extraction_hallucination_rate": 0.0727
+    "structured_extraction_hallucination_rate": 0.0727,
+    "image_extraction_score": 0.6798,
+    "image_extraction_extraction_quality_score": 0.6798,
+    "image_extraction_composite_score": 0.8299,
+    "image_extraction_schema_validity": 1.0,
+    "image_extraction_field_f1_partial": 0.4663,
+    "image_extraction_hallucination_rate": 0.0
+  },
+  {
+    "model_name": "surus-factura",
+    "publisher": "unknown",
+    "full_model_name": "surus-factura",
+    "overall_latam_score": null,
+    "image_extraction_score": 0.9749,
+    "image_extraction_extraction_quality_score": 0.9749,
+    "image_extraction_composite_score": 0.9831,
+    "image_extraction_schema_validity": 1.0,
+    "image_extraction_field_f1_partial": 0.9582,
+    "image_extraction_hallucination_rate": 0.0
   },
   {
     "model_name": "Hermes-4-14B",

@@ -40,15 +40,14 @@ export function LeaderboardTable({
     }
   }
 
-  const getColumnHeaderStyle = () => {
-    return "px-6 py-4 text-left text-xs font-bold text-muted-foreground uppercase tracking-wider cursor-pointer select-none hover:text-foreground transition-colors"
+  const getColumnLabel = (col: string) => {
+    if (col === 'model_name') return 'Model'
+    if (col === 'publisher') return 'Publisher'
+    if (col === 'overall_score') return 'Overall score'
+    return col.replace(/_/g, ' ').replace('score', '').trim()
   }
 
   const visibleOrderedColumns = orderedColumns.filter(col => visibleColumns.includes(col))
-  
-  // Debug logging
-  console.log('Table render - visibleColumns:', visibleColumns);
-  console.log('Table render - visibleOrderedColumns:', visibleOrderedColumns);
 
   if (loading) {
     return (
@@ -94,7 +93,7 @@ export function LeaderboardTable({
                 >
                   <div className="flex items-center gap-1 md:gap-2">
                     <span className="truncate text-xs md:text-xs">
-                      {col === 'model_name' ? 'Model' : col === 'publisher' ? 'Publisher' : col.replace(/_/g, ' ').replace('score', '').trim()}
+                      {getColumnLabel(col)}
                     </span>
                     {sortBy === col && (
                       <div className="flex-shrink-0 text-primary">

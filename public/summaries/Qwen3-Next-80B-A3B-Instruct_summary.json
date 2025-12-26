@@ -1,0 +1,114 @@
+{
+  "model_name": "Qwen3-Next-80B-A3B-Instruct",
+  "publisher": "Qwen",
+  "full_model_name": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+  "categories": {
+    "structured_extraction": {
+      "model_name": "Qwen3-Next-80B-A3B-Instruct",
+      "task_scores": {
+        "extraction_quality_score": {
+          "score": 0.8789231535721153,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "extraction_quality_score"
+        },
+        "composite_score": {
+          "score": 0.925122609296613,
+          "stderr": 0.0,
+          "metric": "composite_mean",
+          "alias": "composite_score"
+        },
+        "schema_validity": {
+          "score": 0.9966131133304384,
+          "stderr": 0.0,
+          "metric": "validity_rate",
+          "alias": "schema_validity"
+        },
+        "field_f1_partial": {
+          "score": 0.8075681807093438,
+          "stderr": 0.0,
+          "metric": "f1",
+          "alias": "field_f1_partial"
+        },
+        "hallucination_rate": {
+          "score": 0.027969247568445172,
+          "stderr": 0.0,
+          "metric": "hallucination_rate",
+          "alias": "hallucination_rate"
+        }
+      },
+      "category_scores": {
+        "structured_extraction": {
+          "score": 0.8789231535721153,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "structured_extraction"
+        }
+      },
+      "top_level_scores": {
+        "structured_extraction": {
+          "score": 0.8789231535721153,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "structured_extraction"
+        }
+      },
+      "overall_score": 0.8789231535721153,
+      "evaluation_time": "20251226_132019"
+    },
+    "image_extraction": {
+      "model_name": "Qwen3-Next-80B-A3B-Instruct",
+      "task_scores": {
+        "extraction_quality_score": {
+          "score": 0.5619571428571428,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "extraction_quality_score"
+        },
+        "composite_score": {
+          "score": 0.616116897694737,
+          "stderr": 0.43482527041381974,
+          "metric": "composite_mean",
+          "alias": "composite_score"
+        },
+        "schema_validity": {
+          "score": 1.0,
+          "stderr": 0.0,
+          "metric": "validity_rate",
+          "alias": "schema_validity"
+        },
+        "field_f1_partial": {
+          "score": 0.2699285714285714,
+          "stderr": 0.0,
+          "metric": "f1",
+          "alias": "field_f1_partial"
+        },
+        "hallucination_rate": {
+          "score": 0.0,
+          "stderr": 0.0,
+          "metric": "hallucination_rate",
+          "alias": "hallucination_rate"
+        }
+      },
+      "category_scores": {
+        "image_extraction": {
+          "score": 0.5619571428571428,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "image_extraction"
+        }
+      },
+      "top_level_scores": {
+        "image_extraction": {
+          "score": 0.5619571428571428,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "image_extraction"
+        }
+      },
+      "overall_score": 0.5619571428571428,
+      "evaluation_time": "20251226_132204"
+    }
+  },
+  "overall_latam_score": 0.8789231535721153
+}

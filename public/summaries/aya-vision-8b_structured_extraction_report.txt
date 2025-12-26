@@ -1,0 +1,72 @@
+┌──────────────────────────────────────────────────────────────────────┐
+│  Model: CohereLabs/aya-vision-8b                                     │
+│  Dataset: paraloq/json_data_extraction (476 samples)         │
+│  Date: 2025-10-16 22:40:33                                        │
+└──────────────────────────────────────────────────────────────────────┘
+
+OVERALL SCORE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Extraction Quality Score (EQS): 0.844  ✅ GOOD
+  95% CI: [0.828, 0.859]
+
+PRIMARY METRICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚠️  Schema Validity:     74.8%  (356/476)  Grade: B-
+  ⚠️  Field F1 (Partial):  0.759             Grade: B
+  ❌ Exact Match:         15.3%  (73/476)  Grade: D
+  ✅ Hallucination Rate:   4.3%              Grade: A+
+
+DETAILED ACCURACY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Field F1 (Strict):       0.742
+  Field Precision:         0.774
+  Field Recall:            0.761
+  Type Accuracy:           92.5%
+
+MATCH DISTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Exact       60.5%  ████████████████████████
+  Partial      3.2%  █
+  Incorrect   14.0%  █████
+  Missed      10.0%  ████
+  Spurious    12.3%  ████
+
+COMPOSITE SCORE STATISTICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Mean:   0.870
+  Median: 1.000
+  StdDev: 0.296
+  Range:  [0.005, 1.000]
+
+SAMPLE-LEVEL CONSISTENCY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  EQS:  μ=0.844, σ=0.172, range=[0.276, 1.000]
+  F1:   μ=0.759, σ=0.255, range=[0.000, 1.000]
+  Consistency: Poor (highly variable)
+
+SCHEMA COMPLEXITY ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Distribution by Complexity:
+    Simple   (329): EQS=0.842, F1=0.755, Halluc= 5.6%
+    Medium   ( 26): EQS=0.860, F1=0.794, Halluc= 8.1%
+    Complex  (  1): EQS=0.933, F1=0.889, Halluc= 0.0%
+
+  Correlations with Performance:
+    complexity_score_vs_eqs   r=+0.030 (negligible positive)
+    total_fields_vs_f1        r=+0.053 (negligible positive)
+    max_depth_vs_f1           r=+0.074 (negligible positive)
+
+PRODUCTION READINESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Quality Tier: Tier 2 (Good)
+  Production Ready: ⚠️  CAUTION
+
+  Recommendation: DEPLOY WITH MONITORING
+  Model shows acceptable performance but may struggle with
+  complex schemas. Recommend human review for critical extractions.
+
+PERFORMANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Throughput:         0.25 samples/second
+  Total Duration:     1867.64 seconds
+  Avg per Sample:     3.92 seconds

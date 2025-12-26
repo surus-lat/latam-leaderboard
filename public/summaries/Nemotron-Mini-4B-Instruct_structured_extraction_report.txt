@@ -1,0 +1,72 @@
+┌──────────────────────────────────────────────────────────────────────┐
+│  Model: nvidia/Nemotron-Mini-4B-Instruct                             │
+│  Dataset: paraloq/json_data_extraction (476 samples)         │
+│  Date: 2025-10-19 00:32:17                                        │
+└──────────────────────────────────────────────────────────────────────┘
+
+OVERALL SCORE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Extraction Quality Score (EQS): 0.785  ✅ GOOD
+  95% CI: [0.760, 0.809]
+
+PRIMARY METRICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ Schema Validity:     93.3%  (444/476)  Grade: A
+  ❌ Field F1 (Partial):  0.694             Grade: C+
+  ❌ Exact Match:         21.0%  (100/476)  Grade: D
+  ✅ Hallucination Rate:  14.9%              Grade: A-
+
+DETAILED ACCURACY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Field F1 (Strict):       0.681
+  Field Precision:         0.699
+  Field Recall:            0.695
+  Type Accuracy:           81.3%
+
+MATCH DISTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Exact       57.6%  ███████████████████████
+  Partial      2.5%  █
+  Incorrect   10.9%  ████
+  Missed      15.3%  ██████
+  Spurious    13.6%  █████
+
+COMPOSITE SCORE STATISTICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Mean:   0.892
+  Median: 1.000
+  StdDev: 0.275
+  Range:  [0.007, 1.000]
+
+SAMPLE-LEVEL CONSISTENCY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  EQS:  μ=0.785, σ=0.271, range=[0.200, 1.000]
+  F1:   μ=0.694, σ=0.354, range=[0.000, 1.000]
+  Consistency: Poor (highly variable)
+
+SCHEMA COMPLEXITY ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Distribution by Complexity:
+    Simple   (419): EQS=0.777, F1=0.684, Halluc=16.8%
+    Medium   ( 24): EQS=0.913, F1=0.863, Halluc= 2.7%
+    Complex  (  1): EQS=0.933, F1=0.889, Halluc= 0.0%
+
+  Correlations with Performance:
+    complexity_score_vs_eqs   r=+0.400 (moderate positive)
+    total_fields_vs_f1        r=+0.392 (weak positive)
+    max_depth_vs_f1           r=+0.159 (negligible positive)
+
+PRODUCTION READINESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Quality Tier: Tier 3 (Moderate)
+  Production Ready: ⚠️  CAUTION
+
+  Recommendation: DEPLOY WITH MONITORING
+  Model shows acceptable performance but may struggle with
+  complex schemas. Recommend human review for critical extractions.
+
+PERFORMANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Throughput:         0.90 samples/second
+  Total Duration:     530.54 seconds
+  Avg per Sample:     1.11 seconds

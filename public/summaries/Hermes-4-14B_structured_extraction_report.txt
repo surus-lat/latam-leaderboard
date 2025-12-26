@@ -1,0 +1,72 @@
+┌──────────────────────────────────────────────────────────────────────┐
+│  Model: NousResearch/Hermes-4-14B                                    │
+│  Dataset: paraloq/json_data_extraction (476 samples)         │
+│  Date: 2025-10-18 20:27:00                                        │
+└──────────────────────────────────────────────────────────────────────┘
+
+OVERALL SCORE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Extraction Quality Score (EQS): 0.861  ⭐ EXCELLENT
+  95% CI: [0.844, 0.878]
+
+PRIMARY METRICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ Schema Validity:     99.6%  (474/476)  Grade: A+
+  ⚠️  Field F1 (Partial):  0.785             Grade: B
+  ❌ Exact Match:         29.2%  (139/476)  Grade: D
+  ✅ Hallucination Rate:   5.1%              Grade: A
+
+DETAILED ACCURACY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Field F1 (Strict):       0.771
+  Field Precision:         0.801
+  Field Recall:            0.779
+  Type Accuracy:           89.4%
+
+MATCH DISTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Exact       68.4%  ███████████████████████████
+  Partial      2.8%  █
+  Incorrect   12.3%  ████
+  Missed      10.8%  ████
+  Spurious     5.8%  ██
+
+COMPOSITE SCORE STATISTICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Mean:   0.900
+  Median: 1.000
+  StdDev: 0.265
+  Range:  [0.006, 1.000]
+
+SAMPLE-LEVEL CONSISTENCY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  EQS:  μ=0.861, σ=0.188, range=[0.200, 1.000]
+  F1:   μ=0.785, σ=0.274, range=[0.000, 1.000]
+  Consistency: Poor (highly variable)
+
+SCHEMA COMPLEXITY ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Distribution by Complexity:
+    Simple   (444): EQS=0.858, F1=0.781, Halluc= 5.3%
+    Medium   ( 29): EQS=0.899, F1=0.838, Halluc= 2.0%
+    Complex  (  1): EQS=1.000, F1=1.000, Halluc= 0.0%
+
+  Correlations with Performance:
+    complexity_score_vs_eqs   r=+0.155 (negligible positive)
+    total_fields_vs_f1        r=+0.157 (negligible positive)
+    max_depth_vs_f1           r=+0.069 (negligible positive)
+
+PRODUCTION READINESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Quality Tier: Tier 2 (Good)
+  Production Ready: ✅ YES
+
+  Recommendation: DEPLOY WITH CONFIDENCE
+  Model demonstrates strong extraction capability across
+  the benchmark. Suitable for production use.
+
+PERFORMANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Throughput:         0.52 samples/second
+  Total Duration:     916.50 seconds
+  Avg per Sample:     1.93 seconds

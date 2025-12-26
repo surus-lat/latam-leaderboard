@@ -1,0 +1,114 @@
+{
+  "model_name": "Apriel-1.6-15b-Thinker",
+  "publisher": "ServiceNow-AI",
+  "full_model_name": "ServiceNow-AI/Apriel-1.6-15b-Thinker",
+  "categories": {
+    "structured_extraction": {
+      "model_name": "Apriel-1.6-15b-Thinker",
+      "task_scores": {
+        "extraction_quality_score": {
+          "score": 0.9361624685286567,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "extraction_quality_score"
+        },
+        "composite_score": {
+          "score": 0.9683728424939988,
+          "stderr": 0.0,
+          "metric": "composite_mean",
+          "alias": "composite_score"
+        },
+        "schema_validity": {
+          "score": 0.6878825804983502,
+          "stderr": 0.0,
+          "metric": "validity_rate",
+          "alias": "schema_validity"
+        },
+        "field_f1_partial": {
+          "score": 0.8958461766516379,
+          "stderr": 0.0,
+          "metric": "f1",
+          "alias": "field_f1_partial"
+        },
+        "hallucination_rate": {
+          "score": 0.0036350033556472533,
+          "stderr": 0.0,
+          "metric": "hallucination_rate",
+          "alias": "hallucination_rate"
+        }
+      },
+      "category_scores": {
+        "structured_extraction": {
+          "score": 0.9361624685286567,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "structured_extraction"
+        }
+      },
+      "top_level_scores": {
+        "structured_extraction": {
+          "score": 0.9361624685286567,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "structured_extraction"
+        }
+      },
+      "overall_score": 0.9361624685286567,
+      "evaluation_time": "20251226_112447"
+    },
+    "image_extraction": {
+      "model_name": "Apriel-1.6-15b-Thinker",
+      "task_scores": {
+        "extraction_quality_score": {
+          "score": 0.037814285714285745,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "extraction_quality_score"
+        },
+        "composite_score": {
+          "score": 0.9753609831029186,
+          "stderr": 0.1031862168980279,
+          "metric": "composite_mean",
+          "alias": "composite_score"
+        },
+        "schema_validity": {
+          "score": 0.04,
+          "stderr": 0.0,
+          "metric": "validity_rate",
+          "alias": "schema_validity"
+        },
+        "field_f1_partial": {
+          "score": 0.9089285714285715,
+          "stderr": 0.0,
+          "metric": "f1",
+          "alias": "field_f1_partial"
+        },
+        "hallucination_rate": {
+          "score": 0.0,
+          "stderr": 0.0,
+          "metric": "hallucination_rate",
+          "alias": "hallucination_rate"
+        }
+      },
+      "category_scores": {
+        "image_extraction": {
+          "score": 0.037814285714285745,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "image_extraction"
+        }
+      },
+      "top_level_scores": {
+        "image_extraction": {
+          "score": 0.037814285714285745,
+          "stderr": 0.0,
+          "metric": "eqs",
+          "alias": "image_extraction"
+        }
+      },
+      "overall_score": 0.037814285714285745,
+      "evaluation_time": "20251226_114444"
+    }
+  },
+  "overall_latam_score": 0.9361624685286567
+}

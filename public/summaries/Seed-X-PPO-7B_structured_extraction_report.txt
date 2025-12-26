@@ -1,0 +1,71 @@
+┌──────────────────────────────────────────────────────────────────────┐
+│  Model: ByteDance-Seed/Seed-X-PPO-7B                                 │
+│  Dataset: paraloq/json_data_extraction (476 samples)         │
+│  Date: 2025-10-14 04:49:49                                        │
+└──────────────────────────────────────────────────────────────────────┘
+
+OVERALL SCORE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Extraction Quality Score (EQS): 0.252  ❌ POOR
+  95% CI: [0.236, 0.269]
+
+PRIMARY METRICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ❌ Schema Validity:     20.0%  (95/476)  Grade: D
+  ❌ Field F1 (Partial):  0.064             Grade: D
+  ❌ Exact Match:          0.6%  (3/476)  Grade: D
+  ⚠️  Hallucination Rate:  18.6%              Grade: B+
+
+DETAILED ACCURACY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Field F1 (Strict):       0.064
+  Field Precision:         0.063
+  Field Recall:            0.066
+  Type Accuracy:            7.4%
+
+MATCH DISTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Exact        1.7%  
+  Partial      0.0%  
+  Incorrect    0.2%  
+  Missed      37.0%  ██████████████
+  Spurious    61.1%  ████████████████████████
+
+COMPOSITE SCORE STATISTICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Mean:   0.932
+  Median: 1.000
+  StdDev: 0.237
+  Range:  [0.023, 1.000]
+
+SAMPLE-LEVEL CONSISTENCY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  EQS:  μ=0.252, σ=0.189, range=[0.200, 1.000]
+  F1:   μ=0.064, σ=0.232, range=[0.000, 1.000]
+  Consistency: Poor (highly variable)
+
+SCHEMA COMPLEXITY ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Distribution by Complexity:
+    Simple   ( 94): EQS=0.253, F1=0.065, Halluc=92.9%
+    Medium   (  1): EQS=0.200, F1=0.000, Halluc=100.0%
+
+  Correlations with Performance:
+    complexity_score_vs_eqs   r=+0.304 (weak positive)
+    total_fields_vs_f1        r=+0.348 (weak positive)
+    max_depth_vs_f1           r=-0.029 (negligible negative)
+
+PRODUCTION READINESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Quality Tier: Tier 4 (Poor)
+  Production Ready: ⚠️  CAUTION
+
+  Recommendation: NOT RECOMMENDED FOR PRODUCTION
+  Model shows significant limitations in structured extraction.
+  Consider fine-tuning or using a more capable model.
+
+PERFORMANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Throughput:         0.22 samples/second
+  Total Duration:     2138.86 seconds
+  Avg per Sample:     4.49 seconds

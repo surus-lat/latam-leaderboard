@@ -1,0 +1,46 @@
+============================================================
+BENCHMARK REPORT
+============================================================
+Model: Qwen/Qwen3-Next-80B-A3B-Instruct
+Task: image_extraction
+Timestamp: 20251226_132204
+
+Metrics:
+----------------------------------------
+  total_samples: 100
+  valid_samples: 100
+  error_count: 0
+  error_rate: 0.0000
+  response_rate: 1.0000
+  connectivity_error_rate: 0.0000
+  invalid_response_rate: 0.0000
+  extraction_quality_score: 0.5620
+  overall_extraction_quality_score: 0.5620
+  schema_validity_rate: 1.0000
+  hallucination_rate: 0.0000
+  exact_match_rate: 0.0000
+  field_f1_partial: 0.2699
+  field_f1_strict: 0.2693
+  field_precision_partial: 0.2699
+  field_recall_partial: 0.2699
+  field_precision_strict: 0.2693
+  field_recall_strict: 0.2693
+  type_accuracy: 1.0000
+  match_distribution: {'exact': 26.92857142857143, 'partial': 0.2142857142857143, 'incorrect': 72.85714285714285, 'missed': 0.0, 'spurious': 0.0}
+  match_distribution_counts: {'exact': 377, 'partial': 3, 'incorrect': 1020, 'missed': 0, 'spurious': 0}
+  composite_score_stats: {'mean': 0.616116897694737, 'median': 1.0, 'stdev': 0.43482527041381974, 'min': 0.029999999999999992, 'max': 1.0}
+  sample_level_variance: {'eqs_mean': 0.5619571428571428, 'eqs_stdev': 0.03402113825059972, 'eqs_min': 0.4857142857142857, 'eqs_max': 0.6142857142857143, 'f1_mean': 0.2699285714285714, 'f1_stdev': 0.05670189708433286, 'f1_min': 0.14285714285714285, 'f1_max': 0.35714285714285715}
+  critical_error_rate: 0.5057
+  field_accuracy_score: 0.2693
+  numeric_precision_rate: 0.2133
+  numeric_fields_total: 900
+  numeric_fields_correct: 192
+  imperfect_sample_quality: 0.5620
+  imperfect_sample_quality_f1: 0.2699
+  imperfect_sample_count: 100
+  document_extraction_score: 0.3511
+  strict_type_compliance_rate: 1.0000
+  samples_with_type_errors: 0
+  total_duration: 103.4406
+  throughput: 0.9667
+============================================================
