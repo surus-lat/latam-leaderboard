@@ -6,7 +6,7 @@ tags:
 - results
 ---
 
-# mauroibz/leaderboard-results
+# LatamBoard/leaderboard-results
 
 Results from model evaluations on the leaderboard
 

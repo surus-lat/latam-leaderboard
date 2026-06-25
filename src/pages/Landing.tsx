@@ -11,7 +11,7 @@ async function fetchLeaderboard(): Promise<LeaderboardRow[]> {
   try {
     // Try Hugging Face dataset JSON files (assumes converted to parquet/JSON compatible listing)
     // We'll hit the raw file list via the repo tree API. If that fails, fallback to local file.
-    const res = await fetch('https://huggingface.co/datasets/mauroibz/leaderboard-results/resolve/main/leaderboard_table.json', { cache: 'no-store' })
+    const res = await fetch('https://huggingface.co/datasets/LatamBoard/leaderboard-results/resolve/main/leaderboard_table.json', { cache: 'no-store' })
     if (res.ok) {
       return await res.json()
     }
@@ -167,7 +167,7 @@ export function Landing() {
       <div className="flex items-center justify-center gap-2 pt-8 text-sm text-muted-foreground">
         <span>{t('landing.source_prefix')}</span>
         <a 
-          href="https://huggingface.co/datasets/mauroibz/leaderboard-results/" 
+          href="https://huggingface.co/datasets/LatamBoard/leaderboard-results/"
           target="_blank" 
           rel="noreferrer"
           className="inline-flex items-center gap-1 text-primary hover:text-primary/80 font-medium transition-colors"
