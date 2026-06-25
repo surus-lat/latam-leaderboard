@@ -33,6 +33,14 @@ function renderMarkdownLinks(text: string) {
   return { __html: html }
 }
 
+const HF_BASE = 'https://huggingface.co/datasets/LatamBoard/leaderboard-results/resolve/main'
+
+async function fetchHFJson<T>(path: string): Promise<T> {
+  const res = await fetch(`${HF_BASE}/${path}`, { cache: 'no-store' })
+  if (!res.ok) throw new Error(`${path} not found on HF (${res.status})`)
+  return res.json()
+}
+
 function useTasksData() {
   const [groups, setGroups] = useState<TaskGroups | null>(null)
   const [tasks, setTasks] = useState<TasksList | null>(null)
@@ -40,8 +48,8 @@ function useTasksData() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/tasks_groups.json').then(r => r.json() as Promise<TaskGroups>),
-      fetch('/tasks_list.json').then(r => r.json() as Promise<TasksList>),
+      fetchHFJson<TaskGroups>('tasks_groups.json'),
+      fetchHFJson<TasksList>('tasks_list.json'),
     ]).then(([g, t]) => {
       setGroups(g)
       setTasks(t)

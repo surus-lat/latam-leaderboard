@@ -7,18 +7,12 @@ import { ExternalLink } from 'lucide-react'
 
 type LeaderboardRow = Record<string, string | number | null>
 
+const HF_BASE = 'https://huggingface.co/datasets/LatamBoard/leaderboard-results/resolve/main'
+
 async function fetchLeaderboard(): Promise<LeaderboardRow[]> {
-  try {
-    // Try Hugging Face dataset JSON files (assumes converted to parquet/JSON compatible listing)
-    // We'll hit the raw file list via the repo tree API. If that fails, fallback to local file.
-    const res = await fetch('https://huggingface.co/datasets/LatamBoard/leaderboard-results/resolve/main/leaderboard_table.json', { cache: 'no-store' })
-    if (res.ok) {
-      return await res.json()
-    }
-  } catch {}
-  // Local fallback during dev
-  const local = await fetch('/leaderboard_table.json')
-  return await local.json()
+  const res = await fetch(`${HF_BASE}/leaderboard_table.json`, { cache: 'no-store' })
+  if (!res.ok) throw new Error(`Failed to load leaderboard data from HuggingFace (${res.status})`)
+  return res.json()
 }
 
 const TASK_OPTIONS = [
