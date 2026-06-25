@@ -1,8 +1,16 @@
 # LatamBoard
 
-Simple, stylized leaderboard for evaluating LLMs on Spanish and Portuguese tasks in LATAM. Built with React, Vite, and TailwindCSS.
+Simple, stylized leaderboard for evaluating LLMs on Spanish, Portuguese, translation, structured extraction, and transcription tasks for Latin America. Built with React, Vite, and TailwindCSS.
 
-Data is sourced from a public dataset on Hugging Face. See Data Source below.
+## For contributors and AI agents — read this first
+
+Three pieces of LatamBoard's data/content/routing live **outside this repo**. Editing `src/` cannot fix them. Each has a project skill under `.claude/skills/` with the exact workflow + common-mistakes table.
+
+- **Leaderboard data** (rows, scores, task chips, models) lives on Hugging Face: `LatamBoard/leaderboard-results`. The `/public/*.json` files in this repo are only a local-dev fallback — editing them does NOT change what production users see. See `.claude/skills/update-data/SKILL.md`.
+- **About page** is a Quarto-rendered standalone HTML at `public/about.html` (~2.9k lines, seven edit zones). The `.qmd` source is not in this repo. See `.claude/skills/update-paper-about/SKILL.md`.
+- **URL routing** (redirects, headers, SPA fallback, cache) is configured in the Cloudflare Pages dashboard, not this repo. See `.claude/skills/cloudflare-routing/SKILL.md`.
+
+Adding a new task category? See `update-data` skill, Flow C — you need to update HF data + `TASK_OPTIONS` in `src/pages/Landing.tsx` + the three locale entries in `src/i18n/index.ts`.
 
 ## Features
 
