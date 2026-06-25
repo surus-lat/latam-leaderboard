@@ -12,10 +12,10 @@ const I18nContext = createContext<I18nContextValue | undefined>(undefined)
 
 function getFromDict(dict: TranslationDict, path: string): string | undefined {
   const parts = path.split('.')
-  let cur: any = dict
+  let cur: unknown = dict
   for (const p of parts) {
     if (cur && typeof cur === 'object' && p in cur) {
-      cur = (cur as any)[p]
+      cur = (cur as Record<string, unknown>)[p]
     } else {
       return undefined
     }
@@ -59,6 +59,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   )
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useI18n() {
   const ctx = useContext(I18nContext)
   if (!ctx) throw new Error('useI18n must be used within I18nProvider')

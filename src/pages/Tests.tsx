@@ -28,7 +28,7 @@ type TaskGroups = {
 
 function renderMarkdownLinks(text: string) {
   const html = text
-    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1<\/a>')
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>')
     .replace(/\n/g, '<br/>')
   return { __html: html }
 }
@@ -101,7 +101,7 @@ export function Tests() {
 
   const entries = Object.entries(groups.task_groups)
 
-  function lx<T extends Record<string, any>>(obj: T, key: string): string {
+  function lx<T extends Record<string, unknown>>(obj: T, key: string): string {
     const suffixes = locale === 'pt' ? ['_pt', '_pr'] : locale === 'es' ? ['_es'] : ['_en']
     for (const s of suffixes) {
       const k = `${key}${s}`

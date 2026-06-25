@@ -2,7 +2,7 @@ export type Locale = 'en' | 'es' | 'pt'
 
 export const DEFAULT_LOCALE: Locale = 'en'
 
-export type TranslationDict = Record<string, any>
+export type TranslationDict = { [key: string]: string | TranslationDict }
 
 export const en: TranslationDict = {
   common: {

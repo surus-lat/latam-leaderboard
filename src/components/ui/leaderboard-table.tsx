@@ -26,7 +26,7 @@ export function LeaderboardTable({
   error = null
 }: LeaderboardTableProps) {
   
-  const formatScore = (value: any) => {
+  const formatScore = (value: unknown) => {
     if (typeof value !== 'number') return String(value || '-')
     return (value * 100).toFixed(1) + '%'
   }
