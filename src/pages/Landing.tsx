@@ -27,6 +27,7 @@ const TASK_OPTIONS = [
   { key: 'translation', column: 'translation_score' },
   { key: 'structured_extraction', column: 'structured_extraction_score' },
   { key: 'image_extraction', column: 'image_extraction_score' },
+  { key: 'transcription', column: 'transcription_score' },
 ] as const
 
 const DEFAULT_SELECTED_TASKS = ['spanish', 'portuguese']

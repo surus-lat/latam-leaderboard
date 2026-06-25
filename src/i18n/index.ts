@@ -39,6 +39,7 @@ export const en: TranslationDict = {
       translation: 'Translation',
       structured_extraction: 'Structured Extraction',
       image_extraction: 'Image Extraction',
+      transcription: 'Transcription',
     },
     columns: {
       model_name: 'model_name',
@@ -190,6 +191,7 @@ export const es: TranslationDict = {
       translation: 'Traducción',
       structured_extraction: 'Extracción estructurada',
       image_extraction: 'Extracción de imágenes',
+      transcription: 'Transcripción',
     },
     columns: {
       model_name: 'model_name',
@@ -341,6 +343,7 @@ export const pt: TranslationDict = {
       translation: 'Tradução',
       structured_extraction: 'Extração estruturada',
       image_extraction: 'Extração de imagens',
+      transcription: 'Transcrição',
     },
     columns: {
       model_name: 'model_name',
