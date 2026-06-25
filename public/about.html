@@ -8,11 +8,12 @@
 
 <meta name="author" content="Mauro Ibañez">
 <meta name="author" content="Marian Basti">
+<meta name="author" content="Francis Perelman">
 <meta name="author" content="Francis Felici">
-<meta name="dcterms.date" content="2025-09-25">
-<meta name="keywords" content="AI, Benchmarks, Latin America, task-oriented evals">
+<meta name="dcterms.date" content="2026-06-23">
+<meta name="keywords" content="AI, Benchmarks, Latin America, Evals Hub, multipolar AI">
 
-<title>LatamBoard: Performance benchmarks for Latin American AI systems</title>
+<title>LatamBoard: On the missing benchmarks layer and a potential solution</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -2193,12 +2194,13 @@ vertical-align: -.125em;
 </script>
 
 
-<meta name="citation_title" content="LatamBoard: Performance benchmarks for Latin American AI systems">
+<meta name="citation_title" content="LatamBoard: On the missing benchmarks layer and a potential solution">
 <meta name="citation_abstract" content="LatamBoard represents a community-driven initiative to establish rigorous, task-oriented evaluation standards for artificial intelligence systems serving Latin America. This work addresses the critical gap in AI assessment tools that are culturally and linguistically appropriate for Spanish and Portuguese-speaking markets. We present a comprehensive evaluation framework built on multiple forks of lm-evaluation-harness, designed to measure real-world task performance rather than general language fluency. Our approach emphasizes transparent methodology, reproducible setups, and outcome-first scoring across three development phases: comprehensive language understanding, real-world task evaluation, and community-contributed specialized benchmarks. LatamBoard serves not only as an evaluation platform but as a foundation for training signals in reinforcement learning workflows, enabling the development of AI systems that effectively address regional needs and drive productivity in Latin American markets.
 ">
 <meta name="citation_keywords" content="AI,Benchmarks,Latin America,task-oriented evals">
 <meta name="citation_author" content="Mauro Ibañez">
 <meta name="citation_author" content="Marian Basti">
+<meta name="citation_author" content="Francis Perelman">
 <meta name="citation_author" content="Francis Felici">
 <meta name="citation_publication_date" content="2025-09-25">
 <meta name="citation_cover_date" content="2025-09-25">
@@ -2219,7 +2221,7 @@ vertical-align: -.125em;
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">LatamBoard: Performance benchmarks for Latin American AI systems</h1>
+      <h1 class="title">LatamBoard: On the missing benchmarks layer and a potential solution</h1>
           </div>
 
     
@@ -2234,7 +2236,7 @@ vertical-align: -.125em;
           </div>
                 <div class="quarto-title-meta-contents">
                     <p class="affiliation">
-                        Surus AI
+                        SURUS
                       </p>
                   </div>
                       <div class="quarto-title-meta-contents">
@@ -2242,7 +2244,15 @@ vertical-align: -.125em;
           </div>
                 <div class="quarto-title-meta-contents">
                     <p class="affiliation">
-                        Surus AI
+                        SURUS
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Francis Perelman</p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Independent
                       </p>
                   </div>
                       <div class="quarto-title-meta-contents">
@@ -2250,18 +2260,18 @@ vertical-align: -.125em;
           </div>
                 <div class="quarto-title-meta-contents">
                     <p class="affiliation">
-                        Surus AI
+                        SURUS
                       </p>
                   </div>
                     </div>
-        
+
         <div class="quarto-title-meta">
 
                       
                 <div>
-            <div class="quarto-title-meta-heading">Published</div>
+            <div class="quarto-title-meta-heading">Last modified</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">September 25, 2025</p>
+              <p class="date">June 23, 2026</p>
             </div>
           </div>
           
@@ -2269,20 +2279,20 @@ vertical-align: -.125em;
               </div>
       </div>
       <div class="quarto-title-meta-column-end quarto-other-formats-target">
-      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></p></div><div class="quarto-title-meta-contents"><p><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF (agu)</a></p></div><div class="quarto-title-meta-contents"><p><a href="index-meca.zip" data-meca-link="true"><i class="bi bi-archive"></i>MECA Bundle</a></p></div></div></div>
+      </div>
     </div>
 
     <div>
       <div class="abstract">
         <div class="block-title">Abstract</div>
-        <p>LatamBoard represents a community-driven initiative to establish rigorous, task-oriented evaluation standards for artificial intelligence systems serving Latin America. This work addresses the critical gap in AI assessment tools that are culturally and linguistically appropriate for Spanish and Portuguese-speaking markets. We present a comprehensive evaluation framework built on multiple forks of lm-evaluation-harness, designed to measure real-world task performance rather than general language fluency. Our approach emphasizes transparent methodology, reproducible setups, and outcome-first scoring across three development phases: comprehensive language understanding, real-world task evaluation, and community-contributed specialized benchmarks. LatamBoard serves not only as an evaluation platform but as a foundation for training signals in reinforcement learning workflows, enabling the development of AI systems that effectively address regional needs and drive productivity in Latin American markets.</p>
+        <p>Latin America is missing a foundational layer of AI infrastructure: the <strong>benchmark layer</strong> — the layer without which the region cannot <strong>audit</strong> the AI it consumes nor give <strong>direction</strong> to the AI it builds. On the <strong>public-institution side</strong>, almost every AI system in regional use today was built elsewhere, and almost none of it has been measured against the contexts it is being deployed into. On the <strong>industry side</strong>, the absence is structural: modern AI optimization — the software 3.0 stack of prompt-program optimizers &amp; agent-architecture search — <strong>consumes a benchmark as its input</strong>. No benchmark, no optimization target, no way to adapt a general-purpose model to a specific industry workflow. The cost of the missing layer is therefore dual: a loss of <strong>auditability</strong> on one side, a loss of <strong>direction</strong> on the other, and together a loss of sovereign capacity over a technology that has become infrastructure.</p>
       </div>
     </div>
 
     <div>
       <div class="keywords">
         <div class="block-title">Keywords</div>
-        <p>AI, Benchmarks, Latin America, task-oriented evals</p>
+        <p>AI, Benchmarks, Latin America, Evals Hub, multipolar AI</p>
       </div>
     </div>
 
@@ -2294,29 +2304,13 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-mission" id="toc-sec-mission" class="nav-link active" data-scroll-target="#sec-mission">Our Mission</a></li>
-  <li><a href="#sec-rationale" id="toc-sec-rationale" class="nav-link" data-scroll-target="#sec-rationale">Why This Matters</a>
-  <ul class="collapse">
-  <li><a href="#sec-culture-capability" id="toc-sec-culture-capability" class="nav-link" data-scroll-target="#sec-culture-capability">From Culture to Capability</a></li>
-  <li><a href="#sec-learning-signals" id="toc-sec-learning-signals" class="nav-link" data-scroll-target="#sec-learning-signals">Signals for Learning and Reinforcement</a></li>
-  <li><a href="#sec-evaluation-gap" id="toc-sec-evaluation-gap" class="nav-link" data-scroll-target="#sec-evaluation-gap">Bridging the Evaluation Gap</a></li>
-  </ul></li>
-  <li><a href="#sec-evaluation-methodology" id="toc-sec-evaluation-methodology" class="nav-link" data-scroll-target="#sec-evaluation-methodology">How We Evaluate Models</a>
-  <ul class="collapse">
-  <li><a href="#sec-evolving-standards" id="toc-sec-evolving-standards" class="nav-link" data-scroll-target="#sec-evolving-standards">Evolving Standards</a></li>
-  </ul></li>
-  <li><a href="#sec-community" id="toc-sec-community" class="nav-link" data-scroll-target="#sec-community">Community Collaboration</a>
-  <ul class="collapse">
-  <li><a href="#sec-ai-pms" id="toc-sec-ai-pms" class="nav-link" data-scroll-target="#sec-ai-pms">For AI Product Managers</a></li>
-  <li><a href="#sec-researchers" id="toc-sec-researchers" class="nav-link" data-scroll-target="#sec-researchers">For Researchers and Universities</a></li>
-  <li><a href="#sec-developers" id="toc-sec-developers" class="nav-link" data-scroll-target="#sec-developers">For Model Developers</a></li>
-  <li><a href="#sec-practitioners" id="toc-sec-practitioners" class="nav-link" data-scroll-target="#sec-practitioners">for Companies and Practitioners</a></li>
-  </ul></li>
-  <li><a href="#sec-commitment" id="toc-sec-commitment" class="nav-link" data-scroll-target="#sec-commitment">Our Commitment</a></li>
-  <li><a href="#sec-future" id="toc-sec-future" class="nav-link" data-scroll-target="#sec-future">Building Latin America’s AI Future</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#sec-layer" id="toc-sec-layer" class="nav-link active" data-scroll-target="#sec-layer">What the Benchmark Layer Does</a></li>
+  <li><a href="#sec-hub" id="toc-sec-hub" class="nav-link" data-scroll-target="#sec-hub">The Evals Hub and LatamBoard</a></li>
+  <li><a href="#sec-access" id="toc-sec-access" class="nav-link" data-scroll-target="#sec-access">The Access Problem</a></li>
+  <li><a href="#sec-multipolar" id="toc-sec-multipolar" class="nav-link" data-scroll-target="#sec-multipolar">A Multipolar AI</a></li>
+  <li><a href="#sec-open" id="toc-sec-open" class="nav-link" data-scroll-target="#sec-open">Open Questions</a></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="about-preview.html"><i class="bi bi-journal-code"></i>About LatamBoard</a></li><li><a href="CLAUDE-preview.html"><i class="bi bi-journal-code"></i>CLAUDE.md</a></li><li><a href="notebooks/data-screening.embed-preview.html"><i class="bi bi-journal-code"></i>Data Screening</a></li></ul></div></nav>
+</nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -2327,113 +2321,49 @@ vertical-align: -.125em;
   
 
 
-<p>LatamBoard is a community initiative dedicated to establishing task-oriented, transparent evaluation standards for AI systems serving Latin America. We are developing the infrastructure to measure real-world performance capabilities, moving beyond general language fluency assessments to task-specific competency evaluation.</p>
-<p>LatamBoard represents more than a ranking system—it serves as the foundation for establishing our region as a global AI innovation hub. Whether you are a researcher, developer, or AI enthusiast, there is a place for you in building these evaluation standards.</p>
-<section id="sec-mission" class="level2">
-<h2 class="anchored" data-anchor-id="sec-mission">Our Mission</h2>
-<p>We create rigorous, region-specific, task-oriented benchmarks in Spanish and Portuguese across LATAM industries, enabling researchers, developers, and companies to train, select, and deploy models that deliver measurable impact in production environments.</p>
+<section id="sec-layer" class="level2">
+<h2 class="anchored" data-anchor-id="sec-layer">What the Benchmark Layer Does</h2>
+<p>The benchmark layer does two things no other layer can. First, it lets the region <strong>evaluate AI systems it did not build</strong>. Datasets cannot reveal whether a foreign frontier model reasons correctly about a topic of regional interest; only a benchmark, run against the model, can. This is the audit function — the principal lever public institutions have for governing AI they do not control. Second, the benchmark layer <strong>defines the optimization target</strong> for the AI systems being built and deployed inside the region. Software 3.0-class optimizers — DSPy-style compilers, MIPRO/GEPA-style program search — are programs that take a benchmark and output a better AI system. Without a benchmark they will not run; with one, a general-purpose foreign model that fails on a regional task can be brought to passing performance through prompt, agent-architecture, and inference parameter changes the optimizer discovers automatically, with no retraining of the underlying model required. <strong>One artifact, two consumers, two functions</strong>: a public good for institutions, a private optimization compass for industry, both produced and consumed through the same layer.</p>
 </section>
-<section id="sec-rationale" class="level2">
-<h2 class="anchored" data-anchor-id="sec-rationale">Why This Matters</h2>
-<section id="sec-culture-capability" class="level3">
-<h3 class="anchored" data-anchor-id="sec-culture-capability">From Culture to Capability</h3>
-<p>AI evaluation has been dominated by English-centric benchmarks that fail to capture the nuanced performance requirements of Latin American markets. We are addressing this limitation by creating rigorous, region-specific evaluation standards that empower our community to build and choose AI solutions with empirical confidence.</p>
-<p>Capturing regional idiosyncrasies is essential but not sufficient. The primary bottleneck is evaluation: without precise, task-level performance signals, models cannot reliably learn instructions, follow constraints, or deliver consistent production outcomes.</p>
+<section id="sec-hub" class="level2">
+<h2 class="anchored" data-anchor-id="sec-hub">The Evals Hub and LatamBoard</h2>
+<p>We call this missing piece the <strong>Evals Hub</strong>, and propose <strong>LatamBoard</strong> (<a href="https://latamboard.ai">latamboard.ai</a>) as its first regional instance — the LATAM surface where benchmarks built by and for the region are published, runnable, and comparable across AI systems. The hub is organized around a task-first ontology: <code>/&lt;task?&gt;/&lt;domain?&gt;/&lt;language?&gt;</code>. <strong>Task</strong> comes first because a benchmark is an exam, and every exam is an exam <em>for</em> something — extraction, classification, reasoning. <strong>Domain</strong> comes second: task context matters. <strong>Language</strong> comes third, as a modifier. The approach is <strong>ai-system agnostic</strong>: the benchmark defines what is being tested; the target (model, workflow, agent) defines who is being tested. <strong>Built once, measured forever</strong> — re-run by an institution each time a new foreign model ships, re-run by an industry team after every change to the system being optimized.</p>
 </section>
-<section id="sec-learning-signals" class="level3">
-<h3 class="anchored" data-anchor-id="sec-learning-signals">Signals for Learning and Reinforcement</h3>
-<p>As training methodologies shift toward reinforcement and feedback-driven approaches, we need clear, auditable success criteria. Our benchmarks are designed so their results can serve as training and validation signals—making “what constitutes good performance” explicit for LATAM-specific tasks.</p>
+<section id="sec-access" class="level2">
+<h2 class="anchored" data-anchor-id="sec-access">The Access Problem</h2>
+<p>The benchmark layer faces a <strong>hard supply problem</strong>: Benchmarks must be <strong>authored from scratch</strong>, by humans, and authoring one today requires four kinds of expertise that almost never sit in the same person: knowledge of what <em>correct</em> means in a domain (the domain expert), the ability to write a benchmark schema and scoring function (ml engineering), the theory and practice of generating a representative test (statistics), and the operational know-how to run the resulting artifact reliably (developer). The people whose judgment is most valuable to the region are locked out by the other three. This is the <strong>Access Problem</strong>, and it is the binding constraint on regional benchmark supply.</p>
 </section>
-<section id="sec-evaluation-gap" class="level3">
-<h3 class="anchored" data-anchor-id="sec-evaluation-gap">Bridging the Evaluation Gap</h3>
-<p>High-quality evaluations in Spanish and Portuguese remain scarce, particularly for concrete, actionable tasks. This gap impedes informed decision-making and slows model development progress for real LATAM use cases.</p>
+<section id="sec-multipolar" class="level2">
+<h2 class="anchored" data-anchor-id="sec-multipolar">A Multipolar AI</h2>
+<p>We root for a <strong>multipolar AI world</strong> — one in which AI is developed across many regions, by many communities, reflecting many sets of values — and we believe Latin America should be one of those poles, with its own technology and its own agency. From that position, an Evals Hub like LatamBoard must be <strong>open by design</strong> and <strong>incentive-driven by construction</strong>. Contributors — universities, public institutions, professional communities, and companies willing to open-source internal benchmarks — are recognized as contributors of the region’s evaluation layer, driving brand-awareness on a heavy topic.</p>
 </section>
-</section>
-<section id="sec-evaluation-methodology" class="level2">
-<h2 class="anchored" data-anchor-id="sec-evaluation-methodology">How We Evaluate Models</h2>
-<p>We maintain publicly accessible benchmarks based on multiple forks of lm-evaluation-harness, focusing on:</p>
-<ul>
-<li><strong>Task definitions with acceptance criteria</strong>: Clear specifications of what constitutes successful task completion</li>
-<li><strong>Reproducible setups</strong>: Versioned configurations, controlled random seeds, and standardized datasets</li>
-<li><strong>Outcome-first scoring</strong>: Task success measurement complemented by supporting metrics appropriate to each evaluation domain</li>
-<li><strong>Transparent reporting</strong>: Comprehensive documentation of benchmark coverage and acknowledged limitations</li>
-</ul>
-<section id="sec-evolving-standards" class="level3">
-<h3 class="anchored" data-anchor-id="sec-evolving-standards">Evolving Standards</h3>
-<ul>
-<li><strong>Phase 1</strong>: Comprehensive language understanding benchmarks</li>
-<li><strong>Phase 2</strong>: Real-world task evaluation encompassing translation, transcription, summarization, instruction following, and structured output generation</li>
-<li><strong>Phase 3</strong>: Community-contributed benchmarks and specialized datasets, with feedback formats suitable for training and reinforcement learning workflows</li>
-</ul>
-</section>
-</section>
-<section id="sec-community" class="level2">
-<h2 class="anchored" data-anchor-id="sec-community">Community Collaboration</h2>
-<section id="sec-ai-pms" class="level3">
-<h3 class="anchored" data-anchor-id="sec-ai-pms">For AI Product Managers</h3>
-<p>Translate business outcomes into benchmarks and training signals. Define performance standards so models can be optimized toward real key performance indicators.</p>
-</section>
-<section id="sec-researchers" class="level3">
-<h3 class="anchored" data-anchor-id="sec-researchers">For Researchers and Universities</h3>
-<p>Contribute benchmarks, methodologies, and datasets. Help establish academic standards that align with genuine regional needs and research priorities.</p>
-</section>
-<section id="sec-developers" class="level3">
-<h3 class="anchored" data-anchor-id="sec-developers">For Model Developers</h3>
-<p>Showcase model performance on region-specific tasks. Obtain actionable insights into strengths, weaknesses, and areas requiring focused additional training.</p>
-</section>
-<section id="sec-practitioners" class="level3">
-<h3 class="anchored" data-anchor-id="sec-practitioners">for Companies and Practitioners</h3>
-<p>Access reliable performance data to guide implementation decisions. Propose your actual production tasks—we will collaborate to express them as clear benchmarks with well-defined acceptance criteria.</p>
-</section>
-</section>
-<section id="sec-commitment" class="level2">
-<h2 class="anchored" data-anchor-id="sec-commitment">Our Commitment</h2>
-<ul>
-<li><strong>Open Science</strong>: Benchmarks, code, and results are public by default</li>
-<li><strong>Academic Rigor</strong>: Transparent methodology and careful scope definition—no leaderboard theatrics</li>
-<li><strong>Regional Focus</strong>: Built around LATAM languages and the tasks that drive regional productivity</li>
-<li><strong>Community Ownership</strong>: We maintain the infrastructure; the community shapes the standards</li>
-</ul>
-</section>
-<section id="sec-future" class="level2">
-<h2 class="anchored" data-anchor-id="sec-future">Building Latin America’s AI Future</h2>
-<p>LatamBoard represents more than a ranking system—it is the evaluation layer that enables our region to train and deploy systems that solve real problems with measurable impact.</p>
-<p>LatamBoard is proudly supported by compute infrastructure from Surus, with development and methodology contributions from the broader LATAM AI community.</p>
-</section>
-<section id="references" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
-<div id="refs" role="list">
-
-</div>
+<section id="sec-open" class="level2">
+<h2 class="anchored" data-anchor-id="sec-open">Open Questions</h2>
+<p>Many questions remain open. <strong>Methodological standards</strong> for a regional evaluation layer. <strong>Re-evaluation cadence</strong> — how often a benchmark should be re-run as new models ship, who maintains the artifact, who pays for the compute — has no shared answer. <strong>Sensitive-domain governance</strong> for medical, legal, and child-safety benchmarks requires institutional structures that do not yet exist regionally.</p>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ibañez2025,
-  author = {Ibañez, Mauro and Basti, Marian and Felici, Francis},
-  title = {LatamBoard: {Performance} Benchmarks for {Latin} {American}
-    {AI} Systems},
-  date = {2025-09-25},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ibañez2026,
+  author = {Ibañez, Mauro and Basti, Marian and Perelman, Francis and
+    Felici, Francis},
+  title = {LatamBoard: {On} the {Missing} {Benchmarks} {Layer} and a
+    {Potential} {Solution}},
+  date = {2026-06-23},
   langid = {en},
-  abstract = {LatamBoard represents a community-driven initiative to
-    establish rigorous, task-oriented evaluation standards for
-    artificial intelligence systems serving Latin America. This work
-    addresses the critical gap in AI assessment tools that are
-    culturally and linguistically appropriate for Spanish and
-    Portuguese-speaking markets. We present a comprehensive evaluation
-    framework built on multiple forks of lm-evaluation-harness, designed
-    to measure real-world task performance rather than general language
-    fluency. Our approach emphasizes transparent methodology,
-    reproducible setups, and outcome-first scoring across three
-    development phases: comprehensive language understanding, real-world
-    task evaluation, and community-contributed specialized benchmarks.
-    LatamBoard serves not only as an evaluation platform but as a
-    foundation for training signals in reinforcement learning workflows,
-    enabling the development of AI systems that effectively address
-    regional needs and drive productivity in Latin American markets.}
+  abstract = {Latin America is missing a foundational layer of AI
+    infrastructure: the benchmark layer — the layer without which the
+    region cannot audit the AI it consumes nor give direction to the AI
+    it builds. The cost of the missing layer is dual: a loss of
+    auditability on one side, a loss of direction on the other, and
+    together a loss of sovereign capacity over a technology that has
+    become infrastructure. We propose LatamBoard as the first regional
+    instance of an Evals Hub — the LATAM surface where benchmarks built
+    by and for the region are published, runnable, and comparable across
+    AI systems.}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-ibañez2025" class="csl-entry quarto-appendix-citeas" role="listitem">
-Ibañez, Mauro, Marian Basti, and Francis Felici. 2025.
-<span>“LatamBoard: Performance Benchmarks for Latin American AI
-Systems.”</span> LatamBoard. September 25, 2025.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-ibañez2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Ibañez, Mauro, Marian Basti, Francis Perelman, and Francis Felici. 2026.
+<span>“LatamBoard: On the Missing Benchmarks Layer and a Potential
+Solution.”</span> LatamBoard. June 23, 2026.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
