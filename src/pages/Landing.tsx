@@ -68,8 +68,13 @@ export function Landing() {
     return data.map((row) => {
       const values = selectedTaskColumns.map((col) => row[col])
       const numericValues = values.filter((value): value is number => typeof value === 'number')
-      const hasAllScores = numericValues.length === selectedTaskColumns.length && selectedTaskColumns.length > 0
-      const overall = hasAllScores ? numericValues.reduce((sum, value) => sum + value, 0) / numericValues.length : null
+      // Average over present scores instead of requiring all-tasks-present: a transcription-only
+      // specialist (e.g. an ASR model) should still get an overall_score so it ranks visibly when
+      // the user adds Transcription to the selected tasks. Returns null only when the row has no
+      // scores in any selected task.
+      const overall = numericValues.length > 0
+        ? numericValues.reduce((sum, value) => sum + value, 0) / numericValues.length
+        : null
       return { ...row, overall_score: overall }
     })
   }, [data, selectedTaskColumns])
