@@ -86,9 +86,12 @@ export function Landing() {
     arr.sort((a, b) => {
       const av = a[sortBy]
       const bv = b[sortBy]
-      const an = typeof av === 'number' ? av : Number.NEGATIVE_INFINITY
-      const bn = typeof bv === 'number' ? bv : Number.NEGATIVE_INFINITY
-      return sortDir === 'asc' ? an - bn : bn - an
+      const aValid = Number.isFinite(av)
+      const bValid = Number.isFinite(bv)
+      if (!aValid && !bValid) return 0
+      if (!aValid) return 1
+      if (!bValid) return -1
+      return sortDir === 'asc' ? (av as number) - (bv as number) : (bv as number) - (av as number)
     })
     return arr
   }, [data, dataWithOverall, sortBy, sortDir])
