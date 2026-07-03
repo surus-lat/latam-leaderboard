@@ -1,0 +1,16 @@
+{
+  "_comment": "Stable paper metadata that does NOT live in latamboard-paper.md. Edit this only when authors, affiliations, date, keywords, or contact change. The title/abstract/body always come from latamboard-paper.md.",
+  "title_prefix": "LatamBoard: ",
+  "date": "2026-06-23",
+  "keywords": ["AI", "Benchmarks", "Latin America", "Evals Hub", "multipolar AI"],
+  "theme": "cosmo",
+  "authors": [
+    { "name": "Mauro Ibañez",    "affiliation": "SURUS",       "co_first": true },
+    { "name": "Francis F Daniel", "affiliation": "SURUS",       "co_first": true },
+    { "name": "Marian Basti",     "affiliation": "SURUS" },
+    { "name": "Francis Perelman", "affiliation": "Independent" }
+  ],
+  "co_first_note": "Equal contribution (co-first authors)",
+  "contact_email": "francis@surus.lat",
+  "citation": { "type": "webpage", "container_title": "LatamBoard", "url": "https://latamboard.ai" }
+}
