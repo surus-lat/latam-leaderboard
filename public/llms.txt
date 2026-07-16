@@ -1,0 +1,40 @@
+# LatamBoard
+
+> Open leaderboard for LLM performance on Latin American Spanish, Portuguese,
+> translation, structured extraction, image extraction, and transcription
+> tasks. Scores are computed from public evaluation suites and served as JSON
+> from Hugging Face; the website (this domain) is a thin client-side
+> visualization on top of that dataset.
+
+## Live data (single source of truth)
+
+All benchmark data is served directly from a public Hugging Face dataset. Each
+file is plain JSON, curl-able with no auth.
+
+- [leaderboard_table.json](https://huggingface.co/datasets/LatamBoard/leaderboard-results/resolve/main/leaderboard_table.json):
+  one row per model. Columns include `model_name`, `publisher`,
+  `overall_latam_score`, `spanish_score`, `portuguese_score`,
+  `translation_score`, `structured_extraction_score`, plus per-subtask columns
+  (naming convention: `{group}_{subtask}`).
+- [tasks_groups.json](https://huggingface.co/datasets/LatamBoard/leaderboard-results/resolve/main/tasks_groups.json):
+  category → task-list mapping. Categories include `latam_es` (Spanish),
+  `latam_pr` (Portuguese), `translation`, `structured_extraction`, and any
+  additional groups the maintainers have added.
+- [tasks_list.json](https://huggingface.co/datasets/LatamBoard/leaderboard-results/resolve/main/tasks_list.json):
+  per-task metadata — description, source dataset link, language.
+
+Dataset home (browse, versions, revisions):
+<https://huggingface.co/datasets/LatamBoard/leaderboard-results>
+
+## Paper (project background, methodology, citation)
+
+- [About / manuscript](https://latamboard.ai/about.html): Quarto-rendered
+  paper — "LatamBoard: On the missing benchmarks layer and a potential
+  solution". Contains abstract, authors, methodology, dataset description,
+  results, and citation block.
+
+## Project home
+
+- <https://latamboard.ai> — the visual leaderboard (client-side React; not a
+  data source).
+- <https://github.com/surus-lat/latam-leaderboard> — source code.

@@ -1,0 +1,6 @@
+# LatamBoard
+# See /llms.txt for a compact, machine-readable index of the site's data
+# sources and paper (llmstxt.org convention).
+
+User-agent: *
+Allow: /
