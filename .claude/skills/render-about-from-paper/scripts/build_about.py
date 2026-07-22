@@ -9,8 +9,9 @@ Pipeline:
         -> patch author ornaments Quarto can't emit natively
         -> write public/about.html
 
-It does NOT run inject-nav or git — the SKILL drives those steps so a human
-stays in the loop before anything is committed.
+It does NOT run inject-nav or git -- the SKILL drives those steps so a human
+stays in the loop before anything is committed. (The repo's `scripts/render-about.sh`
+wrapper runs build + inject-nav + a quick sanity check, for one-shot use.)
 
 Usage:
   python3 build_about.py \
@@ -20,30 +21,78 @@ Usage:
       [--keep-workdir]        # leave the temp .qmd + _files for inspection
 
 Requires: quarto on PATH (tested with 1.8.x). No third-party Python deps.
+
+Paper structure expected by this script (see latamboard-paper.md):
+  # <Title>
+  ## <optional abstract heading — "## 0. abstract" or "## Abstract", case-insensitive>
+  <abstract body — typically one or more paragraphs>
+  ## 1. <section title>
+  ...
+  ## N. <section title>
+  ## References          (optional; rendered as a normal section, included in TOC)
+
+The extractor is forgiving: it accepts both "## Abstract" / "## 0. abstract"
+styles, and does NOT require a trailing `---` after the abstract. If neither
+an abstract heading nor any body heading is found, it errors loudly so the
+caller knows the structure is unrecognized.
 """
 import argparse, json, re, shutil, subprocess, sys, tempfile
 from pathlib import Path
 
 
 def extract(paper: str):
-    """Pull title, abstract, and full body out of the paper markdown."""
+    """Pull title, abstract, and full body out of the paper markdown.
+
+    Returns (h1_title, abstract_block, body_block).
+    - abstract_block: the text between the abstract heading and the next `##`
+      heading, stripped.
+    - body_block: every `##` heading + content from the first non-abstract `##`
+      heading onward, with standalone `---` rules removed (matches current page
+      styling — one continuous manuscript).
+    """
     m = re.search(r'^#\s+(.+)$', paper, re.M)
     if not m:
         sys.exit("ERROR: no top-level '# Title' heading found in the paper.")
     h1 = m.group(1).strip()
 
-    am = re.search(r'^##\s+Abstract\s*$(.+?)^---\s*$', paper, re.M | re.S)
-    if not am:
-        sys.exit("ERROR: could not find '## Abstract' ... '---' block in the paper.")
-    abstract = am.group(1).strip()
+    # Find the abstract heading. We accept:
+    #   ## Abstract
+    #   ## 0. abstract
+    #   ## Abstract: ...       (anything after the word "abstract" is ignored)
+    # We do NOT require a trailing `---` rule — the new paper format omits it.
+    # The abstract body extends until the next `## ...` heading.
+    am = re.search(
+        r'^##\s+(?:\d+\.\s*)?abstract\b.*?\n(.+?)(?=^##\s+)',
+        paper, re.M | re.S | re.I,
+    )
+    if am:
+        abstract = am.group(1).strip()
+    else:
+        # No explicit abstract heading — treat the text between the title and the
+        # first `## ...` as the abstract. This keeps the skill useful even if a
+        # future manuscript drops the abstract heading entirely.
+        bm_pre = re.search(r'^##\s+', paper, re.M)
+        if not bm_pre:
+            sys.exit("ERROR: no '## ...' section headings found in the paper.")
+        abstract = paper[0:bm_pre.start()].strip()
+        # Strip the title heading from the abstract block if it's still in there.
+        abstract = re.sub(r'^#\s+.+\n?', '', abstract, count=1).strip()
+        if not abstract:
+            abstract = "(abstract not provided)"
 
-    bm = re.search(r'^(##\s+(?!Abstract\b).+)', paper, re.M | re.S)
+    # Body: from the first `## ...` heading that is NOT the abstract, to EOF.
+    bm = re.search(r'^##\s+(?!\d+\.\s*abstract\b)(?!abstract\b)(.+)$',
+                   paper, re.M | re.I)
     if not bm:
+        # We allow the case where the abstract IS the only `## ...` heading,
+        # but then there's nothing to render as the body — error out.
         sys.exit("ERROR: no body sections (## ...) found after the abstract.")
-    body = bm.group(1).strip()
-    # Drop standalone '---' horizontal-rule separators between sections so the
-    # rendered page reads as one continuous manuscript (matches current styling).
+    body = paper[bm.start():].strip()
+
+    # Drop standalone '---' horizontal-rule separators so the rendered page
+    # reads as one continuous manuscript (matches current styling).
     body = "\n".join(ln for ln in body.splitlines() if ln.strip() != "---").strip()
+
     return h1, abstract, body
 
 
