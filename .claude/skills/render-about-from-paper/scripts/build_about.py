@@ -121,6 +121,7 @@ def build_qmd(h1, abstract, body, meta) -> str:
         citation_yaml = (
             "citation:\n"
             f'  type: {cit.get("type", "webpage")}\n'
+            f'  title: "{h1.replace(chr(34), chr(92)+chr(34))}"\n'
             f'  container-title: {cit.get("container_title", "LatamBoard")}\n'
             f'  url: {cit.get("url", "")}\n'
         )

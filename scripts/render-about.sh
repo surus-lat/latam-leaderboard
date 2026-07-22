@@ -11,7 +11,7 @@
 #        - "Equal contribution" co-first note is present
 #        - "Contact authors at:" line is present
 #        - <script src="/nav-injector.js"></script> is present (was injected in step 2)
-#        - 10 body <h2 class="anchored"> sections + the Citation appendix
+#        - 11 body <h2 class="anchored"> sections (10 + References) + the Citation appendix
 #   5. Print what to do next: `npm run preview` to eyeball, then commit public/about.html.
 #
 # Usage:
@@ -100,7 +100,7 @@ check "Last modified badge"          'Last modified'               1
 check "Equal contribution note"      'Equal contribution'          1
 check "Contact authors line"         'Contact authors at:'         1
 check "navbar script injected"       '<script src="/nav-injector.js"></script>' 1
-check "10 body sections"             '<h2 class="anchored"'       10
+check "11 body sections (10 + References)"     '<h2 class="anchored"'       11
 check "Citation appendix heading"    'quarto-appendix-heading">Citation' 1
 
 if [[ "$fail" -ne 0 ]]; then
