@@ -44,6 +44,91 @@ HTML is the source of truth.
 - **python3** (any recent 3.x) and **node/npm** (the repo's existing toolchain).
 - Run everything from the repo root (`/Users/dobleefe/latam-leaderboard`).
 
+## Workflow — one shot
+
+Run this from the repo root. That's the whole happy path:
+
+```bash
+./scripts/render-about.sh
+```
+
+The wrapper does, in order:
+
+1. Runs `python3 .claude/skills/render-about-from-paper/scripts/build_about.py`
+   with the default `--paper`, `--metadata`, `--out` paths.
+2. Runs `npm run inject-nav` to graft the `<script src="/nav-injector.js">` tag.
+3. Runs `npm run lint`.
+4. Greps the rendered HTML for the seven must-have markers and exits non-zero
+   on any miss.
+
+Flags:
+- `--preview` — also run `npm run preview` after a clean build, so you can
+  eyeball `/about.html` immediately.
+- `--keep-workdir` — leave the temp `.qmd` + Quarto stderr behind for debugging.
+- `-h` / `--help` — short usage.
+
+After a clean render, eyeball the page and commit:
+
+```bash
+npm run build && npm run preview        # recommended — eyeball /about.html
+git add public/about.html
+git commit -m "[MOD] docs(about): render About page from updated latamboard-paper.md"
+```
+
+- Commit **`public/about.html` only**. Do NOT commit `latamboard-paper.md`
+  unless the user explicitly asks; the manuscript source and the rendered page
+  are versioned independently here.
+- Include `scripts/about-metadata.json` in the commit **only** if you changed
+  it (authors / date / keywords). Branch/tag conventions follow the company
+  CONTRIBUTING.md (commit tags `[ADD]/[MOD]/[FIX]/[DOC]/…`, branch tags
+  `BUG/ …` for fixes, `FEAT/ …` for features).
+- Leave pushing to the user unless told otherwise.
+
+### Manual flow (only if the wrapper is unavailable)
+
+Use this if you're on a checkout that predates `scripts/render-about.sh`, or
+if you want to step through the pipeline interactively for debugging:
+
+```bash
+python3 .claude/skills/render-about-from-paper/scripts/build_about.py \
+  --paper latamboard-paper.md \
+  --metadata .claude/skills/render-about-from-paper/scripts/about-metadata.json \
+  --out public/about.html
+
+npm run inject-nav
+npm run lint
+npm run build && npm run preview    # eyeball /about.html
+```
+
+Then the same commit as above. The wrapper exists precisely to remove the
+need to remember this ordering — use it whenever you can.
+
+## Editing authors, affiliations, date, or keywords
+
+Those come from `scripts/about-metadata.json`, not the paper `.md`. Edit the
+JSON, re-run the build. Co-first authors get `"co_first": true`. The current
+metadata is:
+
+```json
+{
+  "title_prefix": "LatamBoard: ",
+  "date": "2026-06-23",
+  "keywords": ["AI", "Benchmarks", "Latin America", "Evals Hub", "multipolar AI"],
+  "theme": "cosmo",
+  "authors": [
+    { "name": "Francis F Daniel", "affiliation": "SURUS",       "co_first": true  },
+    { "name": "Mauro Ibañez",     "affiliation": "SURUS",       "co_first": true  },
+    { "name": "Francis Perelman", "affiliation": "Independent" },
+    { "name": "Marian Basti",     "affiliation": "SURUS" }
+  ],
+  "co_first_note": "Equal contribution (co-first authors)",
+  "contact_email": "francis@surus.lat",
+  "citation": { "type": "webpage", "container_title": "LatamBoard", "url": "https://latamboard.ai" }
+}
+```
+
+Theme lives in the same file (`"theme": "cosmo"`).
+
 ## Paper structure this script expects
 
 The extractor at `scripts/build_about.py:extract()` is forgiving but has
@@ -75,83 +160,6 @@ What's supported:
 If you change the structure in a way the extractor can't parse, the script
 exits with a specific error naming the block it couldn't find — fix the
 extractor's regexes (small, self-documenting) or revert the paper.
-
-## Workflow — one shot
-
-The repo ships a wrapper that runs the entire pipeline (build → inject-nav →
-lint → sanity checks) and prints exactly what to do next:
-
-```bash
-./scripts/render-about.sh
-```
-
-That command, in order:
-
-1. Runs `python3 .claude/skills/render-about-from-paper/scripts/build_about.py`
-   with the default `--paper`, `--metadata`, `--out` paths.
-2. Runs `npm run inject-nav` to graft the `<script src="/nav-injector.js">` tag.
-3. Runs `npm run lint`.
-4. Greps the rendered HTML for the seven must-have markers and exits non-zero
-   on any miss.
-
-Add `--preview` to also run `npm run preview` after a clean build, so you can
-eyeball `/about.html` immediately. Add `--keep-workdir` to leave the temp
-`.qmd` + Quarto stderr behind for debugging.
-
-### Manual flow (if you don't want the wrapper)
-
-```bash
-python3 .claude/skills/render-about-from-paper/scripts/build_about.py \
-  --paper latamboard-paper.md \
-  --metadata .claude/skills/render-about-from-paper/scripts/about-metadata.json \
-  --out public/about.html
-
-npm run inject-nav
-npm run lint
-npm run build && npm run preview    # eyeball /about.html
-```
-
-### After a clean render — commit
-
-The wrapper's last lines print the exact commands, but the short version:
-
-```bash
-git add public/about.html
-git commit -m "docs(about): render About page from latamboard-paper.md"
-```
-
-- Commit **`public/about.html` only**. Do NOT commit `latamboard-paper.md`
-  unless the user explicitly asks; the manuscript source and the rendered page
-  are versioned independently here.
-- Include `scripts/about-metadata.json` in the commit **only** if you changed
-  it (authors / date / keywords).
-- Leave pushing to the user unless told otherwise.
-
-## Editing authors, affiliations, date, or keywords
-
-Those come from `scripts/about-metadata.json`, not the paper `.md`. Edit the
-JSON, re-run the build. Co-first authors get `"co_first": true`. The current
-metadata is:
-
-```json
-{
-  "title_prefix": "LatamBoard: ",
-  "date": "2026-06-23",
-  "keywords": ["AI", "Benchmarks", "Latin America", "Evals Hub", "multipolar AI"],
-  "theme": "cosmo",
-  "authors": [
-    { "name": "Mauro Ibañez",     "affiliation": "SURUS",       "co_first": true  },
-    { "name": "Francis F Daniel", "affiliation": "SURUS",       "co_first": true  },
-    { "name": "Marian Basti",     "affiliation": "SURUS" },
-    { "name": "Francis Perelman", "affiliation": "Independent" }
-  ],
-  "co_first_note": "Equal contribution (co-first authors)",
-  "contact_email": "francis@surus.lat",
-  "citation": { "type": "webpage", "container_title": "LatamBoard", "url": "https://latamboard.ai" }
-}
-```
-
-Theme lives in the same file (`"theme": "cosmo"`).
 
 ## What the build script handles for you
 
