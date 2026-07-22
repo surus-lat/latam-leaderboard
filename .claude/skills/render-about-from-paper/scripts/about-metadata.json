@@ -1,6 +1,6 @@
 {
   "_comment": "Stable paper metadata that does NOT live in latamboard-paper.md. Edit this only when authors, affiliations, date, keywords, or contact change. The title/abstract/body always come from latamboard-paper.md.",
-  "title_prefix": "LatamBoard: ",
+  "title_prefix": "",
   "date": "2026-06-23",
   "keywords": ["AI", "Benchmarks", "Latin America", "Evals Hub", "multipolar AI"],
   "theme": "cosmo",

@@ -6,7 +6,7 @@
 #   2. Inject the React-app navbar script tag (npm run inject-nav)
 #   3. Lint the repo (npm run lint) — catches anything else that broke
 #   4. Sanity-check the rendered HTML:
-#        - title contains the expected prefix ("LatamBoard: ")
+#        - title contains the paper title ("On the missing benchmarks layer")
 #        - "Last modified" badge is present
 #        - "Equal contribution" co-first note is present
 #        - "Contact authors at:" line is present
@@ -95,7 +95,7 @@ check() {
   fi
 }
 
-check "title has LatamBoard: prefix" 'class="title">LatamBoard: ' 1
+check "title matches paper title"   'class="title">On the missing benchmarks layer' 1
 check "Last modified badge"          'Last modified'               1
 check "Equal contribution note"      'Equal contribution'          1
 check "Contact authors line"         'Contact authors at:'         1
