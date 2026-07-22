@@ -1,0 +1,20 @@
+{
+  "title": "On the missing benchmarks layer and a potential solution",
+  "authors": [
+    {"name": "Francis F Daniel", "affiliation": "SURUS"},
+    {"name": "Mauro Ibañez", "affiliation": "SURUS"},
+    {"name": "Francis Perelman", "affiliation": "Independent"},
+    {"name": "Marian Basti", "affiliation": "SURUS"}
+  ],
+  "co_first_authors": ["Francis F Daniel", "Mauro Ibañez"],
+  "contact_email": "francis@surus.lat",
+  "date": "2026-06-23",
+  "keywords": ["AI", "Benchmarks", "Latin America", "Evals Hub", "multipolar AI"],
+  "categories": {
+    "primary": "cs.AI",
+    "secondary": ["cs.CL", "cs.CY"]
+  },
+  "comments": "Position paper. 10 sections, 31 references.",
+  "license": "arXiv",
+  "abstract": "Latin America is missing a foundational layer for native AI development: a shared evaluation layer for artificial intelligence. This deficit produces two costs. Public institutions procure foreign models and AI systems without reliable instruments to test performance and alignment on Latin American languages, jurisdictions, health practices, administrative procedures, and social contexts. Companies can access general-purpose models but cannot systematically optimize them for regionally relevant workflows because there's a missing optimization direction. The dependency is sequential: data → benchmarks → models → systems → local models for regulation, market fit, and autonomy. Latin America has researchers, engineers, domain expertise, and open-source software. It lacks infrastructure that converts these assets into maintained, reproducible, regionally relevant evaluations. This paper argues that Latin America needs these two missing layers --benchmarks & data-- to develop its own native AI systems. It focuses on the benchmark layer and proposes an EvalsHub, with LatamBoard as its first regional instance: an open, task-first infrastructure where universities, public institutions, professional communities, and companies can publish, execute, compare, and maintain evaluations across models, workflows, and agents."
+}

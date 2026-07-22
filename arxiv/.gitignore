@@ -1,0 +1,9 @@
+# Build artifacts (not submitted to arXiv — they compile from source)
+arxiv/submission/main.pdf
+arxiv/submission/main.aux
+arxiv/submission/main.log
+arxiv/submission/main.blg
+arxiv/submission/main.toc
+arxiv/submission/main.out
+arxiv/submission/main.bbl
+arxiv/latamboard.tar.gz
