@@ -5,10 +5,10 @@
   "keywords": ["AI", "Benchmarks", "Latin America", "Evals Hub", "multipolar AI"],
   "theme": "cosmo",
   "authors": [
-    { "name": "Mauro Ibañez",    "affiliation": "SURUS",       "co_first": true },
     { "name": "Francis F Daniel", "affiliation": "SURUS",       "co_first": true },
-    { "name": "Marian Basti",     "affiliation": "SURUS" },
-    { "name": "Francis Perelman", "affiliation": "Independent" }
+    { "name": "Mauro Ibañez",      "affiliation": "SURUS",       "co_first": true },
+    { "name": "Francis Perelman",  "affiliation": "Independent" },
+    { "name": "Marian Basti",      "affiliation": "SURUS" }
   ],
   "co_first_note": "Equal contribution (co-first authors)",
   "contact_email": "francis@surus.lat",
