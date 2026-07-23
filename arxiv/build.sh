@@ -75,9 +75,9 @@ check() {
 
 check "title in tex"        'On the missing benchmarks layer' 1 "$SUBDIR/main.tex"
 check "abstract in tex"     '\\begin{abstract}' 1 "$SUBDIR/main.tex"
-check "sections in tex"     '\\section{' 10 "$SUBDIR/main.tex"
+check "sections in tex"     '\\section{' 7 "$SUBDIR/main.tex"
 check "bibliography"        '\\bibliography{main}' 1 "$SUBDIR/main.tex"
-check "bib entries"         '@article\|@inproceedings\|@misc\|@techreport\|@proceedings' 25 "$SUBDIR/main.bib"
+check "bib entries"         '@article\|@inproceedings\|@misc\|@techreport\|@proceedings' 12 "$SUBDIR/main.bib"
 check "PDF compiled locally"      '' 1 "$SUBDIR/main.pdf"
 
 # Check PDF size > 50KB (catches blank/empty PDFs)

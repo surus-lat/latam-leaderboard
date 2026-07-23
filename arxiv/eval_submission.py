@@ -67,13 +67,12 @@ def main():
     subsections = re.findall(r'\\subsection\{([^}]+)\}', tex)
     subsubsections = re.findall(r'\\subsubsection\{([^}]+)\}', tex)
     
-    expected_sections = ["introduction", "problem", "missing benchmark layer",
-                         "what the benchmark layer does", "state of evaluation",
-                         "EvalsHub", "Access Problem", "multipolar", "open questions",
+    expected_sections = ["missing benchmark layer", "benchmark layer does",
+                         "EvalsHub", "Access Problem", "Multipolar", "open questions",
                          "invitation to contribute"]
     
-    if not check(f">= 10 sections (got {len(sections)})", len(sections) >= 10): failures += 1
-    if not check(f">= 20 subsections (got {len(subsections)})", len(subsections) >= 20): failures += 1
+    if not check(f">= 7 sections (got {len(sections)})", len(sections) >= 7): failures += 1
+    if not check(f">= 10 subsections (got {len(subsections)})", len(subsections) >= 10): failures += 1
     
     # Check key sections present
     for expected in expected_sections:
@@ -89,12 +88,12 @@ def main():
     bib = (d / "main.bib").read_text() if (d / "main.bib").exists() else ""
     bib_entries = re.findall(r'@\w+\{(\w+),', bib)
     
-    if not check(f">= 25 bib entries (got {len(bib_entries)})", len(bib_entries) >= 25): failures += 1
+    if not check(f">= 12 bib entries (got {len(bib_entries)})", len(bib_entries) >= 12): failures += 1
     
     # Check key citations present
     key_cites = ["khattab2023dspy", "opsahlong2024mipro", "agrawal2025gepa",
-                "wagnerfilho2018brwac", "real2020assin2", "santos2006harem",
-                "hendrycks2020mmlu", "srivastava2022bigbench", "liang2022helm"]
+                "latamgpt2025", "bommasani2021foundationmodels", "liu2022medicalaudit",
+                "metaxa2021auditing", "mokander2023auditing"]
     for key in key_cites:
         if not check(f"bib entry: {key}", key in bib):
             if args.strict:
@@ -147,7 +146,7 @@ def main():
         if not check("abstract non-empty (>200 chars)", len(abstract) > 200,
                      f"got {len(abstract)} chars"):
             failures += 1
-        if not check("abstract has 'native AI development'", "native ai" in abs_plain.lower()):
+        if not check("abstract has 'benchmark layer'", "benchmark layer" in abs_plain.lower()):
             if args.strict: failures += 1
             else: warnings += 1
         if not check("abstract has 'EvalsHub'", "evalshub" in abs_plain.lower()):

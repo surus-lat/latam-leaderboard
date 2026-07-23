@@ -51,69 +51,9 @@ BIB_ENTRIES = r"""@article{khattab2023dspy,
 @inproceedings{agrawal2025gepa,
   author = {Agrawal, Lakshay A. and others},
   title = {GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning},
-  booktitle = {ICLR 2026},
+  booktitle = {ICLR 2026 (Oral)},
   year = {2025},
   note = {arXiv:2507.19457}
-}
-
-@inproceedings{wagnerfilho2018brwac,
-  author = {Wagner Filho, Joao A. and Wilkens, Roberto and Idiart, Marco and Villavicencio, Aline},
-  title = {The brWaC Corpus: A New Open Resource for Brazilian Portuguese},
-  booktitle = {LREC 2018},
-  year = {2018}
-}
-
-@inproceedings{real2020assin2,
-  author = {Real, Livy and Fonseca, Erick and Gon\c{c}alo Oliveira, Hugo},
-  title = {The ASSIN 2 Shared Task: A Quick Overview},
-  booktitle = {PROPOR 2020},
-  year = {2020},
-  doi = {10.1007/978-3-030-41505-1_39}
-}
-
-@inproceedings{santos2006harem,
-  author = {Santos, Diana and Seco, Nuno and Cardoso, Nuno and Vilela, Rui},
-  title = {HAREM: An Advanced NER Evaluation Contest for Portuguese},
-  booktitle = {LREC 2006},
-  year = {2006}
-}
-
-@inproceedings{luzdearaujo2018lenerbr,
-  author = {Luz de Araujo, Pedro H. and others},
-  title = {LeNER-Br: A Dataset for Named Entity Recognition in Brazilian Legal Text},
-  booktitle = {PROPOR 2018},
-  year = {2018},
-  doi = {10.1007/978-3-319-99722-3_32}
-}
-
-@misc{b2w2019reviews,
-  author = {{B2W Digital}},
-  title = {B2W-Reviews01},
-  howpublished = {STIL 2019, \url{github.com/americanas-tech/b2w-reviews01}},
-  year = {2019}
-}
-
-@techreport{canete2020beto,
-  author = {Ca\~nete, Jorge and others},
-  title = {BETO: Spanish Pretrained BERT},
-  institution = {University of Chile},
-  year = {2020},
-  note = {Technical report}
-}
-
-@proceedings{garcia2019iberlef,
-  editor = {Garc\'ia Cumbreras, M. \'A. and others},
-  title = {Proceedings of IberLEF 2019},
-  series = {CEUR Workshop Proceedings},
-  volume = {Vol-2421},
-  year = {2019}
-}
-
-@inproceedings{mager2021americasnlp,
-  author = {Mager, Manuel and others},
-  title = {Findings of the AmericasNLP 2021 Shared Task on Open Machine Translation for Indigenous Languages of the Americas},
-  year = {2021},
-  doi = {10.18653/v1/2021.americasnlp-1.23}
 }
 
 @misc{latamgpt2025,
@@ -123,140 +63,92 @@ BIB_ENTRIES = r"""@article{khattab2023dspy,
   year = {2025}
 }
 
-@inproceedings{wang2018glue,
-  author = {Wang, Alex and others},
-  title = {GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding},
-  booktitle = {ICLR 2019},
-  year = {2018},
-  note = {arXiv:1804.07461}
-}
-
-@inproceedings{wang2019superglue,
-  author = {Wang, Alex and others},
-  title = {SuperGLUE: A Stickier Benchmark for General-Purpose Language Understanding Systems},
-  booktitle = {NeurIPS 2019},
-  year = {2019},
-  note = {arXiv:1905.00537}
-}
-
-@inproceedings{hendrycks2020mmlu,
-  author = {Hendrycks, Dan and others},
-  title = {Measuring Massive Multitask Language Understanding},
-  booktitle = {ICLR 2021},
-  year = {2020},
-  note = {arXiv:2009.03300}
-}
-
-@article{srivastava2022bigbench,
-  author = {Srivastava, Aarohi and others},
-  title = {Beyond the Imitation Game: Quantifying and Extrapolating the Capabilities of Language Models (BIG-bench)},
-  journal = {TMLR 2023},
-  year = {2022},
-  note = {arXiv:2206.04615}
-}
-
-@article{liang2022helm,
-  author = {Liang, Percy and others},
-  title = {Holistic Evaluation of Language Models (HELM)},
-  journal = {TMLR 2023},
-  year = {2022},
-  note = {arXiv:2211.09110}
-}
-
-@article{biderman2024lessons,
-  author = {Biderman, Stella and others},
-  title = {Lessons from the Trenches on Reproducible Evaluation of Language Models},
-  journal = {arXiv preprint arXiv:2405.14782},
-  year = {2024}
-}
-
-@misc{bis2022export,
-  author = {{U.S. Dept. of Commerce, Bureau of Industry and Security}},
-  title = {Implementation of Additional Export Controls},
-  howpublished = {87 FR 62186, Oct 13, 2022},
-  year = {2022}
-}
-
-@misc{bis2023export,
-  author = {{U.S. Dept. of Commerce, Bureau of Industry and Security}},
-  title = {Export Controls: Updates and Corrections},
-  howpublished = {88 FR 73458, Oct 25, 2023},
-  year = {2023}
-}
-
-@misc{bis2025framework,
-  author = {{U.S. Dept. of Commerce, Bureau of Industry and Security}},
-  title = {Framework for AI Diffusion},
-  howpublished = {90 FR 4544, Jan 15, 2025},
-  year = {2025}
-}
-
-@misc{nvidia2022form8k,
-  author = {{NVIDIA Corp.}},
-  title = {Form 8-K, SEC EDGAR},
-  howpublished = {Accession No. 0001045810-22-000146, Aug 26, 2022},
-  year = {2022}
-}
-
-@misc{nvidia2023form10k,
-  author = {{NVIDIA Corp.}},
-  title = {Form 10-K, SEC EDGAR},
-  howpublished = {Accession No. 0001045810-23-000017, Feb 24, 2023},
-  year = {2023}
-}
-
-@misc{lgpd2018,
-  author = {{Brasil}},
-  title = {Lei Geral de Prote\c{c}\~ao de Dados Pessoais (LGPD)},
-  howpublished = {Lei n\textordmasculine\ 13.709/2018, 14 ago. 2018},
-  year = {2018}
-}
-
-@misc{lfpdipp2010,
-  author = {{M\'exico}},
-  title = {Ley Federal de Protecci\'on de Datos Personales en Posesi\'on de los Particulares},
-  howpublished = {DOF 05-07-2010},
-  year = {2010}
-}
-
-@misc{ebia2024,
-  author = {{Brasil}},
-  title = {Estrat\'egia Brasileira de Intelig\^encia Artificial (EBIA)},
-  howpublished = {Portaria SGD/MGI n\textordmasculine\ 6.618, 25 set. 2024},
-  year = {2024}
-}
-
-@misc{chileia2021,
-  author = {{MinCiencia, Chile}},
-  title = {Pol\'itica Nacional de Inteligencia Artificial},
+@article{bommasani2021foundationmodels,
+  author = {Bommasani, Rishi and others},
+  title = {On the Opportunities and Risks of Foundation Models},
+  journal = {arXiv preprint arXiv:2108.07258},
   year = {2021}
 }
 
-@misc{uruguayia2024,
-  author = {{AGESIC, Uruguay}},
-  title = {Estrategia Nacional de Inteligencia Artificial 2024--2030},
-  howpublished = {21 nov. 2024},
+@article{liu2022medicalaudit,
+  author = {Liu, Xinzhe and others},
+  title = {The medical algorithmic audit},
+  journal = {The Lancet Digital Health},
+  volume = {4},
+  number = {3},
+  pages = {e152--e163},
+  year = {2022},
+  doi = {10.1016/S2589-7500(22)00003-6}
+}
+
+@article{mokander2023auditing,
+  author = {M{\"o}kander, Jonas and others},
+  title = {Auditing large language models: a three-layered approach},
+  journal = {AI and Ethics},
+  year = {2023},
+  doi = {10.1007/s43681-023-00289-2}
+}
+
+@inproceedings{kay2024epistemic,
+  author = {Kay, Jasmine and others},
+  title = {Epistemic Injustice in Generative AI},
+  booktitle = {AIES 2024},
+  year = {2024},
+  doi = {10.1609/aies.v7i1.31671}
+}
+
+@inproceedings{schneider2020biobertpt,
+  author = {Schneider, Elisa T. R. and others},
+  title = {BioBERTpt: A Portuguese Neural Language Model for Clinical Named Entity Recognition},
+  booktitle = {Clinical NLP Workshop, ACL 2020},
+  year = {2020},
+  doi = {10.18653/v1/2020.clinicalnlp-1.7}
+}
+
+@article{pineau2020reproducibility,
+  author = {Pineau, Joelle and others},
+  title = {Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program)},
+  journal = {JMLR},
+  year = {2020},
+  note = {arXiv:2003.12206}
+}
+
+@article{metaxa2021auditing,
+  author = {Metaxa, Dana and Park, Joon Sung and Robertson, Ronald E.},
+  title = {Auditing Algorithms: Understanding Algorithmic Systems from the Outside In},
+  journal = {Foundations and Trends in HCI},
+  year = {2021},
+  doi = {10.1561/1100000083}
+}
+
+@article{xu2024contamination,
+  author = {Xu, Cheng and others},
+  title = {Benchmark Data Contamination of Large Language Models: A Survey},
+  journal = {arXiv preprint arXiv:2406.04244},
   year = {2024}
 }
 
-@misc{colombiaia2024,
-  author = {{Minciencias, Colombia}},
-  title = {Hoja de Ruta para la Adopci\'on \'Etica y Sostenible de la IA en Colombia},
-  howpublished = {12 feb. 2024},
-  year = {2024}
+@inproceedings{zheng2023llmjudge,
+  author = {Zheng, Lianmin and others},
+  title = {Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena},
+  booktitle = {NeurIPS 2023},
+  year = {2023},
+  note = {arXiv:2306.05685}
 }
 
-@misc{cnj2020res332,
-  author = {{Conselho Nacional de Justi\c{c}a, Brasil}},
-  title = {Resolu\c{c}\~ao n\textordmasculine\ 332/2020: \'Etica e governan\c{c}a para produ\c{c}\~ao e uso da IA no Poder Judici\'ario},
-  howpublished = {8 set. 2020},
-  year = {2020}
+@article{roberts2024sovereignty,
+  author = {Roberts, Huw},
+  title = {Digital sovereignty and artificial intelligence: a normative approach},
+  journal = {AI and Ethics},
+  year = {2024},
+  doi = {10.1007/s10676-024-09810-5}
 }
 
-@misc{cnj2025res616,
-  author = {{Conselho Nacional de Justi\c{c}a, Brasil}},
-  title = {Resolu\c{c}\~ao n\textordmasculine\ 616/2025: Intelig\^encia Artificial Generativa no Poder Judici\'ario},
-  year = {2025}
+@article{goncalves2015dialects,
+  author = {Gon\c{c}alves, Bruno and S\'anchez, David},
+  title = {Learning about Spanish dialects through Twitter},
+  journal = {arXiv preprint arXiv:1511.04970},
+  year = {2015}
 }
 """
 
@@ -265,31 +157,21 @@ CITATION_MAP = {
     "Khattab et al.": "khattab2023dspy",
     "Opsahl-Ong et al.": "opsahlong2024mipro",
     "Agrawal et al.": "agrawal2025gepa",
-    "Wagner Filho et al.": "wagnerfilho2018brwac",
-    "Real et al.": "real2020assin2",
-    "Santos et al.": "santos2006harem",
-    "Luz de Araujo et al.": "luzdearaujo2018lenerbr",
-    "B2W Digital": "b2w2019reviews",
-    "Ca\\~nete et al.": "canete2020beto",
-    "Cañete et al.": "canete2020beto",
-    "Garc\'ia Cumbreras et al.": "garcia2019iberlef",
-    "García Cumbreras et al.": "garcia2019iberlef",
-    "Mager et al.": "mager2021americasnlp",
     "LatamGPT Project": "latamgpt2025",
-    "Wang et al.": "wang2018glue",  # GLUE 2018 and SuperGLUE 2019 — handled by year context
-    "Hendrycks et al.": "hendrycks2020mmlu",
-    "Srivastava et al.": "srivastava2022bigbench",
-    "Liang et al.": "liang2022helm",
-    "Biderman et al.": "biderman2024lessons",
-    "BIS": "bis2022export",  # handled specially
-    "NVIDIA": "nvidia2022form8k",  # handled specially
-    "Lei n": "lgpd2018",
-    "LFPDPPP": "lfpdipp2010",
-    "Estrat\'egia Brasileira": "ebia2024",
-    "Estratégia Brasileira": "ebia2024",
-    "Pol\'itica Nacional de IA": "chileia2021",
-    "Política Nacional de AI": "chileia2021",
-    "TCU/CNJ": "cnj2020res332",
+    "Bommasani et al.": "bommasani2021foundationmodels",
+    "Liu et al.": "liu2022medicalaudit",
+    "Mökander et al.": "mokander2023auditing",
+    "Mokander et al.": "mokander2023auditing",
+    "Kay et al.": "kay2024epistemic",
+    "Schneider et al.": "schneider2020biobertpt",
+    "Pineau et al.": "pineau2020reproducibility",
+    "Metaxa et al.": "metaxa2021auditing",
+    "Metaxa": "metaxa2021auditing",
+    "Xu et al.": "xu2024contamination",
+    "Zheng et al.": "zheng2023llmjudge",
+    "Roberts": "roberts2024sovereignty",
+    "Gonçalves & Sánchez": "goncalves2015dialects",
+    "Gon\c{c}alves & S\'anchez": "goncalves2015dialects",
 }
 
 
@@ -468,22 +350,23 @@ def convert_markdown_to_latex(md: str) -> str:
                 latex_lines.append(f"\\end{{{list_type}}}")
                 in_list = False
             heading = stripped[4:].strip()
-            # Remove numbering like "2.1 — " or "2.1 - "
-            heading = re.sub(r'^\d+\.\d+\s*[—–-]\s*', '', heading)
+            # Remove §-style numbering like "§1.1 — " or "1.1 — "
+            heading = re.sub(r'^§?\d+\.\d+\s*[—–-]\s*', '', heading)
             latex_lines.append(f"\\subsection{{{convert_inline(escape_latex(heading))}}}")
         elif stripped.startswith("#### "):
             if in_list:
                 latex_lines.append(f"\\end{{{list_type}}}")
                 in_list = False
             heading = stripped[5:].strip()
-            heading = re.sub(r'^\d+\.\d+\.\d+\s*[—–-]\s*', '', heading)
+            heading = re.sub(r'^§?\d+\.\d+\.\d+\s*[—–-]\s*', '', heading)
             latex_lines.append(f"\\subsubsection{{{convert_inline(escape_latex(heading))}}}")
         elif stripped.startswith("## "):
             if in_list:
                 latex_lines.append(f"\\end{{{list_type}}}")
                 in_list = False
             heading = stripped[3:].strip()
-            # Remove numbering like "1. " or "10. "
+            # Remove §-style numbering like "§1 — " or "1. "
+            heading = re.sub(r'^§\d+\s*[—–-]\s*', '', heading)
             heading = re.sub(r'^\d+\.\s+', '', heading)
             latex_lines.append(f"\\section{{{convert_inline(escape_latex(heading))}}}")
         elif stripped.startswith("# "):
@@ -492,6 +375,14 @@ def convert_markdown_to_latex(md: str) -> str:
                 in_list = False
             heading = stripped[2:].strip()
             latex_lines.append(f"\\section*{{{convert_inline(escape_latex(heading))}}}")
+        # Horizontal rule (---) — skip, it's just a section separator
+        elif stripped == "---":
+            if in_list:
+                latex_lines.append(f"\\end{{{list_type}}}")
+                in_list = False
+            # Just add a paragraph break
+            if latex_lines and latex_lines[-1] != "":
+                latex_lines.append("")
         # Ordered list
         elif re.match(r'^\d+\.\s+', stripped):
             if not in_list or list_type != "enumerate":
